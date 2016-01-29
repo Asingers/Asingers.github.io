@@ -3,7 +3,7 @@ layout: post
 title:  "BlackBerry刷机"
 date:   2016-01-29 09:38:45
 author:     "Asingers"
-header-img: "img/carton1.jpg"
+header-img: "img/sucai_sample-image-1.jpg"
 subtitle: "日常搞机"
 tags:
      - Life
