@@ -170,6 +170,16 @@ layout: default
                                 </a>
                             </li>
                             {% endif %}
+                            {% if site.mail_username %}
+                    <li>
+                        <a target="_blank" href="mailto:{{ site.mail_username }}.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">邮</i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
                         </ul>
                     </div>
                 </section>
