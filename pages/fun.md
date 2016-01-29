@@ -1,6 +1,6 @@
 ---
 layout: blank
-title: ComingSoon
+title: FUN
 date: 2016-01-28
 author: "Asingers"
 header-img: "img/comingsoon.jpg"
