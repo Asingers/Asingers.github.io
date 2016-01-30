@@ -2,7 +2,7 @@
 
 ## 同时我针对一些细节也进行了修改和定制
 ## Screenshoot:
-<hr>
+
 ![](http://7xqmgj.com1.z0.glb.clouddn.com/screenshoot.png)
 
 
