@@ -47,6 +47,7 @@ Saving to: latest.tar.gz
   latest.tar.gz  wordpress
   ```
   
+  
 ### 创建 MySQL 用户和数据库以安装 WordPress
 
 安装 WordPress 需要存储信息，例如数据库中的博客文章和用户评论。此步骤将帮助您为自己的博客创建一个数据库，并创建一个有权读取该数据库的信息并将信息保存到该数据库的用户。
