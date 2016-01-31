@@ -39,14 +39,16 @@ Saving to: latest.tar.gz
 100%[======================================>] 4,028,740   20.1MB/s   in 0.2s
 2013-08-09 17:19:02 (20.1 MB/s) - latest.tar.gz saved [4028740/4028740]
 ```
+
  2. 解压并解档安装包。将安装文件夹解压到名为 wordpress 的文件夹。
  
- 	 ```
-  [ec2-user ~]$ tar -xzf latest.tar.gz
-  [ec2-user ~]$ ls
-  latest.tar.gz  wordpress
-  ```
-  
+```
+[ec2-user ~]$ tar -xzf latest.tar.gz
+[ec2-user ~]$ ls
+latest.tar.gz  wordpress
+```
+
+
   
 ### 创建 MySQL 用户和数据库以安装 WordPress
 
