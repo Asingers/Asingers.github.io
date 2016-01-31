@@ -28,7 +28,7 @@ tags:
 ### 下载并解压 WordPress 安装包
  1. 使用 wget 命令下载最新 WordPress 安装包。以下命令始终会下载最新版本。 
  
- ```
+```
  [ec2-user ~]$ wget https://wordpress.org/latest.tar.gz
 --2013-08-09 17:19:01--  https://wordpress.org/latest.tar.gz
 Resolving wordpress.org (wordpress.org)... 66.155.40.249, 66.155.40.250
@@ -36,25 +36,23 @@ Connecting to wordpress.org (wordpress.org)|66.155.40.249|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 4028740 (3.8M) [application/x-gzip]
 Saving to: latest.tar.gz
-
 100%[======================================>] 4,028,740   20.1MB/s   in 0.2s
-
 2013-08-09 17:19:02 (20.1 MB/s) - latest.tar.gz saved [4028740/4028740]
 ```
  2. 解压并解档安装包。将安装文件夹解压到名为 wordpress 的文件夹。
-
-  ```
+ 
+```
   [ec2-user ~]$ tar -xzf latest.tar.gz
   [ec2-user ~]$ ls
   latest.tar.gz  wordpress
-  ```
+```
 ### 创建 MySQL 用户和数据库以安装 WordPress
 
 安装 WordPress 需要存储信息，例如数据库中的博客文章和用户评论。此步骤将帮助您为自己的博客创建一个数据库，并创建一个有权读取该数据库的信息并将信息保存到该数据库的用户。
 
 1. 启动 MySQL 服务器。
 
-	[ec2-user ~]$ sudo service mysqld start
+		[ec2-user ~]$ sudo service mysqld start
 	
 2. 以 root 用户身份登录到 MySQL 服务器。在系统提示时输入您的 MySQL root 密码，这可能与您的 root 系统密码不同，如果您尚未给您的 MySQL 服务器加密，它甚至可能是空的。
 
