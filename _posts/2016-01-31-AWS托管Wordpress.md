@@ -41,11 +41,12 @@ Saving to: latest.tar.gz
 ```
  2. 解压并解档安装包。将安装文件夹解压到名为 wordpress 的文件夹。
  
-```
+ 	 ```
   [ec2-user ~]$ tar -xzf latest.tar.gz
   [ec2-user ~]$ ls
   latest.tar.gz  wordpress
-```
+  ```
+  
 ### 创建 MySQL 用户和数据库以安装 WordPress
 
 安装 WordPress 需要存储信息，例如数据库中的博客文章和用户评论。此步骤将帮助您为自己的博客创建一个数据库，并创建一个有权读取该数据库的信息并将信息保存到该数据库的用户。
@@ -117,7 +118,7 @@ d.查找名为 Authentication Unique Keys and Salts 的一节。这些 KEY 和 S
    Note:
 以下值仅用作示例；请勿使用以下值进行安装。
 
-```
+	```
 define('AUTH_KEY',         ' #U$$+[RXN8:b^-L 0(WU_+ c+WFkI~c]o]-bHw+)/Aj[wTwSiZ<Qb[mghEXcRh-');
 define('SECURE_AUTH_KEY',  'Zsz._P=l/|y.Lq)XjlkwS1y5NJ76E6EJ.AV0pCKZZB,*~*r ?6OP$eJT@;+(ndLg');
 define('LOGGED_IN_KEY',    'ju}qwre3V*+8f_zOWf?{LlGsQ]Ye@2Jh^,8x>)Y |;(^[Iw]Pi+LG#A4R?7N`YB3');
@@ -162,7 +163,7 @@ WordPress permalink 需要使用 Apache .htaccess 文件才能正常工作，但
 		
 * 找到以 <Directory "/var/www/html"> 开头的部分。
 
-```
+	```
 	#<Directory "/var/www/html">
     #
     # Possible values for the Options directive are "None", "All",
