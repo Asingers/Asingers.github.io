@@ -37,7 +37,24 @@ tags:
         "method":"aes-256-cfb"
     }
 
-启动服务，因为平常都用 pm2管理，所以用 pm2启动服务 `pm2 start /usr/bin/ssserver`
+命令行参数（服务器端启动命令）
+
+	ssserver -c /etc/shadowsocks.json
+如果想在后台一直运行Shadowsocks，启动命令如下：
+
+	nohup ssserver -c /etc/shadowsocks.json > /dev/null 2>&1 &
+备注：关于nohup，是可以让程序在后台运行的命令。（或者可使用screen命令）
+
+同时可以用命令行参数覆盖 /etc/shadowsocks.json 里的设置：
+
+	sslocal -s 服务器地址 -p 服务器端口 -l 本地端端口 -k 密码 -m 加密方法
+	ssserver -p 服务器端口 -k 密码 -m 加密方法
+
+备注：sslocal是客户端程序；ssserver是服务端程序。
+
+如果要关闭服务，kill掉shadowsocks的进程即可：
+
+	killall ssserver
 
 ## 客户端
 
