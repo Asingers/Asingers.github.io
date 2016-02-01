@@ -5,7 +5,7 @@ subtitle: "日常搞机"
 date: 2016-01-31 16:20:20
 author: "Asingers"
 header-img: "img/Wallions3743.png"
-
+categories: aws
 tags:
     - AWS
     - EC2
