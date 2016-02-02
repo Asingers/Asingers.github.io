@@ -2,7 +2,7 @@
 layout: page
 title: TOOLS
 description: keep hungry keep foolish
-header-img: "img/post-bg-unix-linux.jpg"
+header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgpost-bg-unix-linux.jpg"
 ---
 
 ### Tools List
