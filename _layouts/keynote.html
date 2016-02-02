@@ -157,14 +157,14 @@ layout: default
 
 <!-- resize header to fullscreen keynotes -->
 <script>
-    var $header = document.getElementsByTagName("header")[0];
+    var $header = document.getElementsByTagName("header")[50];
     function resize(){
         /*
          * leave 85px to both
          * - told/imply users that there has more content below
          * - let user can scroll in mobile device, seeing the keynote-view is unscrollable
          */
-        $header.style.height = (window.innerHeight-150) + 'px';
+        $header.style.height = (window.innerHeight-85) + 'px';
     }
     document.addEventListener('DOMContentLoaded', function(){
         resize();
