@@ -3,7 +3,7 @@ layout: post
 title:  "利用Shadowsocks和AWS免费翻墙"
 date:   2016-01-29 18:38:45
 author:     "Asingers"
-header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgWallions3743.png"
+header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgWallions10267.png"
 subtitle: "日常搞机"
 tags:
      - Life
