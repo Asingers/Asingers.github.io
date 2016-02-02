@@ -110,7 +110,14 @@ br + small.img-hint {
   margin-top: -40px;
 }
 img.shadow {
-box-shadow: rgba(0, 0, 0, 0.258824) 0px 2px 5px 0px;
+/*box-shadow: rgba(0, 0, 0, 0.258824) 0px 2px 5px 0px;*/
+border: 1px solid #696;padding: 60px 0;text-align: center; width: 200px;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;
+-webkit-box-shadow: #666 0px 0px 10px;
+-moz-box-shadow: #666 0px 0px 10px;
+box-shadow: #666 0px 0px 10px;background: #EEFF99;
 }
 @media screen and (max-width: 768px) {
   select {
