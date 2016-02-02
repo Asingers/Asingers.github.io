@@ -13,7 +13,8 @@ tags:
 ### 下载7.1桌面管理器和对应的Rom,这就不多说了.
 
 安装Rom之后,你可以对Rom进行精简,就像下图所示,删除你不需要的Cod文件
-<div class="entry-content"><p><img src="http://7xoawu.com1.z0.glb.clouddn.com/snip_20160121200641.png"></p>
+
+![](http://7xoawu.com1.z0.glb.clouddn.com/snip_20160121200641.png)
 
 
 ### 删除不需要的Code之后,接下来就是手机连接电脑进行刷机,运行Loader
