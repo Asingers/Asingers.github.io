@@ -852,13 +852,13 @@ body {
   max-width: 100%;
   height: auto;
   margin: 1.5em auto 1.6em auto;
-  border: 1px solid #696;padding: 60px 0;text-align: center; width: 200px;
--webkit-border-radius: 8px;
--moz-border-radius: 8px;
-border-radius: 8px;
--webkit-box-shadow: #666 0px 0px 10px;
--moz-box-shadow: #666 0px 0px 10px;
-box-shadow: #666 0px 0px 10px;background: #EEFF99;
+  order: 1px solid #696;padding: 60px 0;text-align: center; width: 200px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: #666 0px 0px 10px;
+  -moz-box-shadow: #666 0px 0px 10px;
+  box-shadow: #666 0px 0px 10px;background: #EEFF99;behavior: url(/PIE.htc);
 }
 /* Hux Optimize UserExperience */
 .navbar-default .navbar-toggle:focus,
