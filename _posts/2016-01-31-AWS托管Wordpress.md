@@ -4,7 +4,7 @@ title: "教程：使用 Amazon Linux 托管 WordPress 博客"
 subtitle: "日常搞机"
 date: 2016-01-31 16:20:20
 author: "Asingers"
-header-img: "img/Wallions3743.png"
+header-img: "http://7xoawu.com1.z0.glb.clouddn.com/an_object-wallpaper-1920x1080.jpg"
 categories: aws
 tags:
     - AWS
