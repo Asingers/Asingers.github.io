@@ -8,7 +8,7 @@ header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgWallions5635.jpg"
 
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
