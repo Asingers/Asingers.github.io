@@ -10,19 +10,21 @@ tags:
      - Life
 ---
 
-![](http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1890.JPG)
+<img src="http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1890.JPG" alt="" class="shadow"/>
 
-![](http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1897.JPG)
+<img src="http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1897.JPG" alt="" class="shadow"/>
 
-![](http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1892.JPG)
+<img src="http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1892.JPG" alt="" class="shadow"/>
 
-![](http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1891.JPG)
+<img src="http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1891.JPG" alt="" class="shadow"/>
 
-![](http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1893.JPG)
+<img src="http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1893.JPG" alt="" class="shadow"/>
 
-![](http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1896.JPG)
+<img src="http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1896.JPG" alt="" class="shadow"/>
 
-![](http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1895.JPG)
+<img src="http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1895.JPG" alt="" class="shadow"/>
 
-![](http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1894.JPG)
+<img src="http://7xoawu.com1.z0.glb.clouddn.com/fun9dic_IMG_1894.JPG" alt="" class="shadow"/>
+
+
 
