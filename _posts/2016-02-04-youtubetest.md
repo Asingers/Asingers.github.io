@@ -1,0 +1,14 @@
+---
+layout: post
+title: "YTBtest"
+subtitle: "日常搞机"
+date: 2016-02-04 16:20:20
+author: "Asingers"
+categories: test
+tags:
+    - test
+---
+
+test
+
+{% youtube oHg5SJYRHA0 800 600 %}
