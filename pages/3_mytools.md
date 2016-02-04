@@ -1,6 +1,6 @@
 ---
 layout: page
-title: TOOLS
+title: Tools
 description: keep hungry keep foolish
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgpost-bg-unix-linux.jpg"
 ---
