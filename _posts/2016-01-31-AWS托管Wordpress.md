@@ -13,6 +13,13 @@ tags:
     - wordpress
 ---
 
+
+## 目录
+{: .no_toc}
+
+* 目录
+{:toc}
+
 ### 先决条件
 
 本教程假定您已按照教程：安装 LAMP Web 服务器（在 Amazon Linux 上）中的所有步骤，通过支持 PHP 和 MySQL 的功能性 Web 服务器启动了 Amazon Linux 实例。本教程还介绍了配置安全组以允许 HTTP 和 HTTPS 流量的步骤，以及用于确保为 Web 服务器正确设置文件权限的几个步骤。如果您尚未完成这些步骤，请参阅教程：安装 LAMP Web 服务器（在 Amazon Linux 上）以满足这些先决条件，然后回到本教程安装 WordPress。有关添加规则到您安全组的信息，请参阅 向安全组添加规则。
