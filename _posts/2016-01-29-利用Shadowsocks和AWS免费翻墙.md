@@ -47,7 +47,8 @@ tags:
 	
 备注：关于nohup，是可以让程序在后台运行的命令。（或者可使用screen命令）
 
-		my: nohup ssserver -c /usr/lib/node_modules/shadowsocks/config.json > /dev/null 2>&1 &
+	my: nohup ssserver -c /usr/lib/node_modules/shadowsocks/config.json > /dev/null 2>&1 &
+		
 		
 同时可以用命令行参数覆盖 /etc/shadowsocks.json 里的设置：
 
