@@ -8,6 +8,8 @@ categories: test
 tags:
     - test 
 ---
+
+
 # test
 
-{% youtube oHg5SJYRHA0 800 600 %}
+{% youtube oHg5SJYRHA0 %}
