@@ -205,14 +205,20 @@ layout: default
     }
 </script>
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!-- Asingers 自定义 -->
 <script>
     async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
         anchors.options = {
-          visible: 'always',
-          placement: 'right',
-          icon: '#'
+          // visible: 'always',
+          // placement: 'right',
+          // icon: '#'
+          visible: 'hover',
+          placement: 'left'
+          <!-- icon: '§' -->
         };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+        // anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+        anchors.add('h2,h3');
+        anchors.remove('.subheading');
     })
 </script>
 <style>
