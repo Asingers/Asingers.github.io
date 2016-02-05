@@ -33,5 +33,12 @@ tags:
 选择网络环境,打开开关
 使用极其简单友好...
 
+当然,如果设备连接Xcode跑过程序,可以直接使用设备上的开发者选项,不再赘述
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/post_imgkaifazhe.jpg" alt="" class="shadow"/>
+
+就当上边都白讲了  :(  
+
+
+
 
 
