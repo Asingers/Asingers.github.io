@@ -1,5 +1,5 @@
 ---
-layout: blank
+layout: default
 title: Favorite
 date: 2016-02-17
 author: "Asingers"
