@@ -13,7 +13,6 @@ tags:
 
 Mac的通用快捷键
 
-    这部分内容之前陆续介绍过，但还是有童靴希望有个汇总，基于二八原则，我把最常用的快捷键罗列一下，对于非开发者，应该够用了：
      Command+Tab : 任意情况下切换应用程序 - 向前循环
      Shift+Command+Tab : 切换应用程序 - 向后循环
      Command+Delete : 把选中的资源移到废纸篓
@@ -23,7 +22,8 @@ Mac的通用快捷键
      Command+F : 呼出大部分应用程序的查询功能
      Command+C/V/X : 复制/粘贴/剪切
      Command+N : 新建应用程序窗口
-     Command+Q : 退出当前应用程序，说明一下，所有应用程序界面左上角都有红黄绿三个小图标，点击绿色扩展到最适合的窗口大小，黄色最小化，红色关掉当前窗口，但并没有退出程序。用Command+Q配合Command+Tab关闭应用程序最为迅速
+     Command+Q : 退出当前应用程序，说明一下，所有应用程序界面左上角都有红黄绿三个小图标，点击绿色扩展到最适合的窗口大小，
+     黄色最小化，红色关掉当前窗口，但并没有退出程序。用Command+Q配合Command+Tab关闭应用程序最为迅速
      Command+L : 当前程序是浏览器时，可以直接定位到地址栏
      Command+"+/-" 放大或缩小字体
      Control+Space : 呼出Spotlight
@@ -83,7 +83,8 @@ H2M_LI_HEADER
 H2M_LI_HEADER 
 Alfred
 
-    - 通过find、open、in搜索文件。find是找到文件，open是找到并打开文件，in是在文件中检索，这种检索方式比spotlight更具备针对性
+    - 通过find、open、in搜索文件。find是找到文件，open是找到并打开文件，in是在文件中检索，
+    这种检索方式比spotlight更具备针对性
      - 输入>即可直接运行shell命令。比如>bpython，可以直接打开终端并运行bpython的shell。（收费版本）
      - 输入itunes，会出现一个iTunes mini play，打开可以通过alfred控制音乐播放（收费版本）
      - 输入email，后面跟邮件地址，可以直接打开写邮件的界面（收费版本）
@@ -120,7 +121,8 @@ Go2Shell，我们通过Finder浏览文件的时候，常常需要在浏览的文
 H2M_LI_HEADER 
 open
 
-    我们之前介绍过如何在finder中浏览文件时进入当前目录的shell界面，那个插件叫做Go2Shell。当然我们也会有在shell下打开当前目录的finder的需求，运行如下命令即可：
+    我们之前介绍过如何在finder中浏览文件时进入当前目录的shell界面，
+    那个插件叫做Go2Shell。当然我们也会有在shell下打开当前目录的finder的需求，运行如下命令即可：
     
     open .
     当然open也可以打开其他目录，比如open /Users
@@ -135,7 +137,9 @@ open
 H2M_LI_HEADER 
 locate
 
-    locate是Unix/Linux下的命令工具，基本原理就是通过定期更新系统的文件和文件名并把索引信息放入系统的数据库中，当通过locate查找文件时直接从数据库里那数据。而且locate可以查到spotlight查不到的系统文件。 基本的使用方法非常简单，比如你想找niginx的配置文件在哪，只需输入：
+    locate是Unix/Linux下的命令工具，基本原理就是通过定期更新系统的文件和文件名并把索引信息放入系统的数据库中，
+    当通过locate查找文件时直接从数据库里那数据。而且locate可以查到spotlight查不到的系统文件。 
+    基本的使用方法非常简单，比如你想找niginx的配置文件在哪，只需输入：
     locate nginx.conf
 
 
@@ -145,7 +149,10 @@ H2M_LI_HEADER
 H2M_LI_HEADER 
 在Finder中打开某个文件夹下所有子文件夹
 
-    有时候我们希望在Finder中查看某个文件夹下的所有文件和子文件夹，怎么做到呢？把文件切换到列表视图（command+2），把排序方式设置为不排序，这时文件夹左侧会出现一个箭头。按住option键点击文件夹左侧的箭头，你就会发现所有的文件和文件夹都展现在眼前了。注意，如果该文件夹下文件太多，不建议使用，打开会需要很长时间。
+    有时候我们希望在Finder中查看某个文件夹下的所有文件和子文件夹，怎么做到呢？
+    把文件切换到列表视图（command+2），把排序方式设置为不排序，这时文件夹左侧会出现一个箭头。
+    按住option键点击文件夹左侧的箭头，你就会发现所有的文件和文件夹都展现在眼前了。
+    注意，如果该文件夹下文件太多，不建议使用，打开会需要很长时间。
 
 
 H2M_LI_HEADER 
