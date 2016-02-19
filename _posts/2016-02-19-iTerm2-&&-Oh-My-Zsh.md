@@ -119,3 +119,4 @@ chsh -s /bin/zsh
 需要下载苹果官方的[Command line](https://developer.apple.com/downloads/index.action?name=for%20Xcode%20)。必須官方工具下载最新版 Command Line
 3. ⌘+Q关闭iTerm 2 时每次弹窗提示问题：
 iTerm 2 中，进入Preference-General-Closing栏目，将Confirm "Quit iTerm2(⌘Q)" command选项勾选去掉就行
+4. 通常zshrc文件在 /user/youname 下
