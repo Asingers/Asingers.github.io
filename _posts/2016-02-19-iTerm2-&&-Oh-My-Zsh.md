@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "iTerm 2 && Oh My Zsh"
-subtitle: "DIY教程——亲身体验过程"
+subtitle: "DIY教程"
 date: 2016-02-19 
 author: "Asingers"
 categories: ios
