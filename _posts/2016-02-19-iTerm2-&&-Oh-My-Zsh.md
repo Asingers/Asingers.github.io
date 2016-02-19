@@ -12,7 +12,7 @@ tags:
 
 先来看一下效果:
 
-<img src="http://7xqmgj.com1.z0.glb.clouddn.com/post_imgiterm2.png" alt="" class="shadow"/>
+![](http://7xqmgj.com1.z0.glb.clouddn.com/post_imgiterm22.png)
 
 
 ### 1. 首先下载[iTerm 2](http://www.iterm2.com/)
