@@ -18,9 +18,6 @@ NSArray保存的对象可以是不同类型的对象，但只能保存OC对象�
 
 字面语法是的编译器指令，它提供简化符号来创建对象，类似于java5提供的auto boxing功能。这虽然是一个语法糖，但对提高写代码效率帮助很大。以下代码片段基于字面量语法快捷初始化数组（NSArray）：
 
-    [objc] view plain copy
-    print?
-    
         NSString* yy = @"2015";  
         NSNumber* mm = @(07);  
         NSValue* dd = @(26);  
@@ -36,9 +33,6 @@ After an immutable array has been initialized in the following way, it cannot be
 
 1.1 Initializing an Array(NS_DESIGNATED_INITIALIZER)
 
-    [objc] view plain copy
-    print?
-    
         // Initializes a newly allocated array. Not recommended for immutable array as  it's empty!  
         - (instancetype)init NS_DESIGNATED_INITIALIZER;  
         - (instancetype)initWithObjects:(const id[])objects count:(NSUInteger)cnt NS_DESIGNATED_INITIALIZER;  
@@ -55,9 +49,6 @@ After an immutable array has been initialized in the following way, it cannot be
 
 1.2 Creating an Array(autorelease)
 
-    [objc] view plain copy
-    print?
-    
         // Creates and returns an empty array. This method is used by mutable subclasses of NSArray.  
         + (instancetype)array;  
         + (instancetype)arrayWithObject:(id)anObject;  
@@ -77,17 +68,11 @@ After an immutable array has been initialized in the following way, it cannot be
 
 2.1 数组描述
 
-    [objc] view plain copy
-    print?
-    
         @property (readonly,copy)NSString *description;  
 
 
 例如以下代码可以在调试时打印数组：
 
-    [objc] view plain copy
-    print?
-    
         NSArray* array = [NSArray arrayWithObjects:@"e0",@"e1",@"e2",@"e3",@"e4",@"e5",@"e6",nil];  
         NSLog(@"array = %@", array);  
         NSLog(@"array = %@", array.description);  
@@ -95,9 +80,6 @@ After an immutable array has been initialized in the following way, it cannot be
 
 2.2 数组大小
 
-    [objc] view plain copy
-    print?
-    
         //返回数组所包含的元素（NSObject对象）个数  
         @property (readonly)NSUInteger count;  
 
@@ -106,8 +88,6 @@ After an immutable array has been initialized in the following way, it cannot be
 
 2.3 数组元素
 
-    [objc] view plain copy
-    print?
     
         //返回数组第一个元素  
         @property (nonatomic,readonly)id firstObject NS_AVAILABLE(10_6,4_0);  
@@ -124,20 +104,12 @@ After an immutable array has been initialized in the following way, it cannot be
     
         //返回数组指定索引集的元素组成的子数组  
         - (NSArray *)objectsAtIndexes:(NSIndexSet *)indexes;  
-
-
-- 
-objectAtIndex:方法用于快速返回指定索引位置的元素；firstObject和lastObject属性用于快捷访问数组的首、尾元素。
-
-- 
-containsObject:方法用于按值搜索查询数组是否包含某个元素。
+        - objectAtIndex:方法用于快速返回指定索引位置的元素；firstObject和lastObject属性用于快捷访问数组的首、尾元素。
+        - containsObject:方法用于按值搜索查询数组是否包含某个元素。
 
 
 
 以下代码获取第2、4、6个元素子数组：
-
-    [objc] view plain copy
-    print?
     
         NSMutableIndexSet* indexSet = [NSMutableIndexSet indexSet];  
         [indexSet addIndex:1];  
@@ -148,11 +120,8 @@ containsObject:方法用于按值搜索查询数组是否包含某个元素。
 
 
 等效于：
-
-    [objc] view plain copy
-    print?
-    
-        NSArray* subArray = 
+	
+	 NSArray* subArray = 
                            [NSArray arrayWithObjects:[ array objectAtIndex:1], 
         					[array objectAtIndex:3], 
         					[array objectAtIndex:5], nil nil];  
@@ -162,9 +131,6 @@ containsObject:方法用于按值搜索查询数组是否包含某个元素。
 
 （1）索引遍历
 
-    [objc] view plain copy
-    print?
-    
         // 倒序：for (NSInteger index=array.count-1; index>=0; index--)  
         for (NSUInteger index=0; index<array.count; index++)  
         {  
@@ -174,9 +140,6 @@ containsObject:方法用于按值搜索查询数组是否包含某个元素。
 
 （2）枚举遍历
 
-    [objc] view plain copy
-    print?
-    
         // 倒序：reverseObjectEnumerator  
         NSEnumerator* enumerator = [array objectEnumerator];  
         id e = nil;  
@@ -196,9 +159,6 @@ containsObject:方法用于按值搜索查询数组是否包含某个元素。
 
 -(void)enumerateObjectsUsingBlock:(void (^)(id obj,NSUInteger idx,BOOL *stop))block NS_AVAILABLE(10_6,4_0);
 
-    [objc] view plain copy
-    print?
-    
         // 示例1：枚举遍历  
         [array enumerateObjectsUsingBlock:^ (id obj, NSUInteger idx, BOOLBOOL *stop){  
             NSLog(@"obj = %@", obj);  
@@ -216,9 +176,6 @@ containsObject:方法用于按值搜索查询数组是否包含某个元素。
 
 以上版本默认是顺序同步遍历，另外一个版本可以指定NSEnumerationOptions参数：
 
-    [objc] view plain copy
-    print?
-    
         typedefNS_OPTIONS(NSUInteger, NSEnumerationOptions) {  
             NSEnumerationConcurrent = (1UL <<0),// block并发  
             NSEnumerationReverse = (1UL <<1),//倒序  
@@ -227,9 +184,6 @@ containsObject:方法用于按值搜索查询数组是否包含某个元素。
 
 （3）快速遍历
 
-    [objc] view plain copy
-    print?
-    
         for (id e in array) {  
             NSLog(@"e = %@", e);  
         }  
@@ -239,9 +193,6 @@ containsObject:方法用于按值搜索查询数组是否包含某个元素。
 
 3.1 indexOfObject(IdenticalTo)
 
-    [objc] view plain copy
-    print?
-    
         // 在数组（或指定范围）中，测试指定的对象是否在数组中（按值查询）  
         - (NSUInteger)indexOfObject:(id)anObject; // 同containsObject  
         - (NSUInteger)indexOfObject:(id)anObject inRange:(NSRange)range;  
@@ -254,18 +205,12 @@ containsObject:方法用于按值搜索查询数组是否包含某个元素。
 
 使用代码块传递遍历操作过滤条件：
 
-    [objc] view plain copy
-    print?
-    
         //查找数组中第一个符合条件的对象（代码块过滤），返回对应索引  
         - (NSUInteger)indexOfObjectPassingTest:(BOOL (^)(id obj,NSUInteger idx, BOOLBOOL *stop))predicate NS_AVAILABLE(10_6,4_0);  
 
 
 以下代码用于获取值等于@”e3”的元素索引：
 
-    [objc] view plain copy
-    print?
-    
         NSUInteger index = [array indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOLBOOL *stop) {  
             if ([obj isEqualToString:@"e3"]) {  
                 return YES;  
@@ -278,9 +223,6 @@ containsObject:方法用于按值搜索查询数组是否包含某个元素。
 
 查找数组中所有符合条件的对象（代码块过滤），返回对应索引集合：
 
-    [objc] view plain copy
-    print?
-    
         - (NSIndexSet *)indexesOfObjectsPassingTest:(BOOL (^)(id obj,NSUInteger idx, BOOLBOOL *stop)) predicate NS_AVAILABLE(10_6,4_0);  
 
 
@@ -290,42 +232,27 @@ indexOfObjectAtIndexes:options:passingTest:和indexOfObjectsAtIndexes:options:pa
 
 3.3 firstObjectCommonWithArray
 
-    [objc] view plain copy
-    print?
-    
         //查找与给定数组中第一个相同的对象（按值）  
         - (id)firstObjectCommonWithArray:(NSArray *)otherArray;  
 
 
 示例：
 
-    [objc] view plain copy
-    print?
-    
         id fo = [array firstObjectCommonWithArray:subArray];  
         NSLog(@"fo= %@", fo); // e1  
 
 
 ## 4.衍生数组（Deriving）
 
-    [objc] view plain copy
-    print?
-    
         //返回指定范围（起始索引、长度）的子数组  
         -  (NSArray *)subarrayWithRange:(NSRange)range;  
 
 
 以下代码获取数组前一半子数组：
-
-    [objc] view plain copy
-    print?
     
         //return the first half of the whole array  
         NSArray* subArray = [array subarrayWithRange:NSMakeRange(0,array.count/2)];  
         NSLog(@"subArray= %@", subArray);  
-    
-    [objc] view plain copy
-    print?
     
         //在当前数组追加元素或数组，并返回新数组对象  
         - (NSArray *)arrayByAddingObject:(id)anObject;  
@@ -337,18 +264,12 @@ indexOfObjectAtIndexes:options:passingTest:和indexOfObjectsAtIndexes:options:pa
 5.1 Initializing an Array(NS_DESIGNATED_INITIALIZER)
 
     除了继承NSArray基本的init，还增加了以下指定初始化函数
-    
-    [objc] view plain copy
-    print?
-    
+
         - (instancetype)initWithCapacity:(NSUInteger)numItemsNS_DESIGNATED_INITIALIZER;  
 
 
 5.2 addObject
 
-    [objc] view plain copy
-    print?
-    
         //尾部追加一个元素  
         - (void)addObject:(id)anObject;  
         //尾部追加一个数组  
@@ -357,9 +278,6 @@ indexOfObjectAtIndexes:options:passingTest:和indexOfObjectsAtIndexes:options:pa
 
 5.3 insertObject
 
-    [objc] view plain copy
-    print?
-    
         //在指定索引处插入一个元素，原来的元素后移  
         // index取值范围=[0, count]，index=count时相当于addObject  
         - (void)insertObject:(id)anObject atIndex:(NSUInteger)index;  
@@ -369,9 +287,6 @@ indexOfObjectAtIndexes:options:passingTest:和indexOfObjectsAtIndexes:options:pa
 
 5.4 exchangeObject/replaceObject
 
-    [objc] view plain copy
-    print?
-    
         //交换对应索引位置的元素（索引必须有效）  
         - (void)exchangeObjectAtIndex:(NSUInteger)idx1 withObjectAtIndex:(NSUInteger)idx2;  
     
@@ -389,9 +304,6 @@ indexOfObjectAtIndexes:options:passingTest:和indexOfObjectsAtIndexes:options:pa
 
 5.5 removeObject
 
-    [objc] view plain copy
-    print?
-    
         - (void)removeLastObject;  
         //删除对应索引位置/范围的元素（索引/范围必须有效）  
         - (void)removeObjectAtIndex:(NSUInteger)index;  
