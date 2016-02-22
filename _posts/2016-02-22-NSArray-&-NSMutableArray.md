@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "NSArray & NSMutableArray常用操作梳理"
+title: "NSArray & NSMutableArray 常用操作梳理"
 subtitle: "深入理解"
 date: 2016-02-22 
 author: "Asingers"
@@ -152,7 +152,10 @@ containsObject:方法用于按值搜索查询数组是否包含某个元素。
     [objc] view plain copy
     print?
     
-        NSArray* subArray = [NSArray arrayWithObjects:[ array objectAtIndex:1], [array objectAtIndex:3], [array objectAtIndex:5], nil nil];  
+        NSArray* subArray = 
+                           [NSArray arrayWithObjects:[ array objectAtIndex:1], 
+        					[array objectAtIndex:3], 
+        					[array objectAtIndex:5], nil nil];  
 
 
 2.4遍历数组
