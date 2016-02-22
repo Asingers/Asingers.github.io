@@ -4,7 +4,8 @@
 ## 有什么问题也可以<a target="_blank" href="mailto:asingers@9dic.com">联系我</a>
 ## Screenshoot:
 
-![](http://7xqmgj.com1.z0.glb.clouddn.com/screenshoot.png)
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/screenshoot1.png" alt="" class="shadow"/>
+
 
 
 
