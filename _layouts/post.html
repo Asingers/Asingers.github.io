@@ -249,8 +249,6 @@ $("#AnchorContentToggle").click(function(){
 $(".anchor-link").click(function(){
     $("html,body").animate({scrollTop: $($(this).attr("link")).offset().top}, 1000);
 });
-$('.ScrollTop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});
-</script>
 
 {% if site.duoshuo_username %}
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -340,6 +338,8 @@ $('.ScrollTop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800)
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
+</script>
+$('.ScrollTop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});
 </script>
 
             
