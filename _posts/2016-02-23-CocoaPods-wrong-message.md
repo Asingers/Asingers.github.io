@@ -26,14 +26,15 @@ Podfile文件请按照如下格式:
 
 	platform :ios, '8.0'
 	target 'MyApp' do
-	pod 'AFNetworking', '~> 2.6'
-	pod 'ORStackView', '~> 3.0'
-	pod 'SwiftyJSON', '~> 2.3'
+	pod 'xxx', '~> 2.6'
+	pod 'xxx', '~> 3.0'
+	pod 'xxx', '~> 2.3'
 	end
 	
 其中 Myapp就是你的工程的Target名
 
 至此,问题解决
+<hr>
 
 当然你也可以通过安装指定版本来解决:
 
