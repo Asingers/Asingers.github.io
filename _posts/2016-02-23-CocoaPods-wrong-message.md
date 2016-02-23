@@ -17,6 +17,7 @@ tags:
 如果不巧你看到CocoaPods的升级Beta版测试并进行了升级,
 
 	sudo gem install cocoapods --pre
+	
 那么你就有可能遇到上面那个问题.
 
 ### 解决方法
