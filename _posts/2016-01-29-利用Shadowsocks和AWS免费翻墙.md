@@ -29,7 +29,8 @@ tags:
 <img src="http://ingf.github.io/img/shadowsocks-safe.png" alt="" class="shadow"/>
 
 
-然后我们来安装 Shadowsocks 吧，[http://shadowsocks.org/en/download/servers.html](http://shadowsocks.org/en/download/servers.html)，这里列出了所有的服务器版本，各种支持啊，我很高兴的选择了 Node.js 版，先安装 Node.js，可以点[这里下载](https://nodejs.org/download/)，然后 `npm install -g shadowsocks` 
+然后我们来安装 Shadowsocks 吧，[http://shadowsocks.org/en/download/servers.html](http://shadowsocks.org/en/download/servers.html)，这里列出了所有的服务器版本，各种支持啊，我很高兴的选择了 Node.js 版，先安装 Node.js，可以点[这里下载](https://nodejs.org/download/)，然后 `npm install -g shadowsocks`   
+当然,如果首次安装,你可能因为缺少一些必要的环境而报错.你可以查看我的另一篇[**如何安装Node.js**](http://9dic.com/2016/01/30/EC2%E6%90%AD%E5%BB%BAnode.js%E7%8E%AF%E5%A2%83/)和[**如何搭建Web环境**](http://9dic.com/2016/01/31/AWS%E5%AE%89%E8%A3%85%E6%9C%8D%E5%8A%A1%E5%99%A8/)获得帮助.
 
 搞定！接下来进行配置，我的配置文件在这里`/usr/local/lib/node_modules/shadowsocks/config.json`
 
@@ -74,6 +75,6 @@ tags:
 
 
 恩，好，打开[https://www.youtube.com/](https://www.youtube.com/)试试吧！
-其他端，Android 和 iOS 自己弄把，很好弄的。
+其他端，Android 和 iOS 自己弄把，很好弄的。如果有什么错误,可以在下方留言你的log信息,欢迎一起学习讨论.
 
 
