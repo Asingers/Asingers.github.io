@@ -11,6 +11,11 @@ tags:
     - Dev
 ---
 
+**git config --global credential.helper osxkeychain**
+
+如果不能执行,请先安装:
+
+
 	$ git credential-osxkeychain
 	# Test for the cred helper
 	  git: 'credential-osxkeychain' is not a git command. See 'git --help'.
@@ -29,3 +34,5 @@ tags:
 
 	$  git config --global credential.helper osxkeychain
 	# Set git to use the osxkeychain credential helper
+	
+
