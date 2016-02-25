@@ -35,4 +35,4 @@ tags:
 	$  git config --global credential.helper osxkeychain
 	# Set git to use the osxkeychain credential helper
 	
-
+相关问题,可以看[stackoverflow](http://stackoverflow.com/questions/11745504/remove-credential-osxkeychain)解答
