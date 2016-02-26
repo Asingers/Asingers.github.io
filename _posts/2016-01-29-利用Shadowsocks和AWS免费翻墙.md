@@ -11,11 +11,6 @@ tags:
      - VPN
 ---
 
-## 目录
-{: .no_toc}
-
-* 目录
-{:toc}
 
 世界那么大，我想去看看，但是被墙了...
 
@@ -26,10 +21,11 @@ tags:
 首先需要一个云主机，其实[青云](https://www.qingcloud.com/)的很好嘛，但是还有更好的，[http://aws.amazon.com/cn/free/](http://aws.amazon.com/cn/free/) AWS 有一年的免费使用期限，对于翻墙和自己搞点啥东西还是很方便的，强烈推荐，这中间需要绑定信用卡号，会扣掉一美元，注意不要超过期限了哦，超过了可能会要扣钱的。
 
 申请下来了以后，创建一个Amazon EC2实例(edhat 默认用户名为ec2-user ubuntu默认用户名为ubuntu)，然后就可以在上面倒腾各种服务了。先开启防火墙吧，在网络与安全里面进行设置，如下图所示，在操作那里点开，编辑入站规则
-<img src="http://ingf.github.io/img/shadowsocks-safe.png" alt="" class="shadow"/>
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/post_imgJietu_20160224092835.png" alt="" class="shadow"/>
 
 
-然后我们来安装 Shadowsocks 吧，[http://shadowsocks.org/en/download/servers.html](http://shadowsocks.org/en/download/servers.html)，这里列出了所有的服务器版本，各种支持啊，我很高兴的选择了 Node.js 版，先安装 Node.js，可以点[这里下载](https://nodejs.org/download/)，然后 `npm install -g shadowsocks` 
+然后我们来安装 Shadowsocks 吧，[http://shadowsocks.org/en/download/servers.html](http://shadowsocks.org/en/download/servers.html)，这里列出了所有的服务器版本，各种支持啊，我很高兴的选择了 Node.js 版，先安装 Node.js，可以点[这里下载](https://nodejs.org/download/)，然后 `npm install -g shadowsocks`   
+当然,如果首次安装,你可能因为缺少一些必要的环境而报错.你可以查看我的另一篇[**如何安装Node.js**](http://9dic.com/2016/01/30/EC2%E6%90%AD%E5%BB%BAnode.js%E7%8E%AF%E5%A2%83/)和[**如何搭建Web环境**](http://9dic.com/2016/01/31/AWS%E5%AE%89%E8%A3%85%E6%9C%8D%E5%8A%A1%E5%99%A8/)获得帮助.
 
 搞定！接下来进行配置，我的配置文件在这里`/usr/local/lib/node_modules/shadowsocks/config.json`
 
@@ -69,11 +65,11 @@ tags:
 ## 客户端
 
 搞完了服务器，搞客户端，Shadowsocks 客户端那个多呀，[http://shadowsocks.org/en/download/clients.html](http://shadowsocks.org/en/download/clients.html) 都支持。下面说一下 Mac 的配置，其他的一样样的，从上面的链接下载ShadowsocksX，然后启动ShadowsocksX，客户端配置参照下图，IP 填你的云主机的 IP 就 OK 了。
-<img src="http://ingf.github.io/img/shadowsocks1.png" alt="" class="shadow"/>
-<img src="http://ingf.github.io/img/shadowsocks2.png" alt="" class="shadow"/>
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/post_imgJietu_20160224092748.png" alt="" class="shadow"/>
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/post_imgJietu_20160224092704.png" alt="" class="shadow"/>
 
 
 恩，好，打开[https://www.youtube.com/](https://www.youtube.com/)试试吧！
-其他端，Android 和 iOS 自己弄把，很好弄的。
+其他端，Android 和 iOS 自己弄把，很好弄的。如果有什么错误,可以在下方留言你的log信息,欢迎一起学习讨论.
 
 
