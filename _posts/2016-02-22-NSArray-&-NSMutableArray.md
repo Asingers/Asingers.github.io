@@ -313,5 +313,4 @@ indexOfObjectAtIndexes:options:passingTest:和indexOfObjectsAtIndexes:options:pa
 	- (void)removeObject:(id)anObject;  
 	- (void)removeObject:(id)anObject inRange:(NSRange)range;  
 	- (void)removeObjectsInArray:(NSArray *)otherArray;  
-	- (void)removeAllObjects;  
-
+	- (void)removeAllObjects;
