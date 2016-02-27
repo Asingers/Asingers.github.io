@@ -6,7 +6,7 @@ SEOTitle: Asingers | Blog
 header-img: http://7xqmgj.com1.z0.glb.clouddn.com/header_imgWallions4664.jpg
 email: asingers@9dic.com
 description: "Asingers ，张袁杰 ，9dic.com ，iOS,解忧の杂货"
-keyword: "博客, 个人网站, 互联网, 产品,解忧の杂货,9dic.com,9dic"
+keyword: "Asingers,博客,个人网站,互联网,产品,解忧の杂货,9dic.com,9dic"
 url: "http://9dic.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 permalink: :categories/:title/
@@ -74,7 +74,7 @@ sidebar-avatar: http://7xqmgj.com1.z0.glb.clouddn.com/header_imgp1092913307.jpg
 
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+featured-condition-size: 3              # A tag will be featured if the size of it is more than this condition value
 
 # Friends
 #friends: [
