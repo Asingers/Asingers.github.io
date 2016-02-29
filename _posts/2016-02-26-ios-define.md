@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "iOS 开发常用宏"
-subtitle: "日常整理"
+subtitle: "Macro definition is commonly used in ios development"
 date: 2016-02-26 
 author: "Asingers"
 categories: ios
