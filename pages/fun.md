@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: ...
 title: FUN
 subtitle: "Coming soon..."
 date: 2016-01-28
