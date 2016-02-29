@@ -56,4 +56,3 @@ tags:
 <h3>三、重启Xcode</h3>
 
 <p>Xcode 6之后，重启Xcode时会提示“Load bundle”、 “Skip Bundle”，这里必须选择“Load bundle”，不然插件无法使用。</p>
-</div>
