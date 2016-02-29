@@ -2,7 +2,7 @@
 layout: post
 title: "iOS9横竖屏设置的处理方法"
 subtitle: "iOS 9 somehow screen set processing method"
-date: 2016-03-01 
+date: 2016-02-29 
 author: "Asingers"
 categories: ios
 tags:
