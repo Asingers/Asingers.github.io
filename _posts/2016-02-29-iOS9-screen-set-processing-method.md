@@ -15,11 +15,13 @@ tags:
 
 在iOS6以后，如果APP需要支持横屏，需要在xcode设置中General里面进行勾选配置：
 
-![orientation1](http://images.90159.com/12/orientation1.png)
+<img src="http://images.90159.com/12/orientation1.png" alt="" class="shadow"/>
+
 
 配置完成之后，我们可以看一下Info.plist里面的Supported interface orientations选项也相应的改变了。如下图：
 
-![orientation2](http://images.90159.com/12/orientation2.png)
+<img src="http://images.90159.com/12/orientation2.png" alt="" class="shadow"/>
+
 
 当然，我们也可以直接在Info.plist进行配置。
 
