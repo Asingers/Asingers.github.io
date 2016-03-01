@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "在Mac下搭建jenkins github环境"
-subtitle: "jenkins+github"
+title: "在Mac下搭建Jenkins Github环境"
+subtitle: "Jenkins+Github"
 date: 2016-03-01
 author: "Asingers"
 categories: ios
@@ -9,7 +9,7 @@ tags:
     - iOS
     - Dev
     - Mac
-    - jenkins
+    - Jenkins
 ---
 
 
