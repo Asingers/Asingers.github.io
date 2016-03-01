@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "在Mac下搭建jenkins+github环境"
+title: "在Mac下搭建jenkins github环境"
 subtitle: "jenkins+github"
 date: 2016-03-01
 author: "Asingers"
@@ -11,6 +11,7 @@ tags:
     - Mac
     - jenkins
 ---
+
 
 **1, 下载安装版[http://jenkins-ci.org/](http://jenkins-ci.org/)**(注: 默认端口为8080)
 
@@ -91,5 +92,3 @@ tags:
 参考：
 
 [http://nepalonrails.com/post/14217655627/set-up-jenkins-ci-on-ubuntu-for-painless-rails3-app-ci](http://nepalonrails.com/post/14217655627/set-up-jenkins-ci-on-ubuntu-for-painless-rails3-app-ci)
-
-http://hataewon.tumblr.com/post/16880951412/setting-up-jenkins-on-lion
