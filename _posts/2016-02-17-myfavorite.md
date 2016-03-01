@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Favorite"
-subtitle: "Music & Movie"
+subtitle: "Music-Movie"
 date: 2016-02-05 
 author: "Asingers"
 categories: life
