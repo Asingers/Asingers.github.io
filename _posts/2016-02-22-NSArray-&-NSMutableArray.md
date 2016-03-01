@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "NSArray & NSMutableArray 常用操作梳理"
+title: "NSArray And NSMutableArray 常用操作梳理"
 subtitle: "深入理解"
 date: 2016-02-22 
 author: "Asingers"
@@ -25,7 +25,7 @@ NSArray保存的对象可以是不同类型的对象，但只能保存OC对象�
 	NSLog(@"array = %@", array);  
 
 
-## 1.创建初始化（Initialization&Creation）
+## 1.创建初始化（Initialization and Creation）
 
 Each object in array simply receives a retain message when it is added to the returned array using initWith*/arrayWith*method.
 
