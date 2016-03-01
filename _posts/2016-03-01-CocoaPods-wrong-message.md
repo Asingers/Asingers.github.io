@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "The dependency is not used in any concrete target"
-subtitle: "解决方案"
-date: 2016-02-23 
-author: "Asingers"
+subtitle: "解决方法"
+date: 2016-03-01
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgnsarry.jpg"
+author: "Asingers"
 categories: ios
 tags:
     - iOS
@@ -92,4 +92,3 @@ Successfully uninstalled cocoapods-0.35.0```
 然后安装指定版本的Cocoapods
 
 	sudo gem install cocoapods -v 0.34.4
-
