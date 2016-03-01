@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "iTerm 2 && Oh My Zsh"
+title: "iTerm 2 Oh My Zsh"
 subtitle: "DIY教程"
 date: 2016-02-19 
 author: "Asingers"
@@ -111,7 +111,7 @@ plugins=(zsh-syntax-highlighting)
 
 ---
 
-## F&Q
+## F Q
 
 1. 启动iTerm 2 默认使用dash改用zsh解决方法：
 chsh -s /bin/zsh

@@ -13,11 +13,11 @@ tags:
     // App Frame
     #define Application_Frame       [[UIScreen mainScreen] applicationFrame]
     
-    // App Frame Height&Width
+    // App Frame Height Width
     #define App_Frame_Height        [[UIScreen mainScreen] applicationFrame].size.height
     #define App_Frame_Width         [[UIScreen mainScreen] applicationFrame].size.width
     
-    // MainScreen Height&Width
+    // MainScreen Height Width
     #define Main_Screen_Height      [[UIScreen mainScreen] bounds].size.height
     #define Main_Screen_Width       [[UIScreen mainScreen] bounds].size.width
 
