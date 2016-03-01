@@ -91,3 +91,4 @@ Successfully uninstalled cocoapods-0.35.0```
 然后安装指定版本的Cocoapods
 
 	sudo gem install cocoapods -v 0.34.4
+
