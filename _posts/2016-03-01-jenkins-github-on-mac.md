@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "在Mac下搭建jenkins+github环境"
-subtitle: "jenkins+githu"
-date: 2016-03-02
+subtitle: "jenkins+github"
+date: 2016-03-01
 author: "Asingers"
 categories: ios
 tags:
