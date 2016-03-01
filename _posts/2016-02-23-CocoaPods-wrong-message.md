@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The dependency "xxx" is not used in any concrete target"
+title: "The dependency is not used in any concrete target"
 subtitle: "解决方案"
 date: 2016-02-23 
 author: "Asingers"
