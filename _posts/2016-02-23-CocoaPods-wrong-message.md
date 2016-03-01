@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CocoaPods报错：The dependency `xxx` is not used in any concrete target"
+title: "CocoaPods报错：The dependency "xxx" is not used in any concrete target"
 subtitle: "解决方案"
 date: 2016-02-23 
 author: "Asingers"
@@ -11,8 +11,9 @@ tags:
     - Dev
 ---
 ### 问题
-	The dependency `` is not used in any concrete target
-	The dependency `AFNetworking ` is not used in any concrete target
+
+	The dependency "xxx" is not used in any concrete target
+	The dependency "AFNetworking" is not used in any concrete target
 
 如果不巧你看到CocoaPods的升级Beta版测试并进行了升级,
 
