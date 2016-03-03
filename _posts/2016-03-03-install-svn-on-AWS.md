@@ -20,7 +20,9 @@ tags:
 	mod_dav_svn
 	mod_perl
 	#(用于支持WEB方式管理SVN服务器)	
+	
 ## Yum已经安装的包冲突?
+
 因为我之前已经配好了很多环境 所以一些包已经安装 所以就会产生冲突 只需要卸载其中一个包就可以了  
 比如我这里卸载了:
 <hr>
@@ -28,6 +30,7 @@ tags:
 <img src="http://7xqmgj.com1.z0.glb.clouddn.com/in_post_imgsvn1.png" alt="" class="shadow"/>
 
 ***
+
 ## 创建目录:
 
 	mkdir  -p  /home/svnroot/svndata/repos1  
@@ -79,7 +82,8 @@ vi authz
 	<用户名> = <权限>  
 	#其中，方框号内部分可以有多种写法:  
   
-	/，表示根目录及以下。根目录是svnserve启动时指定的，我们指定为/home/svnadmin/svndata。这样，/就是表示对全部版本库设置权限。  
+	/，表示根目录及以下。根目录是svnserve启动时指定的，我们指定为/home/svnadmin/svndata。  
+	这样，/就是表示对全部版本库设置权限。  
   
 	repos1:/，表示对版本库1设置权限  
 	repos2:/occi，表示对版本库2中的occi项目设置权限  
@@ -114,7 +118,8 @@ vi authz
   
 	-d表示在后台运行，-r表示……  
   
-	#注意：这里是/home/svnadmin/svndata，并非/home/svnadmin/svndata/repos1。这是SVN使所有仓库根目录都生效的命令，并非某个仓库。这里必须注意。 
+	#注意：这里是/home/svnadmin/svndata，并非/home/svnadmin/svndata/repos1。  
+	这是SVN使所有仓库根目录都生效的命令，并非某个仓库。这里必须注意。 
 	
 ## 基本测试
 
