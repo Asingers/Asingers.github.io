@@ -45,6 +45,15 @@ tags:
 
 接着用浏览器访问`localhost:8080`（默认配置），就可以看到 Jenkins 的 web 界面了
 
+	# 这种方式安装的Jenkins默认目录是/usr/local/Cellar/jenkins/1.651/libexec/....
+	#所以想让其他局域网用户访问则需要修改/etc/apache2/httpd.conf的ServerRoot 路径  
+	改为/usr/local/Cellar/ 即可 
+	 
+重启 Apache 
+
+	sudo apachectl restart
+
+
 ### 集成 GitHub 的 Pull Request
 
 在 GitHub 上有新的 Pull Request 的时候，可以自动来跑测试，然后把结果提交给 GitHub 上
