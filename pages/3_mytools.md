@@ -23,4 +23,4 @@ header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgpost-bg-unix-linux.
 <img src="http://7xoawu.com1.z0.glb.clouddn.com/blackberry.png" alt="" class="shadow"/>
 
 
-[Generate](http://7xoawu.com1.z0.glb.clouddn.com/BlackBerry.html)
+[Generate](http://7xqmgj.com1.z0.glb.clouddn.com/blackberry.html)
