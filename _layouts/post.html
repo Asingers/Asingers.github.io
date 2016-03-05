@@ -12,7 +12,7 @@ layout: default
         background-image: url('{{ site.baseurl }}{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
     }
         /*导航*/
-    .BlogAnchor {
+    /*.BlogAnchor {
         background: #ffffff;
         padding: 0px;
         line-height: 180%;
@@ -45,7 +45,7 @@ layout: default
     }
     .BlogAnchor a {
         text-decoration: none;
-    }
+    }*/
     
     /*.ScrollTop {
         width: 50px;
@@ -105,12 +105,12 @@ layout: default
                 col-md-10 col-md-offset-1
                 post-container">
                 <!-- 导航 -->
-                <div class="BlogAnchor">
+               <!--  <div class="BlogAnchor">
     <p>
         <b id="AnchorContentToggle" title="收起" style="cursor:pointer;">目录[+]</b>
     </p>
     <div class="AnchorContent" id="AnchorContent"> </div>
-</div>
+</div> -->
 
 <!-- <div class="ScrollTop">
     <p>
@@ -223,6 +223,7 @@ layout: default
     </div>
 </article>
 <!-- 导航 -->
+<!--  
 <script src="//cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.js"></script>
 <script>
 $(".container").find("h2,h3,h4,h5,h6").each(function(i,item){
@@ -252,7 +253,7 @@ $("#AnchorContentToggle").click(function(){
 // });
 // $('.ScrollTop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});
 </script>
-
+-->
 {% if site.duoshuo_username %}
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
