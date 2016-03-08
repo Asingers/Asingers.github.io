@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "GithubPages Https"
+title: "GithubPages HTTPS"
 subtitle: "解读"
 date: 2016-03-08
 author: "Asingers"
