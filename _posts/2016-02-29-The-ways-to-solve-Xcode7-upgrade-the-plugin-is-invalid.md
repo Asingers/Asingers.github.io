@@ -52,6 +52,14 @@ tags:
 
 3、Build项目，VVDocumenter-Xcode会自动安装。
 
+
 ### 三、重启Xcode
 
 Xcode 6之后，重启Xcode时会提示“Load bundle”、 “Skip Bundle”，这里必须选择“Load bundle”，不然插件无法使用。
+你也可以尝试下边的命令来修复插件
+
+	curl -s https://raw.githubusercontent.com/ForkPanda/RescueXcodePlug-ins/master/RescueXcode.sh | sh  
+
+
+	  
+	
