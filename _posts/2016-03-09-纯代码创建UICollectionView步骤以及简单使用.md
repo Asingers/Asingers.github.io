@@ -211,10 +211,4 @@ UICollectionView主要用于瀑布流，由于一直接触较少，每次需要�
     @end
 
 
-完成以上两步，效果图如下：
-
-![demo.gif](http://upload-images.jianshu.io/upload_images/327661-1dd9b88e4026599e.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-demo.gif
-
 

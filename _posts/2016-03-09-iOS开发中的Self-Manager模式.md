@@ -13,7 +13,8 @@ tags:
 
 最近，这个思路被我们当做了一种设计模式，即**赋予一个 Widget 更大的权利，让其自己负责自己的事件。**
 举个简单的栗子，这种负责展示头像的视图：
-![http://ww1.sinaimg.cn/large/51530583jw1ez4xxydguqj20k40a4ac0.jpg](http://ww1.sinaimg.cn/large/51530583jw1ez4xxydguqj20k40a4ac0.jpg)
+<img src="http://ww1.sinaimg.cn/large/51530583jw1ez4xxydguqj20k40a4ac0.jpg" alt="" class="shadow"/>
+
 它的职责包括：
 
 1. 通过传入的 URL，加载并展示头像图片
@@ -63,7 +64,8 @@ tags:
 
 接下来再来个例子：
 
-![http://ww1.sinaimg.cn/large/51530583jw1ez4zzt5l4aj20k60lqgn2.jpg](http://ww1.sinaimg.cn/large/51530583jw1ez4zzt5l4aj20k60lqgn2.jpg)
+<img src="http://ww1.sinaimg.cn/large/51530583jw1ez4zzt5l4aj20k60lqgn2.jpg" alt="" class="shadow"/>
+
 
 这个点赞的按钮功能上有几个职责：
 
@@ -72,8 +74,8 @@ tags:
 3. 若已经点赞，点击执行反向操作
 4. 若网络请求发送失败，则回退成点击前的状态
 
+<img src="http://ww1.sinaimg.cn/large/51530583jw1ez5055l1exj20k60lu3zz.jpg" alt="" class="shadow"/>
 
-![http://ww1.sinaimg.cn/large/51530583jw1ez5055l1exj20k60lu3zz.jpg](http://ww1.sinaimg.cn/large/51530583jw1ez5055l1exj20k60lu3zz.jpg)
 
 这个控件的 API 可以设计成这样：
 
