@@ -117,5 +117,8 @@ tags:
 
 
 Self-Manager 模式我们实践的时候写起来很开心，抛砖引玉一下，希望也能解决你的苦恼。
+
 > 原文来自:blog.sunnyxx.com  
-> 
+
+
+
