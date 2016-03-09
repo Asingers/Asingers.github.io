@@ -128,7 +128,7 @@ UICollectionView主要用于瀑布流，由于一直接触较少，每次需要�
     
         MyCollectionViewCell *cell = (MyCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndexPath:indexPath];
     
-        cell.botlabel.text = [NSString stringWithFormat:@"{%ld,%ld}",(long)indexPath.section,(long)indexPath.row];
+        cell.botlabel.text = [NSString stringWithFormat:@"{百分号ld,百分号ld}",(long)indexPath.section,(long)indexPath.row];
     
         cell.backgroundColor = [UIColor yellowColor];
     
