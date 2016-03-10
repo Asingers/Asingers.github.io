@@ -240,5 +240,5 @@ This repository mirrors [Apple's iOS samples](https://developer.apple.com/librar
 | [<sup>ZoomingPDFViewer</sup>](https://developer.apple.com/library/ios/samplecode/ZoomingPDFViewer/Introduction/Intro.html) | <sup>Graphics & Animation</sup><br/><sup>(2D Drawing)</sup> | <sup>CoreGraphics</sup> | <sup>Multi-paged PDF viewing with UIPageViewController demonstrates two-page spline viewing in landscape orientation, which looks like a book within iBooks. The sample also uses UIScrollView and CATiledLayer to support zooming within a single-page view used in portrait orientations. This app is universal and only supports the two-page spline view in landscape orientation on iPad.</sup> |
   
   
-> 当然你也可以fork [原作者的Repo](Mirror of Apple's iOS samples),别忘了Star点赞  
+> 当然你也可以fork [原作者的Repo](https://github.com/robovm/apple-ios-samples),别忘了Star点赞  
 
