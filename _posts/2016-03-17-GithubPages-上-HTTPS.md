@@ -11,7 +11,7 @@ tags:
 ---
 
 
-> 收到Kloudsec创始人发的推荐邮件,决定试一试 
+> yourusername.github.io 支持HTTPS, 因为Github官方是不支持自定义域名,这里我讲的是用自己的域名.
 
 
 # 注册
@@ -35,6 +35,4 @@ Kloudsec官网地址:[Click!](https://kloudsec.com)
 # SSL
 更改好解析,网站会有提醒. 之后点击左侧Protection 进入 我们需要的功能页面. 点击一键开启SSL就行了.等待,很快会有成功邮件.接下来当你访问你的GithubPages 就已经是```https://``` 了
 
-# Done 
-
-> 当然,这一切都是免费的.并且更换解析到Kloudsec提供的IP,也可以加速网站访问.实测ping github服务器ip 140ms, 更换解析之后90多ms.
+当然,这一切都是免费的.并且更换解析到Kloudsec提供的IP,也可以加速网站访问.实测ping github服务器ip 140ms, 更换解析之后90多ms.
