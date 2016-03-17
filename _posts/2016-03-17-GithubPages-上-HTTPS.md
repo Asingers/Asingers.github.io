@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "Github Pages 上 HTTPS"
-subtitle: "一键操作"
-date: 2016-03-17
-author: "Asingers"
-categories: ios
+title:  "GithubPages 上 HTTPS"
+date:   2016-03-17
+author:     "Asingers"
+subtitle: "一键SSL"
 tags:
-	- iOS
-	- HTTPS
-	- GithubPage
+     - iOS
+     - HTTPS
+     - GithubPages
 ---
+
 
 # First
