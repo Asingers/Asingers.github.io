@@ -13,7 +13,7 @@ tags:
 
 
 # 安装
-官网下载[Class-Dump](http://stevenygard.com/),安装dmg,讲安装后的class-dump 放到/usr/local/bin 目录下.这样我们就可以在终端使用class-dump命令了.
+官网下载[Class-Dump](http://stevenygard.com/),安装dmg,将安装后的class-dump 放到/usr/local/bin 目录下.这样我们就可以在终端使用class-dump命令了.
 
 # 使用
 命令使用:
