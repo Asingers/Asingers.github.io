@@ -113,6 +113,14 @@ layout: default
                         {% if site.sidebar-about-description %}
                             <p>{{site.sidebar-about-description}}</p>
                         {% endif %}
+                        <!-- New Weichat -->
+                          <div class="short-about">
+                        {% if site.sidebar-avatar %}
+                            <img src="{{site.sidebar-wechat}}" />
+                        {% endif %}
+                        {% if site.sidebar-wechatdescription %}
+                            <p>{{site.sidebar-wechatdescription}}</p>
+                        {% endif %}
                         <!-- SNS Link -->
                         <ul class="list-inline">
                             {% if site.RSS %}
