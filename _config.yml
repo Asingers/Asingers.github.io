@@ -71,8 +71,7 @@ sidebar-about-description: "写写代码，搭搭网站。世界那么大，我�
 # sidebar-avatar: /img/avatar.png     # use absolute URL, seeing it's used in both `/` and `/about/`
 # sidebar-avatar: http://7xqmgj.com1.z0.glb.clouddn.com/header_imgp1092913307.jpg
 sidebar-avatar: http://7xqmgj.com1.z0.glb.clouddn.com/header_imglove.jpg
-sidebar-wechat: http://7xqmgj.com1.z0.glb.clouddn.com/header_imglove.jpg
-sidebar-wechatdescription:: "欢迎关注微信"
+sidebar-wechat: http://7xqmgj.com1.z0.glb.clouddn.com/wechat.jpg
 
 
 # Featured Tags
