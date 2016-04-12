@@ -344,5 +344,40 @@ $("#AnchorContentToggle").click(function(){
 })();
 </script>
 -->
+<!-- 复制js -->
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+        $("#go-to-top").click(function(){
+            $("html, body").animate({'scrollTop': 0}, 400);
+            return false;
+        });
+        $("#main-navigation").find('#blog').addClass('current')
+        $(window).scroll(function() {
+            var top = $(document).scrollTop();
+            var g = $("#go-to-top");
+            if (top > 300 && g.is(":hidden")) {
+                g.fadeIn();
+            } else if(top < 300 && g.is(":visible")) {
+                g.fadeOut();
+            }
+        });
+
+  var clientTarget = new ZeroClipboard($('a#copy'), {
+    debug: false
+  });
+  clientTarget.on("load", function(clientTarget){
+    clientTarget.on("mouseOver", function(clientTarget) {
+      clientTarget.setText($('a#copy code#link').html());
+    })
+    clientTarget.on("complete", function(clientTarget, args) {
+        ZENG.msgbox.show('链接已复制!', 4, 2000);
+    });
+  });
+  $(window).resize(function(){
+    clientTarget.reposition();
+  })  
+
+    })
+  </script>
 
             
