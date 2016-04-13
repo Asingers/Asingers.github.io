@@ -23,7 +23,8 @@ iOS7提供一个崭新的推送方法：**UIApplicationUserDidTakeScreenshotNoti
 
 希望苹果会在iOS8当中增加 UIApplicationUserWillTakeScreenshotNotification。（只有did, 没有will显然不是苹果的风格...）
 
-**Demo 稍后放出**
+**Demo 稍后放出**  
+
 # 一。注册通知:
 
 
