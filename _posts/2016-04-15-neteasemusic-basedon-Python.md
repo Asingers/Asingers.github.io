@@ -61,7 +61,8 @@ tags:
 
 ### 使用
 
-	$ musicbox
+	$ musicbox  
+	
 **如果存在权限问题,尝试命令加上sudo**
 
 Enjoy it !
