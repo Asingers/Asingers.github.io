@@ -4,6 +4,7 @@ title: "iOS预测文本输入用户界面专利是什么"
 date: 2016-04-15
 author: "Asingers"
 subtitle: "有意思的黑科技"
+header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/Wallions21421.jpeg"
 categories: iOS
 tags:
    - iOS
