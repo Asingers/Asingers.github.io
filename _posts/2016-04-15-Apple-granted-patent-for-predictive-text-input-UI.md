@@ -9,9 +9,11 @@ categories: iOS
 tags:
    - iOS
 ---
-> 开启键盘输入预测,键盘控件大小会根据可能要要输入的字符自动调整触控区域的大小.  
+> 开启键盘输入预测,键盘控件大小会根据可能要要输入的字符自动调整触控区域的大小.    
 
 
+
+原文介绍:
 
 **Apple on Tuesday was granted a U.S. patent for the graphical user interface used in iOS which changes the "hit region" size of a virtual keyboard's buttons based on predictive text data.**
 
@@ -30,7 +32,8 @@ Apple notes the invention is an attempt at a more efficient method of entering t
 The '973 patent was first filed for in June of 2008, less than two weeks prior to the debut of Apple's second-generation handset, the iPhone 3G.   
 
 <img src="http://photos.appleinsidercdn.com/12.07.31-TextPatent.png" alt="" class="shadow"/>  
-From the abstract:
+From the abstract: 
+
 > A portable electronic device having a touch screen display performs a set of operations, including displaying a plurality of key icons, each having an adjustable size hit region, and receiving a sequence of individual touch points input by a user on the touch screen display. The operations performed by the device further include processing the received individual touch points by: forming a user-input directed graph for the sequence of individual touch points received so far, determining a character corresponding to a last received individual touch point in accordance with the adjustable hit regions of the displayed key icons, displaying a sequence of characters corresponding to the sequence of individual touch points, and updating sizes of the adjustable hit regions for a plurality of the key icons in accordance with the sequence of individual touch points input by the user.    
 
 
