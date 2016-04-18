@@ -182,3 +182,9 @@ Rewrite引擎的原理非常简单，模拟Web容器（Apache/Nginx等）的Rewr
 统跳协议在设计过程中预留了很好的扩展能力，所以在界面解耦之外还承担了更多的服务调用功能。Rewrite引擎为实现平台一致性而设计，而在实际应用过程中又挖掘出更多的场景和功能。
 
 在统跳协议和Rewrite引擎接下来的发展过程中，将更注重Android和iOS双平台的高度一致性，并尝试开放更多API，让所有人一起挖掘这套方案的潜力。
+
+> 原文来自[查看原文](http://pingguohe.net/2015/11/24/Navigator-and-Rewrite.html)  
+
+
+
+
