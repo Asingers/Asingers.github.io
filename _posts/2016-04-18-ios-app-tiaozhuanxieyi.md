@@ -43,14 +43,13 @@ tags:
 
 例如分享服务，以iOS为例：实现了`TMShareUrlHandler`服务。
 
-
-    @interfaceTMShareUrlHandler:NSObject<AliAppURLHandler>@end
-
-
-
-
-    @implementationTMShareUrlHandler#pragma mark - URL调用分享组件-(id)handleUrl:(NSURL*)urlwithTarget:(id)targetwithParams:(id)params{// 省略代码详情returnnil;}@end
-
+	@interface TMShareUrlHandler:NSObject<AliAppURLHandler>
+	@end
+    @implementation TMShareUrlHandler
+    #pragma mark - URL调用分享组件-(id)handleUrl:(NSURL*)urlwithTarget:(id)targetwithParams:(id)params{
+    // 省略代码详情returnnil;
+    }
+    @end
 
 
 在分享模块的配置文件中声明该服务的URL为`sharekit.tm/doShare`。
