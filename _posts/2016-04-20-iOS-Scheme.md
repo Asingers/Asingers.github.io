@@ -10,7 +10,7 @@ tags:
 ---
 
 
-# URL Scheme是什么
+## URL Scheme是什么
 
 相信大家都知道URL。
 
@@ -20,7 +20,7 @@ tags:
 
 也就是说 **http://www.apple.com的Scheme就是http。**  
 
-# iOS中的URL Scheme
+## iOS中的URL Scheme
 
 iOS中的Scheme也是一样的，无非是定义应用自己的Scheme，然后定义一些自己的URL解析，就好像YourApp://OneController?username=xxx&userInput=xxx
 
@@ -175,6 +175,6 @@ iOS中的Scheme也是一样的，无非是定义应用自己的Scheme，然后�
 
 **[Demo](http://download.csdn.net/detail/u010127917/9387848)**
 
-# 补充
+### 补充
 
 JLRoutes是一个非常好用的工具，除了以上简单的用法外，还可以解析更加复杂的URL Scheme，可以参考官方文档：[https://github.com/joeldev/JLRoutes](https://github.com/joeldev/JLRoutes)
