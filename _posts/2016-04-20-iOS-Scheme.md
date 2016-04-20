@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "iOS——Scheme是什么、怎么自定义Scheme、JLRoutes的使用"
+title: "iOS—Scheme是什么、怎么自定义Scheme、JLRoutes的使用"
 date: 2016-04-20
 author: "Asingers"
 subtitle: "URL Scheme整理"
@@ -18,7 +18,8 @@ tags:
 
 而://之前的部分就称为Scheme
 
-也就是说 **http://www.apple.com的Scheme就是http。**
+也就是说 **http://www.apple.com的Scheme就是http。**  
+
 # iOS中的URL Scheme
 
 iOS中的Scheme也是一样的，无非是定义应用自己的Scheme，然后定义一些自己的URL解析，就好像YourApp://OneController?username=xxx&userInput=xxx
@@ -29,28 +30,24 @@ iOS中的Scheme也是一样的，无非是定义应用自己的Scheme，然后�
 
 有一点需要注意的是，和Web开发不同，iOS中并不是所有的页面或者操作都有URL Schemes，这完全是由你主导的的，如果你需要，你就可以自己定义一些，并去解析。
 
-# 自定义你应用的Scheme
-
 ## 什么时候用到URL Scheme
 
 自定义Scheme是有意义的
 有以下几种使用场景供你参考：
 
-1. 从一个页面跳转到另一个页面，你不想写N多行代码来『获取下一个控制器』->『创建控制器』->『传递参数』
-2. 从其他应用中跳转到你的应用中特定的位置，并填好相应的参数。比如微博分享的时候，是从另一个页面跳转到微博应用的『发微博』页面，并自动填好了微博的文字内容
+从一个页面跳转到另一个页面，你不想写N多行代码来『获取下一个控制器』->『创建控制器』->『传递参数  
 
-
-## 开始写代码吧
+从其他应用中跳转到你的应用中特定的位置，并填好相应的参数。比如微博分享的时候，是从另一个页面跳转到微博应用的『发微博』页面，并自动填好了微博的文字内容
 
 ### 使用浏览器访问应用
 
 我们建一个应用，就叫URLSchemeDemo
 
-1. 在storyboard中，给我们的应用加一个按钮，便于展示
+在storyboard中，给我们的应用加一个按钮，便于展示
 <img src="http://7xnrog.com1.z0.glb.clouddn.com/blog_iOS%E2%80%94%E2%80%94Scheme%E6%98%AF%E4%BB%80%E4%B9%88-%E6%80%8E%E4%B9%88%E8%87%AA%E5%AE%9A%E4%B9%89Scheme-JLRoutes%E7%9A%84%E4%BD%BF%E7%94%A8-01.png-w500" alt="" class="shadow"/>
 
 	
-2. 打开info.plist
+打开info.plist
 - 添加一行，key选择 URL types
 <img src="http://7xnrog.com1.z0.glb.clouddn.com/blog_iOS%E2%80%94%E2%80%94Scheme%E6%98%AF%E4%BB%80%E4%B9%88-%E6%80%8E%E4%B9%88%E8%87%AA%E5%AE%9A%E4%B9%89Scheme-JLRoutes%E7%9A%84%E4%BD%BF%E7%94%A8-02.png-w500" alt="" class="shadow"/>
 
@@ -64,17 +61,15 @@ iOS中的Scheme也是一样的，无非是定义应用自己的Scheme，然后�
 <img src="http://7xnrog.com1.z0.glb.clouddn.com/blog_iOS%E2%80%94%E2%80%94Scheme%E6%98%AF%E4%BB%80%E4%B9%88-%E6%80%8E%E4%B9%88%E8%87%AA%E5%AE%9A%E4%B9%89Scheme-JLRoutes%E7%9A%84%E4%BD%BF%E7%94%A8-05.png-w500" alt="" class="shadow"/>
 
 
+ 在AppDelegate.m中要处理接收到的URL Scheme
 
-3. 在AppDelegate.m中要处理接收到的URL Scheme
-
-		-(BOOL)application:(UIApplication*)application openURL:	(NSURL*)url sourceApplication:(NSString*)sourceApplication 	annotation:(id)annotation {;
-    	NSLog(@"从哪个app跳转而来 Bundle ID: %@", sourceApplication);
-    	NSLog(@"URL scheme:%@", [url scheme]);
+	-(BOOL)application:(UIApplication*)application openURL:	(NSURL*)url sourceApplication:(NSString*)sourceApplication 	annotation:(id)annotation {
+	
+	NSLog(@"从哪个app跳转而来 Bundle ID: %@", sourceApplication);
+	NSLog(@"URL scheme:%@", [url scheme]);
     
-    	returnYES;
-		}
-    
-
+	returnYES;
+	}
 
 1. 运行项目，当app安装到设备上时，URL Scheme将会自动注册
 2. 打开Safari在地址栏输入URLSchemeDemo://（你刚刚在URL schemes中定义的Scheme）
@@ -101,13 +96,11 @@ iOS中的Scheme也是一样的，无非是定义应用自己的Scheme，然后�
 
 给按钮添加事件
 
-		- (IBAction)jump:(UIButton *)sender {
+	- (IBAction)jump:(UIButton *)sender {
 		NSString *customURL = @"URLSchemeDemo://";
     	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:customURL]];
     
 			}
-    
-
 
 运行项目，点击按钮，你会发现同样能跳转到之前的应用
 
@@ -131,40 +124,40 @@ iOS中的Scheme也是一样的，无非是定义应用自己的Scheme，然后�
 我在URLSchemeDemo中添加SecondViewController
 给SecondViewController在viewDidLoad中添加以下颜色，以作区分
 
-    	- (void)viewDidLoad {;
+	- (void)viewDidLoad {;
     	[superviewDidLoad];
     	self.view.backgroundColor= [UIColorgreenColor];
     	};
 
 在AppDelegate.m中修改处理方式
 
-    	#import"AppDelegate.h"
-    	#import"JLRoutes.h"
+	#import"AppDelegate.h"
+	#import"JLRoutes.h"
     
-    	@interfaceAppDelegate()
+	@interfaceAppDelegate()
     
-    	@end
+	@end
     
-    	@implementationAppDelegate
+	@implementationAppDelegate
     
     
-    	- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
+	- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
     	[JLRoutes addRoute:@"/:controller"handler:^BOOL(NSDictionary*parameters) {
     	NSString*controller = parameters[@"controller"];
     
-    	[self.window.rootViewControllerpresentViewController:[[NSClassFromString(controller) alloc] init] animated:YEScompletion:^{
+	[self.window.rootViewControllerpresentViewController:[[NSClassFromString(controller) alloc] init] animated:YEScompletion:^{
     
-    	}];
-    	returnYES;
-    	}];
-    	returnYES;
+	}];
+	return YES;
+	}];
+	return YES;
     	}
     
-    	- (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation {
+	- (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation {
 		return[JLRoutes routeURL:url];
-		}
+	}
     
-		@end
+	@end
     
 ### URLSchemeDemoTest项目
 
