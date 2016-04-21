@@ -5,6 +5,7 @@ date: 2016-04-20
 author: "Asingers"
 subtitle: "URL Scheme整理"
 categories: ios
+catalog: true
 tags:
    - iOS
 ---
