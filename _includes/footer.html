@@ -152,6 +152,8 @@
         });
         return true;    
     }
+    async("{{ "/js/animatescroll.min.js " | prepend: site.baseurl }}", createCatalog.bind(null, ".direc_content"));
+
     generateCatalog(".catalog-body");
     // toggle side catalog
     $(".catalog-toggle").click((function(e){
