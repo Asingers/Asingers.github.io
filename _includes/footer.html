@@ -135,8 +135,7 @@
         if($nav) FastClick.attach($nav);
     })
 </script>
-<!-- 导航 -->
-<!-- Side Catalog -->
+
 {% if page.catalog %}
 <script type="text/javascript">
     function generateCatalog (selector) {
@@ -153,15 +152,12 @@
         return true;    
     }
     generateCatalog(".catalog-body");
-    // toggle side catalog
+
     $(".catalog-toggle").click((function(e){
         e.preventDefault();
         $('.side-catalog').toggleClass("fold")
     }))
-    /*
-     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
-     * Fork by Hux to support padding
-     */
+
     async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
         $('.catalog-body').onePageNav({
             currentClass: "active",

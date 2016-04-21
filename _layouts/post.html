@@ -11,7 +11,6 @@ layout: default
         /*background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')*/
         background-image: url('{{ site.baseurl }}{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
     }
-        /*导航*/
     /*.BlogAnchor {
         background: #ffffff;
         padding: 0px;
@@ -104,19 +103,7 @@ layout: default
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
-                <!-- 导航 -->
-               <!--  <div class="BlogAnchor">
-    <p>
-        <b id="AnchorContentToggle" title="收起" style="cursor:pointer;">目录[+]</b>
-    </p>
-    <div class="AnchorContent" id="AnchorContent"> </div>
-</div> -->
 
-<!-- <div class="ScrollTop">
-    <p>
-        <b id="ScrollTopToggle" title="顶部" style="cursor:pointer;">Top</b>
-    </p>
-</div> -->
 
                 {{ content }}
 
@@ -184,7 +171,7 @@ layout: default
                 {% endif %}
 
             </div>
-    <!-- Side Catalog Container -->
+
         {% if page.catalog %}
             <div class="
                 col-lg-2 col-lg-offset-0
