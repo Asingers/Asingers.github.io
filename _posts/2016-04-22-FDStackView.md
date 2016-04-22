@@ -10,6 +10,10 @@ tags:
    - iOS
 ---
 
+> 原文来自[**wtlucky**,在此只研究了实际使用,完整内容请看原PO](http://blog.wtlucky.com/blog/2016/01/19/fdstackview-downward-compatible-uistackview-part-2/)
+
+
+
 加入百度知道团队也有一段时间了，能跟[@我就叫Sunny怎么了](http://weibo.com/u/1364395395)、[@sinojerk](http://weibo.com/u/5665046845)等小伙伴一起工作生活是一种极赞的体验。在完成日常业务开发之余，我们也会进行一些技术研究项目，并将研究结果以开源的方式公布出来，自然我也成为了`forkingdog`开源小组的一员。
 
 近期我们的研究项目是`FDStackView`，现如今已经完成了`Alpha`版本的开发工作，并将其开源在了`Github`上，[项目地址](https://github.com/forkingdog/FDStackView)。虽然现在已经完成所有的基本功能，但是仍需要在真实的环境中测试试用，欢迎大家将试用之后的问题反馈给我们，提`issue`给我们，使我们更好的修复和完善`FDStackView`，以便于更好的方便开发者们使用。
@@ -382,6 +386,6 @@ FDStackViewAlignmentLayoutArrangement
 
 写了这么多，才写完第一个技术点的第一部分，内容确实比较多，我写的也比较乱，时间比较紧所以写作时间是间断的，所以思维也是间断跳跃的，还麻烦各位看官多多包涵。本来打算一篇写完的，但是这么长，还是有必要在分一下的，`Part 2`就到这吧，其余的内容就在`Part 3`吧。
 
-> 原文来自[**wtlucky**,在此只研究了实际使用,完整内容请看原PO](http://blog.wtlucky.com/blog/2016/01/19/fdstackview-downward-compatible-uistackview-part-2/)
+
 
 	
