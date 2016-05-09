@@ -12,7 +12,7 @@ tags:
 
 问题如图所示:
 
-<img src="http://cdn.cocimg.com/bbs/attachment/Fid_21/21_124147_0a10442f326939b.jpg" alt="" class="shadow"/> 
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/we.jpeg" alt="" class="shadow"/> 
 
 首先确认 是传递接口的字段导致的问题。是传递接口的字段导致的问题。是传递接口的字段导致的问题。
 
