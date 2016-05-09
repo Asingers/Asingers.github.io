@@ -17,7 +17,7 @@ tags:
     这是base64.h中没有加入#import <Foundation/Foundation.h> 系统库文件导致，这个错误报错方法直接想喷它一脸。报错方式太恶心。
 
 
-####问题2.截图告知你什么问题
+#### 问题2.截图告知你什么问题
 
 
 <img src="http://upload-images.jianshu.io/upload_images/616981-d6540c725f3801a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" class="shadow"/>
@@ -29,7 +29,7 @@ tags:
     这个问题可以同上的，心情好，截图再次说明下，在 openssl_wrapper.h中#import <Foundation/Foundation.h> 库即可
 
 
-####问题3.Util/openssl_wrapper.m:11:9: ‘rsa.h’ file not found
+#### 问题3.Util/openssl_wrapper.m:11:9: ‘rsa.h’ file not found
 
     解决办法：
     （1），万年老坑，只要你接入支付宝百分百要遇到的问题，所以习以为常吧
@@ -49,7 +49,7 @@ tags:
 
 
 
-####问题4.这类错很多，大概有这些：这些可能是库文件没有导入，导致的
+#### 问题4.这类错很多，大概有这些：这些可能是库文件没有导入，导致的
 
 
 ```
@@ -171,14 +171,14 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 
 
-####问题5.Redefinition of 'RSA' as different kind of symbol  多为sdk集成时产生的坑，因为我们公司在集成支付宝之前，有用过RSA加密，导致重名问题
+#### 问题5.Redefinition of 'RSA' as different kind of symbol  多为sdk集成时产生的坑，因为我们公司在集成支付宝之前，有用过RSA加密，导致重名问题
 
     解决办法：
     （1），这个问题不是每个公司都可能遇到的，但遇到也心烦
     （2），由于支付宝中的openssl中的rsa.h文件与RSA加密有重名冲突。改掉公司自己之前导入RSA的命名，如果你牛逼也可以去改rsa.h中的
 
 
-####问题6；系统库导入问题
+#### 问题6；系统库导入问题
 +++++++++++++
 symbol(s) not found for architecture arm64
 
@@ -192,7 +192,7 @@ symbol(s) not found for architecture arm64
 <img src="http://upload-images.jianshu.io/upload_images/616981-3a750ed6a81bdc43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" class="shadow"/> 
 
 
-####问题7：终于到微信了，接入微信，你就开心了
+#### 问题7：终于到微信了，接入微信，你就开心了
 因为问题太少了，只能感谢下这两个帖子的楼主了
 解决办法：  
 
