@@ -10,6 +10,47 @@ categories: life
 tags:
    - Life
 ---
+<div style="height:450px;font-weight:normal;font-size:12px;">
+	<div class="footer-more-trigger most-footer sn-simple-logo" style="width:auto;padding:0;line-height:inherit;top:-20px;left:auto;border:0;background:none;width:1920px;height:0px;left:50%;border:none;padding:0;margin:0;line-height:1.5;">
+		<div class="footer-more-trigger most-footer sn-simple-logo" style="width:auto;padding:0;line-height:inherit;left:auto;border:0;background:none;width:1920px;height:0px;left:-960px;top:-20px;border:none;padding:0;margin:0;line-height:1.5;">
+			<div style="position:relative;width:1920px;height:600px;">
+				<div class="footer-more-trigger most-footer sn-simple-logo" style="width:auto;padding:0;line-height:inherit;top:-20px;left:auto;border:0;background:none;padding:0;border:0;width:auto;height:auto;line-height:inherit;margin:0;left:0;">
+					<div class="J_TWidget" data-widget-type="Carousel" data-widget-config="{&quot;effect&quot;:&quot;scrollx&quot;,&quot;easing&quot;:&quot;easeBoth&quot;,&quot;circular&quot;:true,&quot;autoplay&quot;:true,&quot;duration&quot;:1.0,&quot;contentCls&quot;:&quot;content7608060004&quot;,&quot;navCls&quot;:&quot;navs7608060004&quot;,&quot;prevBtnCls&quot;:&quot;prev7608060004&quot;,&quot;nextBtnCls&quot;:&quot;next7608060004&quot;}" style="width:1920px;height:600px;">
+						<div class="trigger7608060004" style="width:1920px;height:600px;overflow:hidden;">
+							<ul class="content7608060004">
+								<li style="width:1920px;height:600px;overflow:hidden;">
+									 <a target="_blank" href="#"><img src="//gdp.alicdn.com/imgextra/i3/276477138/TB2KMLDoVXXXXc0XpXXXXXXXXXX_!!276477138.jpg" /></a>
+								</li>
+								<li style="width:1920px;height:600px;overflow:hidden;">
+									 <a target="_blank" href="#"><img src="//gdp.alicdn.com/imgextra/i1/276477138/TB2gtfDoVXXXXcNXpXXXXXXXXXX_!!276477138.jpg" /></a>
+								</li>
+								<li style="width:1920px;height:600px;overflow:hidden;">
+									 <a target="_blank" href="#"><img src="//gdp.alicdn.com/imgextra/i3/276477138/TB2bvbHoVXXXXciXpXXXXXXXXXX_!!276477138.jpg" /></a>
+								</li>
+								<li style="width:1920px;height:600px;overflow:hidden;">
+									 <a target="_blank" href="#"><img src="//gdp.alicdn.com/imgextra/i3/276477138/TB2n.ntoVXXXXarXFXXXXXXXXXX_!!276477138.jpg" /></a>
+								</li>
+							</ul>
+						</div>
+						<div class="J_TWidget prev7608060004" data-widget-type="Popup" style="width:990px;height:0px;display:none;" data-widget-config="{&quot;trigger&quot;:&quot;.trigger7608060004&quot;,&quot;align&quot;:{&quot;node&quot;:&quot;.trigger7608060004&quot;,&quot;offset&quot;:[0,-31],&quot;points&quot;:[&quot;cc&quot;,&quot;cc&quot;]}}">
+							<div style="float:left;width:62px;height:62px;cursor:pointer;background:url(//gdp.alicdn.com/imgextra/i4/11193727/TB2GKNmdVXXXXcpXXXXXXXXXXXX-11193727.png) no-repeat;">
+								&nbsp;
+							</div>
+						</div>
+						<div class="J_TWidget next7608060004" data-widget-type="Popup" style="width:990px;height:0px;display:none;" data-widget-config="{&quot;trigger&quot;:&quot;.trigger7608060004&quot;,&quot;align&quot;:{&quot;node&quot;:&quot;.trigger7608060004&quot;,&quot;offset&quot;:[0,-31],&quot;points&quot;:[&quot;cc&quot;,&quot;cc&quot;]}}">
+							<div style="float:right;width:62px;height:62px;cursor:pointer;background:url(//gdp.alicdn.com/imgextra/i4/11193727/TB2GKNmdVXXXXcpXXXXXXXXXXXX-11193727.png) no-repeat scroll 0 -62px;">
+								&nbsp;
+							</div>
+						</div>
+						<ul class="navs7608060004" style="display:none;">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 2 9.2 1972 教父 The Godfather 美国动作大片《教父》BD-R中英双字幕(高清晰版)
 [http://www.ygdy8.com/html/gndy/jddy/20080920/14285.html](http://www.ygdy8.com/html/gndy/jddy/20080920/14285.html)
 
