@@ -68,9 +68,13 @@ tags:
 
 Apple 地图:  
 
-	  MKMapItem *currentLocation = [MKMapItem mapItemForCurrentLocation];
-
-            MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc ]initWithCoordinate:endCoor addressDictionary:nil]];
-            toLocation.name = @"徐家汇";
-            [MKMapItem openMapsWithItems:@[currentLocation, toLocation]
-                           launchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving,MKLaunchOptionsMapCenterKey: [NSNumber numberWithBool:YES],MKLaunchOptionsMapTypeKey:[NSNumber numberWithInteger:0]}];
+	   // 终点
+        CLLocationCoordinate2D coords2 = CLLocationCoordinate2DMake(_stoptLat,_stoptLong);
+        
+        //当前的位置
+        MKMapItem *currentLocation = [MKMapItem mapItemForCurrentLocation];
+        
+        MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc ]initWithCoordinate:coords2 addressDictionary:nil]];
+        toLocation.name = [NSString stringWithFormat:@"%@%@",_destinationPTextField.text,_destinationCTextField.text];
+        [MKMapItem openMapsWithItems:@[currentLocation, toLocation]
+                       launchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving,MKLaunchOptionsMapCenterKey: [NSNumber numberWithBool:YES],MKLaunchOptionsMapTypeKey:[NSNumber numberWithInteger:0]}];
