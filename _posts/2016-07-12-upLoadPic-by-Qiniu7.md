@@ -38,6 +38,115 @@ tags:
 
 ##### 完整Demo中包含个人信息,整理后放出.
 
+- #### 注  
+`系统方法图片上传`
+
+#### 上传照片
+
+	- (void)positiveAction:(UIButton *)btn{
+    self.btn = btn;
+    UIImagePickerController *imagePickerController =
+    [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    imagePickerController.allowsEditing = YES;
+    if (btn.tag == 10000 || btn.tag == 20000) {
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }else{
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    [self.navigationController presentViewController:imagePickerController
+                                            animated:YES
+                                          completion:^{}];
+	}		
+	}
+	
+##### pragma mark - image picker delegte
+	- (void)imagePickerController:(UIImagePickerController *)picker
+        didFinishPickingImage:(UIImage *)image
+                  editingInfo:(NSDictionary<NSString *, id> *)editingInfo{
+    [picker dismissViewControllerAnimated:YES completion:^{}];
+    //上传
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"正在加载";
+    
+    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    NSData * data = UIImageJPEGRepresentation(image, 0.1);
+    NSUserDefaults * user = [NSUserDefaults standardUserDefaults];
+    NSDictionary * dic = @{@"id":[user objectForKey:@"id"],
+                           @"app_token":[user objectForKey:@"app_token"],
+                           @"image":data};
+    
+    if (self.btn.tag == 10000 || self.btn.tag == 10001) {
+        
+        [manager POST:@"http://labour.chinadeer.cn/api/user/upload/image"
+           parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+               
+               [formData appendPartWithFileData:data
+                                           name:@"image"
+                                       fileName:@"front_image.jpg"
+                                       mimeType:@"image/jpeg"];
+               
+           } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+               [hud setHidden:YES];
+               id jDic = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                         options:NSJSONReadingMutableLeaves
+                                                           error:nil];
+               if ([jDic[@"code"] integerValue]== 200) {
+                   frontImage = image;
+                   if (backImage) {
+                       self.idV.upBtn.enabled = YES;
+                       self.idV.upBtn.alpha = 1;
+                   }
+                   _idV.positiveView.positivePhoto.image = image;
+                   [self.info setObject:jDic[@"data"][@"id"] forKey:@"card_image_front"];
+               }else{
+                   NSLog(@"失败信息:%@",jDic[@"data"]);
+               }
+           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+               [hud setHidden:YES];
+               NSLog(@"失败:%@",error);
+               
+           }];
+    }else if (self.btn.tag == 20000 || self.btn.tag == 20001){
+        
+        [manager POST:@"http://labour.chinadeer.cn/api/user/upload/image"
+           parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+               
+               [formData appendPartWithFileData:data name:@"image"
+                                       fileName:@"back_image.jpg"
+                                       mimeType:@"image/jpeg"];
+               
+           } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+               [hud setHidden:YES];
+               id jDic = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                         options:NSJSONReadingMutableLeaves
+                                                           error:nil];
+               if ([jDic[@"code"] integerValue] == 200) {
+                   backImage = image;
+                   if (frontImage) {
+                       self.idV.upBtn.enabled = YES;
+                       self.idV.upBtn.alpha = 1;
+                   }
+                    _idV.onTheBackView.positivePhoto.image = image;
+                   [self.info setObject:jDic[@"data"][@"id"] forKey:@"card_image_back"];
+               }else{
+                   NSLog(@"失败信息:%@",jDic[@"data"]);
+               }
+           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+               [hud setHidden:YES];
+               NSLog(@"失败:%@",error);
+           }];
+    }
+	}
+
+	- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+	
+    [self dismissViewControllerAnimated:YES completion:^{}];
+    
+    }
+
 
  
 
