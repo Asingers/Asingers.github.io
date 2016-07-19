@@ -48,8 +48,10 @@ appium-doctor是一个用于验证appium安装环境的工具，可以诊断出N
 
 [官网](http://appium.io/)下载安装  
 
-#### 上手调试  
+#### 上手调试 
+
 #### 安装ideviceinstaller备用
+
 
 	brew install ideviceinstaller  
 	
