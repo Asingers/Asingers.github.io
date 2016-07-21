@@ -4,7 +4,7 @@ title: "使用AppleDoc生成文档"
 date: 2016-07-19
 author: "Asingers"
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-21_2016doc.jpeg"
-subtitle: "持续整理"
+subtitle: "学习笔记"
 catalog: true
 categories: ios
 tags:
