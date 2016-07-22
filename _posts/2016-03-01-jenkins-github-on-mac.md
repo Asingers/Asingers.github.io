@@ -50,6 +50,16 @@ tags:
 
     defaults write /Library/Preferences/org.jenkins-ci httpPort 7070
 
+Jenkins默认安装目录:  
+
+    /users/share/  
+
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2009%E6%97%B627%E5%88%8623%E7%A7%92.png" alt="" class="shadow"/>  
+
+或者更改目录:  
+
+    cd 到 /Library/LaunchDaemons 编辑 org.jenkins-ci.plist  更改jenkinshome和username
+    重启Jenkins即可 
 
 **2，安装后可直接访问[http://localhost:8080](http://localhost:8080/)**
 
