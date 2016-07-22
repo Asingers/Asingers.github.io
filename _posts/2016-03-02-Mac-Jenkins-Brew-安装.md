@@ -13,16 +13,60 @@ tags:
 ---
 ### 安装配置 Jenkins
 
-先使用 homebrew 安装 Jenkins
+通过命令行安装:  
+
+    brew cask install jenkins  
+    
+前提是已经安装Java  
+
+    brew cask install java  
+    
+安装成功会自动启动并打开网页  
+    
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2008%E6%97%B646%E5%88%8621%E7%A7%92.png" alt="" class="shadow"/>   
+
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2008%E6%97%B647%E5%88%8616%E7%A7%92.png" alt="" class="shadow"/>   
+
+启动执行脚本目录所在:  
+
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2008%E6%97%B658%E5%88%8648%E7%A7%92.png" alt="" class="shadow"/>  
+
+安装包所在:  
+
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2009%E6%97%B602%E5%88%8606%E7%A7%92.png" alt="" class="shadow"/>
+服务项所在:  
+
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2009%E6%97%B604%E5%88%8610%E7%A7%92.png" alt="" class="shadow"/> 
+可以通过命令开始停止:  
+
+    // 方法一:
+    sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist 启动  
+       
+    sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist 停止
+    
+
+如果要修改端口，比如7070，可在第8步重启jenkins前执行以下命令修改端口参数
+
+    defaults write /Library/Preferences/org.jenkins-ci httpPort 7070
+
+Jenkins默认安装目录:  
+
+    /users/share/  
+
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2009%E6%97%B627%E5%88%8623%E7%A7%92.png" alt="" class="shadow"/>  
+
+或者更改目录:  
+
+    cd 到 /Library/LaunchDaemons 编辑 org.jenkins-ci.plist  更改jenkinshome和username
+    重启Jenkins即可 
 
 
-    $brew install jenkins
 
 
 
 然后链接 launchd 配置文件
-
-
+    
+    // 方法二(1): 
     $ln -sfv /usr/local/opt/jenkins/*.plist ~/Library/LaunchAgents
 
 
@@ -36,7 +80,7 @@ tags:
 
 修改完后，在终端执行
 
-
+    // 方法二(2)
     $launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 
 
@@ -48,58 +92,20 @@ tags:
 	# 这种方式安装的Jenkins默认目录是/usr/local/Cellar/jenkins/1.651/libexec/....
 	#所以想让其他局域网用户访问则需要修改/etc/apache2/httpd.conf的ServerRoot 路径  
 	改为/usr/local/Cellar/ 即可 
-	 
-重启 Apache 
 
-	sudo apachectl restart
+进入 系统管理-启用安全-访问控制-Jenkins专有用户数据库-安全矩阵 添加一个用户:  
 
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2009%E6%97%B650%E5%88%8651%E7%A7%92.png" alt="" class="shadow"/>  
 
-### 集成 GitHub 的 Pull Request
+保存之后会在Jenkins安装目录下生成config.xml文件.  
 
-在 GitHub 上有新的 Pull Request 的时候，可以自动来跑测试，然后把结果提交给 GitHub 上
-
-#### 安装插件
-
-在左侧的导航找到`Manage Jenkins`，进到管理界面，然后找到`Manage Plugins`进入插件管理界面，我们安装几个必须的插件：
-
-- GitHub plugin[https://wiki.jenkins-ci.org/display/JENKINS/Github+Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Github+Plugin)
-- GitHub Pull Request Builder[https://wiki.jenkins-ci.org/display/JENKINS/GitHub+pull+request+builder+plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+pull+request+builder+plugin)
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2010%E6%97%B603%E5%88%8620%E7%A7%92.png" alt="" class="shadow"/>  
 
 
-#### Job 跑起来
+    <useSecurity>true</useSecurity>  这个节点表示使用安全管理，也就是需要用户登录才能操作  
+    
+用刚才添加的用户进行注册,不使用密码登录可以  
 
-安装完插件之后，我们可以开始建立 Job，在首页的左侧找到 New Job 进入新建 Job 的界面，选择`Build a free-style software project`
-
-![Screen Shot 2013-11-25 at 2.00.36 PM.png](http://user-image.logdown.io/user/749/blog/746/post/162202/vDclj1BQR9qvMPAhQhdG_Screen%20Shot%202013-11-25%20at%202.00.36%20PM.png)
-
-点击 OK 之后，进入配置界面，找到 Source Code Management，按照下图，选择 Git，然后填入 Name 为`origin`，Refspec 填入`+refs/pull/*:refs/remotes/origin/pr/*`，Branch Specifier 填入`${sha1}`
-
-![Screen Shot 2013-11-25 at 2.02.52 PM.png](http://user-image.logdown.io/user/749/blog/746/post/162202/g62kVG4sRqykiRynCBIu_Screen%20Shot%202013-11-25%20at%202.02.52%20PM.png)
-
-接着在 Build Trigger 下选择上`GitHub pull requests builder`，默认使用的是 polling，这里也可以配置使用 github 的 hook 来触发，具体可以点击旁边的问号查看帮助
-
-![Screen Shot 2013-11-25 at 2.10.02 PM.png](http://user-image.logdown.io/user/749/blog/746/post/162202/SYHWaxR9QdG14iNmpXeJ_Screen%20Shot%202013-11-25%20at%202.10.02%20PM.png)
-
-接着在 Build 下，添加`Execute shell`的 build step，里面写上跑测试的脚本
-
-![Screen Shot 2013-11-25 at 2.16.21 PM.png](http://user-image.logdown.io/user/749/blog/746/post/162202/2u14UI1PQb6lakztF97K_Screen%20Shot%202013-11-25%20at%202.16.21%20PM.png)
-
-[格志](http://griddiaryapp.com)里使用了 cocoapods，还有用 bundler 来管理 cocoapods 和其他 Ruby Gems 的版本，所以我们使用下面这段脚本来跑测试
-
-
-    #!/usr/bin/env zsh --loginrvm use 2.0.0
-    ruby --version
-    bundle
-    bundle --version
-    bin/pod
-    /usr/bin/xcodebuild -scheme'GridDiary Beta'-workspace GridDiary.xcworkspace -destination"platform=iOS Simulator,name=iPhone Retina (4-inch),OS=latest"-configuration Debug clean buildtestONLY_ACTIVE_ARCH=NO
-
-
-
-最后在 Post-build Actions 里加入`Set build status on GitHub commit`
-
-### Extra
-
-Jenkins 默认的界面惨不忍睹，可以用[Simple Theme](https://wiki.jenkins-ci.org/display/JENKINS/Simple+Theme+Plugin)这个插件来来自定 CSS 和 JavaScript
-
-还有一个可以让 console 更不费眼睛一点的 Chrome 插件：[https://github.com/M6Web/JenkinsTerminalColors](https://github.com/M6Web/JenkinsTerminalColors)
+    <useSecurity>false</useSecurity>   
+    
+即可.
