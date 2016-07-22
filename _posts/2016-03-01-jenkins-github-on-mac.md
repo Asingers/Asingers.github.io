@@ -14,6 +14,7 @@ tags:
 
 
 **1, 下载安装版[http://jenkins-ci.org/](http://jenkins-ci.org/)**(注: 默认端口为8080)  
+ 
 或者通过命令行安装:  
 
     brew cask install jenkins  
@@ -21,6 +22,7 @@ tags:
 前提是已经安装Java  
 
     brew cask install java  
+    
 安装成功会自动启动并打开网页  
     
 <img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2008%E6%97%B646%E5%88%8621%E7%A7%92.png" alt="" class="shadow"/>   
@@ -40,7 +42,7 @@ tags:
 可以通过命令开始停止:  
 
     sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist 启动  
-    
+       
     sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist 停止
     
 
