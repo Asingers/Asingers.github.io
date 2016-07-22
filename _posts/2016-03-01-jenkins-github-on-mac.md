@@ -13,7 +13,36 @@ tags:
 ---
 
 
-**1, 下载安装版[http://jenkins-ci.org/](http://jenkins-ci.org/)**(注: 默认端口为8080)
+**1, 下载安装版[http://jenkins-ci.org/](http://jenkins-ci.org/)**(注: 默认端口为8080)  
+或者通过命令行安装:  
+
+    brew cask install jenkins  
+    
+前提是已经安装Java  
+
+    brew cask install java  
+安装成功会自动启动并打开网页  
+    
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2008%E6%97%B646%E5%88%8621%E7%A7%92.png" alt="" class="shadow"/>   
+
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2008%E6%97%B647%E5%88%8616%E7%A7%92.png" alt="" class="shadow"/>   
+
+启动执行脚本目录所在:  
+
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2008%E6%97%B658%E5%88%8648%E7%A7%92.png" alt="" class="shadow"/>  
+
+安装包所在:  
+
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2009%E6%97%B602%E5%88%8606%E7%A7%92.png" alt="" class="shadow"/>
+服务项所在:  
+
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-22_%E6%88%AA%E5%9B%BE%202016-07-22%2009%E6%97%B604%E5%88%8610%E7%A7%92.png" alt="" class="shadow"/> 
+可以通过命令开始停止:  
+
+    sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist 启动  
+    
+    sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist 停止
+    
 
 如果要修改端口，比如7070，可在第8步重启jenkins前执行以下命令修改端口参数
 
