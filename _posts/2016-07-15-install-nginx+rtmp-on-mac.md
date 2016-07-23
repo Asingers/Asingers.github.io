@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Mac搭建nginx+rtmp服务器"
+title: "Mac搭建nginx+rtmp服务器 推流"
 date: 2016-07-15
+header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/2016live.jpeg"
 author: "Asingers"
 subtitle: "学习笔记"
 catalog: true
@@ -12,6 +13,8 @@ tags:
    - 服务器
    
 ---
+
+### 环境
 
 #### 一、安装Homebrow
 
@@ -123,12 +126,7 @@ nginx常用方法：重新加载配置文件
 
 打开Finder Shift + command + G前往，用记事本工具打开nginx.conf
 
-    http {
-        ……
-    }
-
-
-在http节点后面加上rtmp配置：
+加上rtmp配置：
 
     rtmp {
     
@@ -154,10 +152,13 @@ nginx常用方法：重新加载配置文件
               hls_fragment 1s;
           }
        }
-    }
+    }  
+    
+    
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-23%2023.39.47.png" alt="" class="shadow"/>
 
 
-#### 六、安装ffmepg工具
+#### 五、安装ffmepg工具
 
     brew install ffmpeg
 
@@ -165,25 +166,19 @@ nginx常用方法：重新加载配置文件
 安装这个需要等一段时间等待吧 然后准备一个视频文件作为来推流，然后我们在安装一个支持rtmp协议的视频播放器，Mac下可以用VLC
 
 ffmepg 安装完成后可以开始推流了  
-打开配置文件nginx.conf
-完成如下配置
-<img src="http://upload-images.jianshu.io/upload_images/2004362-09d2f711fdfbd637.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" class="shadow"/>   
 
-
-### 二、FFmpeg推流
+### 推流
 
 #### 1.推流MP4文件
 
 - 视频文件地址：/Users/xu/Desktop/bangbangbang.mp4
 - 推流拉流地址：rtmp://localhost:1935/rtmplive/home
 - acc：RTMP的音频格式
-- flv： RTMP的视频格式
-    ffmpeg -re -i /Users/xu/Desktop/bangbangbang.mp4 -vcodec libx264 -acodec aac -f flv rtmp://localhost:1935/rtmplive/home
+- flv： RTMP的视频格式  
 
+	`ffmpeg -re -i /Volumes/娱乐/Movie/ximalaya.mp4 -vcodec libx264 -acodec aac -f flv rtmp://localhost:1935/rtmplive/home`
 
-
-
-![http://upload-images.jianshu.io/upload_images/2004362-5a97b201cc1197c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240](http://upload-images.jianshu.io/upload_images/2004362-5a97b201cc1197c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-23%2023.38.58.png" alt="" class="shadow"/> 
 
 设置推流.2
 
@@ -195,16 +190,15 @@ ffmepg 安装完成后可以开始推流了
 
 - 打开VLC播放器
 
-
-![http://upload-images.jianshu.io/upload_images/2004362-4773fc799694ac3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240](http://upload-images.jianshu.io/upload_images/2004362-4773fc799694ac3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-23%2023.43.57.png" alt="" class="shadow"/> 
 
 VLC.3
 
 
 - 设置播放地址
 
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-23%2023.58.54.png" alt="" class="shadow"/>
 
-![http://upload-images.jianshu.io/upload_images/2004362-6fd37c556efd8844.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240](http://upload-images.jianshu.io/upload_images/2004362-6fd37c556efd8844.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 设置播放地址.4
 
@@ -212,8 +206,8 @@ VLC.3
 - 设置拉流地址
     rtmp://localhost:1935/rtmplive/home
 
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-24%2000.00.14.png" alt="" class="shadow"/>
 
-![http://upload-images.jianshu.io/upload_images/2004362-af6d7b6a0316cfd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240](http://upload-images.jianshu.io/upload_images/2004362-af6d7b6a0316cfd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 拉流地址.5
 
@@ -221,15 +215,13 @@ VLC.3
 - 开始推流，点击open后开始播放。
 
 
-![http://upload-images.jianshu.io/upload_images/2004362-2729312bb03d554a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240](http://upload-images.jianshu.io/upload_images/2004362-2729312bb03d554a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-FFmpeg推流成功.6
-
-
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-23%2023.39.27.png" alt="" class="shadow"/> 
 
 推流成功!
 
-### 三、用ffmpeg推流桌面以及推流摄像头进行直播
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE%202016-07-24%2000%E6%97%B607%E5%88%8621%E7%A7%92.jpg" alt="" class="shadow"/> 
+
+#### 三、用ffmpeg推流桌面以及推流摄像头进行直播
 
 #### 1.如果希望将桌面录制或者分享，可以使用命令行如下：
 
@@ -254,13 +246,13 @@ FFmpeg推流成功.6
 
 - 这个可以推桌面+麦克风，并且摄像头把人头放在界面下面
 
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2004362-1a1e3795c31827c1.png" alt="" class="shadow"/>
 
-![http://upload-images.jianshu.io/upload_images/2004362-1a1e3795c31827c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240](http://upload-images.jianshu.io/upload_images/2004362-1a1e3795c31827c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 Snip20160713_12.png
 
 
-### FFmpeg常用基本命令
+#### FFmpeg常用基本命令
 
 #### 1.分离视频音频流
 
