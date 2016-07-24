@@ -2,7 +2,7 @@
 layout: post
 title:  "BlackBerry刷机"
 date:   2016-01-29 09:38:45
-author:     "Asingers"
+author:     "Alpaca"
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgmac.jpg"
 subtitle: "日常搞机"
 tags:

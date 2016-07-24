@@ -3,7 +3,7 @@ layout: post
 title: "Mac 下慢网速模拟工具"
 subtitle: "开发必备"
 date: 2016-02-05 
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - Mac

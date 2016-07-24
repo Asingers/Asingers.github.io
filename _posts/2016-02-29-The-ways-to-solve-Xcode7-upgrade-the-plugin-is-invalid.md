@@ -3,7 +3,7 @@ layout: post
 title: "升级Xcode7插件无效的解决方法"
 subtitle: "The ways to solve Xcode7 upgrade the plugin is invalid"
 date: 2016-02-29 
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - iOS

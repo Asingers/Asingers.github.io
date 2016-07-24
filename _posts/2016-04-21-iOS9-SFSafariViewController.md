@@ -2,7 +2,7 @@
 layout: post
 title: "iOS9-SFSafariViewController"
 date: 2016-04-21
-author: "Asingers"
+author: "Alpaca"
 catalog: true
 subtitle: "iOS9 引入"
 categories: ios

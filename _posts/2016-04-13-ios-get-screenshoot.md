@@ -2,7 +2,7 @@
 layout: post
 title: "iOS开发-检测用户截屏,并获取所截图片"
 date: 2016-04-13
-author: "Asingers"
+author: "Alpaca"
 subtitle: "实用案例"
 categories: iOS
 tags:

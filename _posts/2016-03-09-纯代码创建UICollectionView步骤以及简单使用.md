@@ -3,7 +3,7 @@ layout: post
 title: "纯代码创建UICollectionView步骤以及简单使用"
 subtitle: "解读"
 date: 2016-03-08
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - iOS

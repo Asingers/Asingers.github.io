@@ -3,7 +3,7 @@ layout: post
 title: "iTerm 2 Oh My Zsh"
 subtitle: "DIY教程"
 date: 2016-02-19 
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - iOS

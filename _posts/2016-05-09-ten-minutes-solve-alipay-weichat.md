@@ -2,7 +2,7 @@
 layout: post
 title: "10分钟搞定支付宝和微信支付 的 各种填坑"
 date: 2016-05-09
-author: "Asingers"
+author: "Alpaca"
 catalog: true
 categories: ios
 tags:

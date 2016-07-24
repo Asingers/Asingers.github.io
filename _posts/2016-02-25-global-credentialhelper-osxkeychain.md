@@ -3,7 +3,7 @@ layout: post
 title: "解决Sourcetree 每次拉取提交都需要输入密码"
 subtitle: "解决方案 Mac保存密码"
 date: 2016-02-25 
-author: "Asingers"
+author: "Alpaca"
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgnsarry.jpg"
 categories: ios
 tags:

@@ -3,7 +3,7 @@ layout: post
 title: "iOS开发之如何跳到系统设置里的各种设置界面"
 subtitle: "How to jump to the various Settings in the system Settings"
 date: 2016-02-29 
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - iOS

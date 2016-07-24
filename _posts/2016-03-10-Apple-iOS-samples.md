@@ -3,7 +3,7 @@ layout: post
 title: "Mirror of Apple's iOS samples"
 subtitle: "整理"
 date: 2016-03-10
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - iOS

@@ -2,7 +2,7 @@
 layout: post
 title: "FDStackView —— Downward Compatible UIStackView (Part 2)"
 date: 2016-04-22
-author: "Asingers"
+author: "Alpaca"
 catalog: true
 subtitle: "Part 2"
 categories: ios

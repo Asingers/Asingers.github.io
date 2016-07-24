@@ -3,7 +3,7 @@ layout: post
 title: "在AWS上安装Jenkins"
 subtitle: "How To Install Jenkins On AWS Liunx"
 date: 2016-03-03
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - iOS

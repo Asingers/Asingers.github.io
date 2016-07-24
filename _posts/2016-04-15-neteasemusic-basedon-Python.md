@@ -2,7 +2,7 @@
 layout: post
 title: "基于Python编写的网易音乐客户端"
 date: 2016-04-15
-author: "Asingers"
+author: "Alpaca"
 subtitle: "有意思"
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/piano.png"
 categories: life

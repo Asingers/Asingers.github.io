@@ -3,7 +3,7 @@ layout: post
 title: "在AWS上搭建SVN"
 subtitle: "How To Install SVN On AWS Liunx"
 date: 2016-03-03
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - Linux
@@ -151,7 +151,7 @@ vi authz
 内容:
 
 	#!/usr/bin/perl
-	# write by Asingers, 2016-03-03
+	# write by Alpaca, 2016-03-03
 
 	use warnings;
 	use strict;

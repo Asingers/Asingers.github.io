@@ -3,7 +3,7 @@ layout: post
 title: "Mac 技巧"
 subtitle: "Mac 技巧合集"
 date: 2016-02-18 
-author: "Asingers"
+author: "Alpaca"
 categories: life
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/post_imgmacskills.jpeg"
 tags:

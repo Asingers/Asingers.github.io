@@ -3,7 +3,7 @@ layout: post
 title: "使用Jenkins搭建持续集成服务"
 subtitle: "Jenkins Service"
 date: 2016-03-01
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - iOS

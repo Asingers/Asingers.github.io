@@ -2,7 +2,7 @@
 layout: post
 title: "解耦神器 —— 统跳协议和Rewrite引擎"
 date: 2016-04-18
-author: "Asingers"
+author: "Alpaca"
 catalog: true
 subtitle: "统跳协议学习 一"
 categories: iOS

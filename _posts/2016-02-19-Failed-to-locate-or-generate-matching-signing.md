@@ -3,7 +3,7 @@ layout: post
 title: "关于苹果开发证书失效的解决方案"
 subtitle: "2016年2月14日Failed to locate or generate matching signing assets"
 date: 2016-02-19 
-author: "Asingers"
+author: "Alpaca"
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgWallions10654.jpeg"
 categories: ios
 tags:

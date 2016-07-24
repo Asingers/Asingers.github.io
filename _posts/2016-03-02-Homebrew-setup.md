@@ -3,7 +3,7 @@ layout: post
 title: "Homebrew安装时”-bash:brew:command not found”的问题"
 subtitle: "Homebrew安装"
 date: 2016-03-02
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - iOS

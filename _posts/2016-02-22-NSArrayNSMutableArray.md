@@ -3,7 +3,7 @@ layout: post
 title: "NSArray And NSMutableArray 常用操作梳理"
 subtitle: "深入理解"
 date: 2016-02-22 
-author: "Asingers"
+author: "Alpaca"
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgnsarry.jpg"
 categories: ios
 tags:

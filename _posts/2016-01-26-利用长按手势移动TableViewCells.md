@@ -2,7 +2,7 @@
 layout: post
 title:  "利用长按手势移动TableViewCells"
 date:   2016-01-26 15:38:45
-author:     "Asingers"
+author:     "Alpaca"
 comments: true
 categories: iOS
 tags:

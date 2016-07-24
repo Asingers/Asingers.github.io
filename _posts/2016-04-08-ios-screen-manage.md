@@ -2,7 +2,7 @@
 layout: post
 title: "iOS横竖屏控制和事件处理"
 date: 2016-04-11
-author: "Asingers"
+author: "Alpaca"
 subtitle: "又一篇"
 categories: iOS
 tags:

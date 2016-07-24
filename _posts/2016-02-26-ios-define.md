@@ -3,7 +3,7 @@ layout: post
 title: "iOS 开发常用宏"
 subtitle: "Macro definition is commonly used in ios development"
 date: 2016-02-26 
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - iOS

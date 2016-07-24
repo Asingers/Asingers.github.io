@@ -2,7 +2,7 @@
 layout: post
 title: "IMDB 8分以上电影"
 date: 2016-05-14
-author: "Asingers"
+author: "Alpaca"
 subtitle: "Movie Collection"
 catalog: true
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/8-movie.jpeg"

@@ -3,7 +3,7 @@ layout: post
 title: "Jekyll 安装"
 subtitle: "傻瓜模式"
 date: 2016-02-04 
-author: "Asingers"
+author: "Alpaca"
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgjekyll-guide.jpg"
 categories: jekyll
 tags:

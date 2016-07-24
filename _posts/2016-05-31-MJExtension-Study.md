@@ -2,7 +2,7 @@
 layout: post
 title: "MJExtension 整理"
 date: 2016-05-31
-author: "Asingers"
+author: "Alpaca"
 subtitle: "学习笔记"
 catalog: true
 categories: ios

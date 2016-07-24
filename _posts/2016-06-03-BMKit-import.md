@@ -2,7 +2,7 @@
 layout: post
 title: "百度地图SDK导入"
 date: 2016-06-03
-author: "Asingers"
+author: "Alpaca"
 subtitle: "学习笔记"
 catalog: true
 categories: ios

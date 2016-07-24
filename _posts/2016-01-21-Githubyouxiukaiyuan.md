@@ -2,7 +2,7 @@
 layout: post
 title:  "Github优秀开源项目大全"
 date:   2016-01-21 15:06:00
-author:     "Asingers"
+author:     "Alpaca"
 comments: true
 categories: iOS
 tags:

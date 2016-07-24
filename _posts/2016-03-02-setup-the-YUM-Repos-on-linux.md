@@ -3,7 +3,7 @@ layout: post
 title: "LINUX下YUM源配置"
 subtitle: "Change the yum source"
 date: 2016-03-02
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - iOS

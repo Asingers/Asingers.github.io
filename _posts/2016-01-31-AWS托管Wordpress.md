@@ -3,7 +3,7 @@ layout: post
 title: "教程：使用 Amazon Linux 托管 WordPress 博客"
 subtitle: "日常搞机"
 date: 2016-01-31 16:20:20
-author: "Asingers"
+author: "Alpaca"
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgWallions3743.png"
 categories: aws
 tags:

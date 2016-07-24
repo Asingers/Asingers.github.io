@@ -3,7 +3,7 @@ layout: post
 title: "Mac Jenkins Brew 安装"
 subtitle: "Jenkins Brew Way"
 date: 2016-03-02
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - iOS

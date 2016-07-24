@@ -2,7 +2,7 @@
 layout: post
 title: "导航调起第三方"
 date: 2016-07-08
-author: "Asingers"
+author: "Alpaca"
 subtitle: "学习笔记"
 catalog: true
 categories: ios
@@ -44,7 +44,7 @@ tags:
                 
                 NSString *address = [NSString stringWithFormat:@"%@%@",_destinationPTextField.text,_destinationCTextField.text];
 
-                NSString *webStr = [[NSString stringWithFormat:@"http://api.map.baidu.com/direction?origin=latlng:%f,%f|name:我的位置&destination=latlng:%f,%f|name:%@&mode=driving&region=我的位置&output=html&src=yourCompanyName|Asingers",_startLat, _startLong,_stoptLat,_stoptLong,address]  stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                NSString *webStr = [[NSString stringWithFormat:@"http://api.map.baidu.com/direction?origin=latlng:%f,%f|name:我的位置&destination=latlng:%f,%f|name:%@&mode=driving&region=我的位置&output=html&src=yourCompanyName|Alpaca",_startLat, _startLong,_stoptLat,_stoptLong,address]  stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 
                 [[UIApplication sharedApplication]openURL:[NSURL URLWithString:webStr]];
                  

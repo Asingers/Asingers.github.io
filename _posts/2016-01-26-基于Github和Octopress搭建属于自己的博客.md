@@ -3,7 +3,7 @@ layout: post
 title: "基于Github和Octopress搭建属于自己的博客"
 subtitle: "博客搭建"
 date: 2016-01-26 14:10:07 +0800
-author: "Asingers"
+author: "Alpaca"
 comments: true
 tags: 
     - 博客

@@ -2,7 +2,7 @@
 layout: post
 title: "Appium iOS 自动化测试环境搭建 "
 date: 2016-07-19
-author: "Asingers"
+author: "Alpaca"
 subtitle: "学习笔记"
 catalog: true
 categories: ios

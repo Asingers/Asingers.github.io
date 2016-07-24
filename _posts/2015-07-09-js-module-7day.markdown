@@ -4,7 +4,7 @@ title:      "JavaScript 模块化七日谈"
 subtitle:   "Keynote: JavaScript Modularization Journey"
 iframe:     "http://7xoawu.com1.z0.glb.clouddn.com/keynotejs_math.html"
 date:       2015-07-09
-author:     "Asingers"
+author:     "Alpaca"
 tags:
     - 前端开发
     - JavaScript

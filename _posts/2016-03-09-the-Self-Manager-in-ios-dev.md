@@ -3,7 +3,7 @@ layout: post
 title: "iOS 开发中的 Self-Manager 模式"
 subtitle: "解读"
 date: 2016-03-09
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - iOS

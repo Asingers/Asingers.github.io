@@ -3,7 +3,7 @@ layout: post
 title: "CALayer Animation - Replicator Animation"
 date: 2016-07-19
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-20_2016animation.jpeg"
-author: "Asingers"
+author: "Alpaca"
 subtitle: "学习笔记"
 catalog: true
 categories: ios

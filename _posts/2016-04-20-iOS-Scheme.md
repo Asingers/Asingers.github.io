@@ -2,7 +2,7 @@
 layout: post
 title: "iOS—Scheme是什么、怎么自定义Scheme、JLRoutes的使用"
 date: 2016-04-20
-author: "Asingers"
+author: "Alpaca"
 catalog: true
 subtitle: "URL Scheme整理"
 categories: ios

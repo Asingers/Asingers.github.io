@@ -4,7 +4,7 @@ title: "The dependency is not used in any concrete target"
 subtitle: "解决方法"
 date: 2016-03-01
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgnsarry.jpg"
-author: "Asingers"
+author: "Alpaca"
 categories: ios
 tags:
     - iOS

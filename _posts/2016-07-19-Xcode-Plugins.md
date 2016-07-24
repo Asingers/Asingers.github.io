@@ -2,7 +2,7 @@
 layout: post
 title: "我的Xcode 必备插件 "
 date: 2016-07-19
-author: "Asingers"
+author: "Alpaca"
 subtitle: "学习笔记"
 catalog: true
 categories: ios

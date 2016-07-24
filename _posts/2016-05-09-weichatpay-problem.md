@@ -2,7 +2,7 @@
 layout: post
 title: "微信支付遇到跳转只有一个确定的问题"
 date: 2016-05-09
-author: "Asingers"
+author: "Alpaca"
 subtitle: "你可能遇到的问题"
 catalog: true
 categories: ios
