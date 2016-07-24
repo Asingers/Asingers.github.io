@@ -1,7 +1,7 @@
 # Site settings
 title: 解忧の杂货
-owner: Asingers
-SEOTitle: Asingers | Blog
+owner: Alpaca
+SEOTitle: Alpaca | Blog
 # header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgWallions10432.jpeg"
 header-img: http://7xqmgj.com1.z0.glb.clouddn.com/header_imgdesktop.jpg
 email: asingers@9dic.com
@@ -13,15 +13,15 @@ permalink: :categories/:title/
 
 
 # SNS settings
-RSS: true
-weibo_username:     
+RSS: false
+# weibo_username:     
 #zhihu_username:    Asingers
 #github_username:   Asingers
-twitter_username:  Asingersz
-facebook_username:  Asingers.z
+# twitter_username:  Asingersz
+# facebook_username:  Asingers.z
 
 # E-mail:
-mail_username: 	    asingers@9dic
+# mail_username: 	    asingers@9dic
 
 
 
