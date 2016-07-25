@@ -3,7 +3,7 @@ layout: post
 title: "Objective-C 消息发送与转发机制原理"
 date: 2016-07-25
 author: "Alpaca"
-header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-25_2016objc_msgsend.jpeg"
+header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-25_2016objec.jpeg"
 subtitle: "学习笔记"
 catalog: true
 categories: ios
