@@ -21,13 +21,11 @@ tags:
 
     objc_msgSend(receiver, selector)
     
-
-
-
 如果消息含有参数，则为：
 
     objc_msgSend(receiver, selector, arg1, arg2, ...)
-    
+   
+
 如果消息的接收者能够找到对应的`selector`，那么就相当于直接执行了接收者这个对象的特定方法；否则，消息要么被转发，或是临时向接收者动态添加这个`selector`对应的实现内容，要么就干脆玩完崩溃掉。
 
 现在可以看出`[receiver message]`真的不是一个简简单单的方法调用。因为这只是在编译阶段确定了要向接收者发送`message`这条消息，而`receive`将要如何响应这条消息，那就要看运行时发生的情况来决定了。
@@ -67,14 +65,17 @@ Runtime 系统是一个由一系列函数和数据结构组成，具有公共接
 
     idobjc_msgSend (idself, SEL op, ... );
     
+
 下面将会逐渐展开介绍一些术语，其实它们都对应着数据结构。
 
 ### SEL
 
 `objc_msgSend`函数第二个参数类型为`SEL`，它是`selector`在Objc中的表示类型（Swift中是`Selector`类）。`selector`是方法选择器，可以理解为区分方法的 ID，而这个 ID 的数据结构是`SEL`:
 
+
     typedefstructobjc_selector *SEL;
     
+
 其实它就是个映射到方法的C字符串，你可以用 Objc 编译器命令`@selector()`或者 Runtime 系统的`sel_registerName`函数来获得一个`SEL`类型的方法选择器。
 
 不同类中相同名字的方法所对应的方法选择器是相同的，即使方法名字相同而变量类型不同也会导致它们具有相同的方法选择器，于是 Objc 中方法命名有时会带上参数类型(`NSNumber`一堆抽象工厂方法拿走不谢)，Cocoa 中有好多长长的方法哦。
@@ -83,11 +84,15 @@ Runtime 系统是一个由一系列函数和数据结构组成，具有公共接
 
 `objc_msgSend`第一个参数类型为`id`，大家对它都不陌生，它是一个指向类实例的指针：
 
+
+
     typedefstructobjc_object *id;
     
+
 那`objc_object`又是啥呢：
 
-    structobjc_object{; Class isa; };;
+    structobjc_object{ Class isa; };
+    
 
 `objc_object`结构体包含一个`isa`指针，根据`isa`指针就可以顺藤摸瓜找到对象所属的类。
 
@@ -97,11 +102,13 @@ PS:`isa`指针不总是指向实例对象所属的类，不能依靠它来确定
 
 之所以说`isa`是指针是因为`Class`其实是一个指向`objc_class`结构体的指针：
 
+
     typedefstructobjc_class *Class;
     
 而`objc_class`就是我们摸到的那个瓜，里面的东西多着呢：
-{
-    structobjc_class {;
+
+
+    structobjc_class {
     Class isa  OBJC_ISA_AVAILABILITY;
     
     #if !__OBJC2__
@@ -116,11 +123,8 @@ PS:`isa`指针不总是指向实例对象所属的类，不能依靠它来确定
     structobjc_protocol_list *protocols                     OBJC2_UNAVAILABLE;
     #endif
     
-    }; OBJC2_UNAVAILABLE;
+    } OBJC2_UNAVAILABLE;
     
-
-
-
 可以看到运行时一个类还关联了它的超类指针，类名，成员变量，方法，缓存，还有附属的协议。
 
 PS:`OBJC2_UNAVAILABLE`之类的宏定义是苹果在  Objc  中对系统运行版本进行约束的黑魔法，为的是兼容非Objective-C 2.0的遗留逻辑，但我们仍能从中获得一些有价值的信息，有兴趣的可以查看源代码。
@@ -132,16 +136,17 @@ PS：任性的话可以在Category中添加`@dynamic`的属性，并利用运行
 
 其中`objc_ivar_list`和`objc_method_list`分别是成员变量列表和方法列表：
 
-    structobjc_ivar_list {;
+
+    structobjc_ivar_list {
     intivar_count                                           OBJC2_UNAVAILABLE;
     #ifdef __LP64__
     intspace                                                OBJC2_UNAVAILABLE;
     #endif
     /* variable length structure */
     structobjc_ivar ivar_list[1]                            OBJC2_UNAVAILABLE;
-    };                                                            OBJC2_UNAVAILABLE;
+    }                                                            OBJC2_UNAVAILABLE;
     
-    structobjc_method_list {;
+    structobjc_method_list {
     structobjc_method_list *obsolete                        OBJC2_UNAVAILABLE;
     
     intmethod_count                                         OBJC2_UNAVAILABLE;
@@ -150,7 +155,7 @@ PS：任性的话可以在Category中添加`@dynamic`的属性，并利用运行
     #endif
     /* variable length structure */
     structobjc_method method_list[1]                        OBJC2_UNAVAILABLE;
-    };
+    }
     
 
 如果你C语言不是特别好，可以直接理解为`objc_ivar_list`结构体存储着`objc_ivar`数组列表，而`objc_ivar`结构体存储了类的单个成员变量的信息；同理`objc_method_list`结构体存储着`objc_method`数组列表，而`objc_method`结构体存储了类的某个方法的信息。
@@ -169,13 +174,15 @@ PS：任性的话可以在Category中添加`@dynamic`的属性，并利用运行
 
     typedef struct objc_method *Method;
     
+
 而`objc_method`在上面的方法列表中提到过，它存储了方法名，方法类型和方法实现：
 
-    structobjc_method {;
+    structobjc_method {
     SEL method_name                                          OBJC2_UNAVAILABLE;
     char*method_types                                       OBJC2_UNAVAILABLE;
     IMP method_imp                                           OBJC2_UNAVAILABLE;
-    };                                                            OBJC2_UNAVAILABLE;
+    }                                                            OBJC2_UNAVAILABLE;
+    
 
 - 方法名类型为`SEL`，前面提到过相同名字的方法即使在不同类中定义，它们的方法选择器也相同。
 - 方法类型`method_types`是个`char`指针，其实存储着方法的参数类型和返回值类型。
@@ -187,44 +194,42 @@ PS：任性的话可以在Category中添加`@dynamic`的属性，并利用运行
 `Ivar`是一种代表类中实例变量的类型。
 
     typedefstructobjc_ivar *Ivar;
-    
+   
+
 而`objc_ivar`在上面的成员变量列表中也提到过：
 
 
-    structobjc_ivar {;
+    structobjc_ivar {
     char*ivar_name                                          OBJC2_UNAVAILABLE;
     char*ivar_type                                          OBJC2_UNAVAILABLE;
     intivar_offset                                          OBJC2_UNAVAILABLE;
     #ifdef __LP64__
     intspace                                                OBJC2_UNAVAILABLE;
     #endif
-    };                                                            OBJC2_UNAVAILABLE;
+    }                                                            OBJC2_UNAVAILABLE;
     
-
 可以根据实例查找其在类中的名字，也就是“反射”：
 
-
-    -(NSString*)nameWithInstance:(id)instance {;
+    -(NSString*)nameWithInstance:(id)instance {
     unsignedintnumIvars =0;
     NSString*key=nil;
     Ivar * ivars = class_copyIvarList([selfclass], &numIvars);
-    for(inti =0; i < numIvars; i++) {;
+    for(inti =0; i < numIvars; i++) {
     Ivar thisIvar = ivars[i];
     constchar*type = ivar_getTypeEncoding(thisIvar);
     NSString*stringType =  [NSStringstringWithCString:type encoding:NSUTF8StringEncoding];
-    if(![stringType hasPrefix:@"@"]) {;
+    if(![stringType hasPrefix:@"@"]) {
     continue;
-    };
-    if((object_getIvar(self, thisIvar) == instance)) {;//此处若 crash 不要慌！
+    }
+    if((object_getIvar(self, thisIvar) == instance)) {//此处若 crash 不要慌！
     key = [NSStringstringWithUTF8String:ivar_getName(thisIvar)];
     break;
-    };
-    };
+    }
+    }
     free(ivars);
     returnkey;
-    };
+    }
     
-
 
 `class_copyIvarList`函数获取的不仅有实例变量，还有属性。但会在原本的属性名前加上一个下划线。
 
@@ -244,16 +249,15 @@ PS：任性的话可以在Category中添加`@dynamic`的属性，并利用运行
 在`runtime.h`中Cache的定义如下：
 
     typedefstructobjc_cache *Cache
-    
+   
 
 还记得之前`objc_class`结构体中有一个`struct objc_cache *cache`吧，它到底是缓存啥的呢，先看看`objc_cache`的实现：
 
-
-    structobjc_cache {;
+    structobjc_cache {
     unsignedintmask/* total = mask + 1 */OBJC2_UNAVAILABLE;
     unsignedintoccupied                                    OBJC2_UNAVAILABLE;
     Method buckets[1]                                        OBJC2_UNAVAILABLE;
-    };;
+    };
     
 
 `Cache`为方法调用的性能进行优化，通俗地讲，每当实例对象接收到一个消息时，它不会直接在`isa`指向的类的方法列表中遍历查找能够响应消息的方法，因为这样效率太低了，而是优先在`Cache`中查找。Runtime 系统会把被调用的方法存到`Cache`中（理论上讲一个方法如果被调用，那么它有可能今后还会被调用），下次查找的时候效率更高。这根计算机组成原理中学过的 CPU 绕过主存先访问`Cache`的道理挺像，而我猜苹果为提高`Cache`命中率应该也做了努力吧。
@@ -262,29 +266,25 @@ PS：任性的话可以在Category中添加`@dynamic`的属性，并利用运行
 
 `@property`标记了类中的属性，这个不必多说大家都很熟悉，它是一个指向`objc_property`结构体的指针：
 
+
     typedefstructobjc_property *Property;
     typedefstructobjc_property *objc_property_t;//这个更常用
-
+    
 可以通过`class_copyPropertyList`和`protocol_copyPropertyList`方法来获取类和协议中的属性：
-
 
     objc_property_t*class_copyPropertyList(Class cls,unsignedint*outCount)
     objc_property_t*protocol_copyPropertyList(Protocol *proto,unsignedint*outCount)
     
-
-
-
 返回类型为指向指针的指针，哈哈，因为属性列表是个数组，每个元素内容都是一个`objc_property_t`指针，而这两个函数返回的值是指向这个数组的指针。
 
 举个栗子，先声明一个类：
 
-
-    @interfaceLender: NSObject {;
+    @interfaceLender: NSObject {
     float alone;
-    };
+    }
     @propertyfloat alone;
     @end
-    
+   
 
 你可以用下面的代码获取属性列表：
 
@@ -294,7 +294,6 @@ PS：任性的话可以在Category中添加`@dynamic`的属性，并利用运行
     
 你可以用`property_getName`函数来查找属性名称：
 
-
     const char *property_getName(objc_property_tproperty)
 
 你可以用`class_getProperty`和`protocol_getProperty`通过给出的名称来在类和协议中获取属性的引用：
@@ -302,22 +301,22 @@ PS：任性的话可以在Category中添加`@dynamic`的属性，并利用运行
     objc_property_tclass_getProperty(Class cls,constchar*name)
     objc_property_tprotocol_getProperty(Protocol *proto,constchar*name, BOOL isRequiredProperty, BOOL isInstanceProperty)
     
-
 你可以用`property_getAttributes`函数来发掘属性的名称和`@encode`类型字符串：
 
-
     const char *property_getAttributes(objc_property_tproperty)
+    
 
 把上面的代码放一起，你就能从一个类中获取它的属性啦：
+
 
     id LenderClass = objc_getClass("Lender");
     unsignedintoutCount, i;
     objc_property_t *properties = class_copyPropertyList(LenderClass, &outCount);
-    for(i =0; i < outCount; i++) {;
+    for(i =0; i < outCount; i++) {
     objc_property_tproperty= properties[i];
     fprintf(stdout,"%s %s\n", property_getName(property), property_getAttributes(property));
-    };
-    
+    }
+  
 
 对比下`class_copyIvarList`函数，使用`class_copyPropertyList`函数只能获取类的属性，而不包含成员变量。但此时获取的属性名是不带下划线的。
 
@@ -361,22 +360,23 @@ PS：有木有发现这些函数的命名规律哦？带“Super”的是消息�
 
 之所以说它们是隐藏的是因为在源代码方法的定义中并没有声明这两个参数。它们是在代码被编译时被插入实现中的。尽管这些参数没有被明确声明，在源代码中我们仍然可以引用它们。在下面的例子中，`self`引用了接收者对象，而`_cmd`引用了方法本身的选择器：
 
-
     - strange
-    {;
+    {
     id  target = getTheReceiver();
     SELmethod=getTheMethod();
     
     if( target ==self||method== _cmd )
     returnnil;
     return[target performSelector:method];
-    };
+    }
+    
 
 在这两个参数中，`self`更有用。实际上,它是在方法实现中访问消息接收者对象的实例变量的途径。
 
 而当方法中的`super`关键字接收到消息时，编译器会创建一个`objc_super`结构体：
 
-    structobjc_super{;idreceiver;Classclass;};;
+    structobjc_super{idreceiver;Classclass;};
+    
 
 这个结构体指明了消息应该被传递给特定超类的定义。但`receiver`仍然是`self`本身，这点需要注意，因为当我们想通过`[super class]`获取超类时，编译器只是将指向`self`的`id`指针和`class`的SEL传递给了`objc_msgSendSuper`函数，因为只有在`NSObject`类才能找到`class`方法，然后`class`方法调用`object_getClass()`，接着调用`objc_msgSend(objc_super->receiver, @selector(class))`，传入的第一个参数是指向`self`的`id`指针，与调用`[self class]`相同，所以我们得到的永远都是`self`的类型。
 
@@ -395,7 +395,6 @@ PS：有木有发现这些函数的命名规律哦？带“Super”的是消息�
     for( i =0; i <1000; i++ )
     setter(targetList[i], @selector(setFilled:), YES);
     
-
 当方法被当做函数调用时，上节提到的两个隐藏参数就需要我们明确给出了。上面的例子调用了1000次函数，你可以试试直接给`target`发送1000次`setFilled:`消息会花多久。
 
 PS：`methodForSelector:`方法是由 Cocoa 的 Runtime 系统提供的，而不是 Objc 自身的特性。
@@ -405,21 +404,22 @@ PS：`methodForSelector:`方法是由 Cocoa 的 Runtime 系统提供的，而不
 你可以动态地提供一个方法的实现。例如我们可以用`@dynamic`关键字在类的实现文件中修饰一个属性：
 
     @dynamicpropertyName;
-
+    
 这表明我们会为这个属性动态提供存取方法，也就是说编译器不会再默认为我们生成`setPropertyName:`和`propertyName`方法，而需要我们动态提供。我们可以通过分别重载`resolveInstanceMethod:`和`resolveClassMethod:`方法分别添加实例方法实现和类方法实现。因为当 Runtime 系统在`Cache`和方法分发表中（包括超类）找不到要执行的方法时，Runtime会调用`resolveInstanceMethod:`或`resolveClassMethod:`来给程序员一次动态添加方法实现的机会。我们需要用`class_addMethod`函数完成向特定类添加特定方法实现的操作：
 
-    void dynamicMethodIMP(id self, SEL _cmd) {;
+
+    void dynamicMethodIMP(id self, SEL _cmd) {
     // implementation ....
-    };
+    }
     @implementationMyClass
     + (BOOL)resolveInstanceMethod:(SEL)aSEL
-    {;
-    if(aSEL ==@selector(resolveThisMethodDynamically)) {;
+    {
+    if(aSEL ==@selector(resolveThisMethodDynamically)) {
     class_addMethod([selfclass],aSEL,(IMP) dynamicMethodIMP,"v@:");
     returnYES;
-    };
+    }
     return[superresolveInstanceMethod:aSEL];
-    };
+    }
     @end
     
 
@@ -436,38 +436,37 @@ PS：动态方法解析会在消息转发机制浸入前执行。如果`responds
     + (void)learnClass:(NSString*) string;
     - (void)goToSchool:(NSString*) name;
     @end
-
+    
 m 文件：
-
 
     #import"Student.h"
     #import<objc/runtime.h>
     
     @implementationStudent
-    + (BOOL)resolveClassMethod:(SEL)sel {;
-    if(sel ==@selector(learnClass:)) {;
+    + (BOOL)resolveClassMethod:(SEL)sel {
+    if(sel ==@selector(learnClass:)) {
     class_addMethod(object_getClass(self), sel, class_getMethodImplementation(object_getClass(self),@selector(myClassMethod:)),"v@:");
     returnYES;
-    };
+    }
     return[class_getSuperclass(self) resolveClassMethod:sel];
-    };
+    }
     
     + (BOOL)resolveInstanceMethod:(SEL)aSEL
-    {;
-    if(aSEL ==@selector(goToSchool:)) {;
+    {
+    if(aSEL ==@selector(goToSchool:)) {
     class_addMethod([selfclass], aSEL, class_getMethodImplementation([selfclass],@selector(myInstanceMethod:)),"v@:");
     returnYES;
-    };
+    }
     return[superresolveInstanceMethod:aSEL];
-    };
+    }
     
-    + (void)myClassMethod:(NSString*)string {;
+    + (void)myClassMethod:(NSString*)string {
     NSLog(@"myClassMethod = %@", string);
-    };
+    }
     
-    - (void)myInstanceMethod:(NSString*)string {;
+    - (void)myInstanceMethod:(NSString*)string {
     NSLog(@"myInstanceMethod = %@", string);
-    };
+    }
     @end
     
 
@@ -488,12 +487,12 @@ m 文件：
 在消息转发机制执行前，Runtime 系统会再给我们一次偷梁换柱的机会，即通过重载`- (id)forwardingTargetForSelector:(SEL)aSelector`方法替换消息的接受者为其他对象：
 
     -(id)forwardingTargetForSelector:(SEL)aSelector
-    {;
-    if(aSelector ==@selector(mysteriousMethod:)){;
+    {
+    if(aSelector ==@selector(mysteriousMethod:)){
     return alternateObject;
-    };
+    }
     return[super forwardingTargetForSelector:aSelector];
-    };
+    }
     
 
 毕竟消息转发要耗费更多时间，抓住这次机会将消息重定向给别人是个不错的选择，不过千万别返回`self`，因为那样会死循环。如果此方法返回nil或self,则会进入消息转发机制(`forwardInvocation:`);否则将向返回的对象重新发送消息。
@@ -501,27 +500,25 @@ m 文件：
 如果想替换**类方法**的接受者，需要覆写`+ (id)forwardingTargetForSelector:(SEL)aSelector`方法，并返回**类对象**：
 
 
-    + (id)forwardingTargetForSelector:(SEL)aSelector {;
-    if(aSelector ==@selector(xxx)) {;
+    + (id)forwardingTargetForSelector:(SEL)aSelector {
+    if(aSelector ==@selector(xxx)) {
     returnNSClassFromString(@"Class name");
-    };
+    }
     return[superforwardingTargetForSelector:aSelector];
-    };
+    }
     
-
-
 ### 转发
 
 当动态方法解析不作处理返回`NO`时，消息转发机制会被触发。在这时`forwardInvocation:`方法会被执行，我们可以重写这个方法来定义我们的转发逻辑：
 
     - (void)forwardInvocation:(NSInvocation *)anInvocation
-    {;
+    {
     if([someOtherObjectrespondsToSelector:
     [anInvocation selector]])
     [anInvocationinvokeWithTarget:someOtherObject];
     else
     [superforwardInvocation:anInvocation];
-    };
+    }
     
 
 该消息的唯一参数是个`NSInvocation`类型的对象——该对象封装了原始的消息和消息的参数。我们可以实现`forwardInvocation:`方法来对不能处理的消息做一些默认的处理，也可以将消息转发给其他对象来处理，而不抛出错误。
@@ -555,37 +552,35 @@ m 文件：
     if( [aWarriorrespondsToSelector:@selector(negotiate)] )
     ...
     
-
 结果是`NO`，尽管它能够接受`negotiate`消息而不报错，因为它靠转发消息给`Diplomat`类来响应消息。
 
 如果你为了某些意图偏要“弄虚作假”让别人以为`Warrior`继承到了`Diplomat`的`negotiate`方法，你得重新实现`respondsToSelector:`和`isKindOfClass:`来加入你的转发算法：
 
-
     - (BOOL)respondsToSelector:(SEL)aSelector
-    {;
+    {
     if( [super respondsToSelector:aSelector] )
     returnYES;
-    else{;
+    else{
     /* Here, test whethertheaSelector message can     *
     * be forwardedtoanother objectandwhetherthat*
     * object can respondtoit. Return YESifitcan.  */
-    };
+    }
     returnNO;
-    };
+    }
     
 
 除了`respondsToSelector:`和`isKindOfClass:`之外，`instancesRespondToSelector:`中也应该写一份转发算法。如果使用了协议，`conformsToProtocol:`同样也要加入到这一行列中。类似地，如果一个对象转发它接受的任何远程消息，它得给出一个`methodSignatureForSelector:`来返回准确的方法描述，这个方法会最终响应被转发的消息。比如一个对象能给它的替代者对象转发消息，它需要像下面这样实现`methodSignatureForSelector:`：
 
-    - (NSMethodSignature*)methodSignatureForSelector:(SEL)selector
-    {;
-    NSMethodSignature* signature = [supermethodSignatureForSelector:selector];
-    if(!signature) {;
-    signature = [surrogatemethodSignatureForSelector:selector];
-    };
-    returnsignature;
-    };
-    
 
+    - (NSMethodSignature*)methodSignatureForSelector:(SEL)selector
+    {
+    NSMethodSignature* signature = [supermethodSignatureForSelector:selector];
+    if(!signature) {
+    signature = [surrogatemethodSignatureForSelector:selector];
+    }
+    returnsignature;
+    }
+    
 ## 健壮的实例变量(Non Fragile ivars)
 
 在 Runtime 的现行版本中，最大的特点就是健壮的实例变量。当一个类被编译时，实例变量的布局也就形成了，它表明访问类的实例变量的位置。从对象头部开始，实例变量依次根据自己所占空间而产生位移：
@@ -608,7 +603,6 @@ m 文件：
 
 在 OS X 10.6 之后，Runtime系统让Objc支持向对象动态添加变量。涉及到的函数有以下三个：
 
-
     voidobjc_setAssociatedObject(idobject,constvoid*key, idvalue, objc_AssociationPolicy policy);
     idobjc_getAssociatedObject(idobject,constvoid*key);
     voidobjc_removeAssociatedObjects(idobject);
@@ -616,13 +610,13 @@ m 文件：
 
 这些方法以键值对的形式动态地向对象添加、获取或删除关联值。其中关联政策是一组枚举常量：
 
-    enum{;
+    enum{
     OBJC_ASSOCIATION_ASSIGN  =0,
     OBJC_ASSOCIATION_RETAIN_NONATOMIC  =1,
     OBJC_ASSOCIATION_COPY_NONATOMIC  =3,
     OBJC_ASSOCIATION_RETAIN  =01401,
     OBJC_ASSOCIATION_COPY  =01403
-    };;
+    };
     
 
 这些常量对应着引用关联值的政策，也就是 Objc 内存管理的引用计数机制。**有关 Objective-C 引用计数机制的原理，可以查看[这篇文章](http://yulingtianxia.com/blog/2015/12/06/The-Principle-of-Refenrence-Counting/)**。
@@ -633,13 +627,14 @@ m 文件：
 
 这里摘抄一个 NSHipster 的例子：
 
+
     #import<objc/runtime.h>
     
     @implementationUIViewController(Tracking)
     
-    + (void)load {;
+    + (void)load {
     staticdispatch_once_tonceToken;
-    dispatch_once(&onceToken, ^{;
+    dispatch_once(&onceToken, ^{
     Class aClass = [selfclass];
     
     SEL originalSelector =@selector(viewWillAppear:);
@@ -660,33 +655,33 @@ m 文件：
     method_getImplementation(swizzledMethod),
     method_getTypeEncoding(swizzledMethod));
     
-    if(didAddMethod) {;
+    if(didAddMethod) {
     class_replaceMethod(aClass,
     swizzledSelector,
     method_getImplementation(originalMethod),
     method_getTypeEncoding(originalMethod));
-    };else{;
+    }else{
     method_exchangeImplementations(originalMethod, swizzledMethod);
-    };
-    };);
-    };
+    }
+    });
+    }
     
     #pragma mark - Method Swizzling
     
-    - (void)xxx_viewWillAppear:(BOOL)animated {;
+    - (void)xxx_viewWillAppear:(BOOL)animated {
     [selfxxx_viewWillAppear:animated];
     NSLog(@"viewWillAppear: %@",self);
-    };
+    }
     
     @end
     
+
 
 上面的代码通过添加一个`Tracking`类别到`UIViewController`类中，将`UIViewController`类的`viewWillAppear:`方法和`Tracking`类别中`xxx_viewWillAppear:`方法的实现相互调换。Swizzling 应该在`+load`方法中实现，因为`+load`是在一个类最开始加载时调用。`dispatch_once`是GCD中的一个方法，它保证了代码块只执行一次，并让其为一个原子操作，线程安全是很重要的。
 
 如果类中不存在要替换的方法，那就先用`class_addMethod`和`class_replaceMethod`函数添加和替换两个方法的实现；如果类中已经有了想要替换的方法，那么就调用`method_exchangeImplementations`函数交换了两个方法的`IMP`，这是苹果提供给我们用于实现 Method Swizzling 的便捷方法。
 
 可能有人注意到了这行:
-
 
     // When swizzling aclassmethod,usethefollowing:
     //ClassaClass=object_getClass((id)self);
@@ -695,19 +690,18 @@ m 文件：
     //MethodswizzledMethod=class_getClassMethod(aClass, swizzledSelector);
     
 
+
 `object_getClass((id)self)`与`[self class]`返回的结果类型都是`Class`,但前者为元类,后者为其本身,因为此时`self`为`Class`而不是实例.注意`[NSObject class]`与`[object class]`的区别：
 
 
-    + (Class)class{;
+    + (Class)class{
     returnself;
-    };
+    }
     
-    - (Class)class{;
+    - (Class)class{
     returnobject_getClass(self);
-    };
+    }
     
-
-
 PS:如果类中没有想被替换实现的原方法时，`class_replaceMethod`相当于直接调用`class_addMethod`向类中添加该方法的实现；否则调用`method_setImplementation`方法，`types`参数会被忽略。`method_exchangeImplementations`方法做的事情与如下的原子操作等价：
 
     IMP imp1 = method_getImplementation(m1);
@@ -715,27 +709,25 @@ PS:如果类中没有想被替换实现的原方法时，`class_replaceMethod`�
     method_setImplementation(m1, imp2);
     method_setImplementation(m2, imp1);
     
-
-
 最后`xxx_viewWillAppear:`方法的定义看似是递归调用引发死循环，其实不会的。因为`[self xxx_viewWillAppear:animated]`消息会动态找到`xxx_viewWillAppear:`方法的实现，而它的实现已经被我们与`viewWillAppear:`方法实现进行了互换，所以这段代码不仅不会死循环，如果你把`[self xxx_viewWillAppear:animated]`换成`[self viewWillAppear:animated]`反而会引发死循环。
 
 看到有人说`+load`方法本身就是线程安全的，因为它在程序刚开始就被调用，很少会碰到并发问题，于是 stackoverflow 上也有大神给出了另一个 Method Swizzling 的实现：
 
-    - (void)replacementReceiveMessage:(const structBInstantMessage*)arg1 {;
+    - (void)replacementReceiveMessage:(const structBInstantMessage*)arg1 {
     NSLog(@"arg1 is %@", arg1);
     [self replacementReceiveMessage:arg1];
-    };
-    + (void)load {;
+    }
+    + (void)load {
     SELoriginalSelector= @selector(ReceiveMessage:);
     SEL overrideSelector = @selector(replacementReceiveMessage:);
     MethodoriginalMethod= class_getInstanceMethod(self,originalSelector);
     Method overrideMethod = class_getInstanceMethod(self, overrideSelector);
-    if (class_addMethod(self,originalSelector,method_getImplementation(overrideMethod), method_getTypeEncoding(overrideMethod))) {;
+    if (class_addMethod(self,originalSelector,method_getImplementation(overrideMethod), method_getTypeEncoding(overrideMethod))) {
     class_replaceMethod(self, overrideSelector, method_getImplementation(originalMethod),method_getTypeEncoding(originalMethod));
-    }; else {;
+    } else {
     method_exchangeImplementations(originalMethod,overrideMethod);
-    };
-    };
+    }
+    }
     
 
 上面的代码同样要添加在某个类的类别中，相比第一个种实现，只是去掉了`dispatch_once`部分。
@@ -750,55 +742,57 @@ Method Swizzling 的确是一个值得深入研究的话题，Method Swizzling �
 
 在用 SpriteKit 写游戏的时候,因为 API 本身有一些缺陷(增删节点时不考虑父节点是否存在啊,很容易崩溃啊有木有!),我在 Swift 上使用 Method Swizzling弥补这个缺陷:
 
-    extensionSKNode{;
+    extensionSKNode{
     
-    classfuncyxy_swizzleAddChild(){;
+    classfuncyxy_swizzleAddChild(){
     letcls =SKNode.self
     letoriginalSelector =Selector("addChild:")
     letswizzledSelector =Selector("yxy_addChild:")
     letoriginalMethod = class_getInstanceMethod(cls, originalSelector)
     letswizzledMethod = class_getInstanceMethod(cls, swizzledSelector)
     method_exchangeImplementations(originalMethod, swizzledMethod)
-    };
+    }
     
-    classfuncyxy_swizzleRemoveFromParent(){;
+    classfuncyxy_swizzleRemoveFromParent(){
     letcls =SKNode.self
     letoriginalSelector =Selector("removeFromParent")
     letswizzledSelector =Selector("yxy_removeFromParent")
     letoriginalMethod = class_getInstanceMethod(cls, originalSelector)
     letswizzledMethod = class_getInstanceMethod(cls, swizzledSelector)
     method_exchangeImplementations(originalMethod, swizzledMethod)
-    };
+    }
     
-    funcyxy_addChild(node: SKNode){;
-    ifnode.parent ==nil{;
+    funcyxy_addChild(node: SKNode){
+    ifnode.parent ==nil{
     self.yxy_addChild(node)
-    };
-    else{;
+    }
+    else{
     println("This node has already a parent!\(node.name)")
-    };
-    };
+    }
+    }
     
-    funcyxy_removeFromParent(){;
-    ifparent !=nil{;
-    dispatch_async(dispatch_get_main_queue(), {; () ->Voidin
+    funcyxy_removeFromParent(){
+    ifparent !=nil{
+    dispatch_async(dispatch_get_main_queue(), { () ->Voidin
     self.yxy_removeFromParent()
-    };)
-    };
-    else{;
+    })
+    }
+    else{
     println("This node has no parent!\(name)")
-    };
-    };
+    }
+    }
     
-    };
-    
+    }
 
 
 然后其他地方调用那两个类方法:
 
+
     SKNode.yxy_swizzleAddChild()
     SKNode.yxy_swizzleRemoveFromParent()
     
+
+
 
 因为 Swift 中的 extension 的特殊性,最好在某个类的`load()`方法中调用上面的两个方法.我是在AppDelegate 中调用的,于是保证了应用启动时能够执行上面两个方法.
 
@@ -811,6 +805,7 @@ Method Swizzling 的确是一个值得深入研究的话题，Method Swizzling �
 - [Objective-C Runtime Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008048)
 - [Objective-C runtime之运行时的基本特点](http://blog.csdn.net/wzzvictory/article/details/8615569)
 - [Understanding the Objective-C Runtime](http://cocoasamurai.blogspot.jp/2010/01/understanding-objective-c-runtime.html)
+
 
 > 原文来自: [玉令天下的博客](http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/#id) 感谢他的分享 
 
