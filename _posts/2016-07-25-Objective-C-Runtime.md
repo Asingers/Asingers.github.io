@@ -3,7 +3,7 @@ layout: post
 title: "Objective-C Runtime"
 date: 2016-07-25
 author: "Alpaca"
-header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-25_2016Runtime.jpeg"
+header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/2016-07-25_2016runtime.jpeg"
 subtitle: "学习笔记"
 catalog: true
 categories: ios
