@@ -20,7 +20,7 @@ tags:
 #### 问题2.截图告知你什么问题
 
 
-<img src="http://upload-images.jianshu.io/upload_images/616981-d6540c725f3801a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" class="shadow"/>
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-08-02_616981-d6540c725f3801a4.png" alt="" class="shadow"/>
 
 
 
@@ -41,10 +41,10 @@ tags:
     （4），由于后期多项目的接入，让我知道一个算是万能方法吧，就是始终保持Header Search Paths 和 Library Search Paths 都能找到你导入的openssl的正确路径即可，已尝试多遍，是能解决以上问题（求黑）
 
 
-<img src="http://upload-images.jianshu.io/upload_images/616981-b71f879b0c85fb6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" class="shadow"/>
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-08-02_616981-b71f879b0c85fb6a.png" alt="" class="shadow"/>
 
 
-<img src="http://upload-images.jianshu.io/upload_images/616981-e833ce4b6bd3cb57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" class="shadow"/>
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-08-02_616981-e833ce4b6bd3cb57.png" alt="" class="shadow"/>
 
 
 
@@ -167,7 +167,7 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 截图如下，由于公司同时接入支付宝和微信支付，所以导入的库就多了点咯：
 
-<img src="http://upload-images.jianshu.io/upload_images/616981-2e9fde123b91a6d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" class="shadow"/> 
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-08-02_616981-2e9fde123b91a6d5.png" alt="" class="shadow"/> 
 
 
 
@@ -183,13 +183,13 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 symbol(s) not found for architecture arm64
 
 
-<img src="http://upload-images.jianshu.io/upload_images/616981-52c8b3ed04cf400f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" class="shadow"/> 
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-08-02_616981-52c8b3ed04cf400f.png" alt="" class="shadow"/> 
 
 解决办法
 就是导入系统库了
 
 
-<img src="http://upload-images.jianshu.io/upload_images/616981-3a750ed6a81bdc43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" class="shadow"/> 
+<img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-08-02_616981-3a750ed6a81bdc43.png" alt="" class="shadow"/> 
 
 
 #### 问题7：终于到微信了，接入微信，你就开心了
