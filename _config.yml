@@ -71,7 +71,9 @@ sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "在平坦的路面上,曲折前行."
 # sidebar-avatar: /img/avatar.png     # use absolute URL, seeing it's used in both `/` and `/about/`
 # sidebar-avatar: http://7xqmgj.com1.z0.glb.clouddn.com/header_imgp1092913307.jpg
-sidebar-avatar: http://7xqmgj.com1.z0.glb.clouddn.com/love1.png
+# sidebar-avatar: http://7xqmgj.com1.z0.glb.clouddn.com/love1.png
+sidebar-avatar: http://7xqmgj.com1.z0.glb.clouddn.com/2016-08-15_IMG_3176.JPG
+
 # sidebar-wechat: http://7xqmgj.com1.z0.glb.clouddn.com/wechat.jpg
 
 
