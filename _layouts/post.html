@@ -243,4 +243,25 @@ layout: default
     }
 </style>
 {% endif %}
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    if (e.target.nodeName.toUpperCase() != 'BODY') return;
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = "{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}";
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = "{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}";
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
             
