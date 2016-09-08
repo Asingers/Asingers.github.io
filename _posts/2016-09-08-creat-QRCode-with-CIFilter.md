@@ -102,7 +102,7 @@ tags:
     ImageView.layer.shadowColor = [UIColor blackColor].CGColor; // 设置阴影的颜色为黑色
     ImageView.layer.shadowOpacity = 0.3; // 设置阴影的不透明度  
     
-Demo: [Demo地址：https://github.com/yourtion/Demo_CustomQRCode](Demo地址：https://github.com/yourtion/Demo_CustomQRCode) 
+Demo: [Demo地址：https://github.com/yourtion/Demo_CustomQRCode](https://github.com/yourtion/Demo_CustomQRCode) 
  
 > 原文: https://blog.yourtion.com/custom-cifilter-qrcode-generator.html 
 
