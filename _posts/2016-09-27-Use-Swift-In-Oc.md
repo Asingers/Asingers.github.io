@@ -35,4 +35,10 @@ tags:
 语法同OC,调用Swift中的方法 这样我们就可以在OC中使用Swift写的控件了
  ![](http://7xqmgj.com1.z0.glb.clouddn.com/2016-09-27-6.png)  
  
+ 在实现Swift中代理方法的时候发现找不到这个代理方法,需要加 @objc  
+ ![](http://7xqmgj.com1.z0.glb.clouddn.com/2016-09-27-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-27%20%E4%B8%8B%E5%8D%883.27.41.png)  
+
+再次编译之后就可以实现了 
+![](http://7xqmgj.com1.z0.glb.clouddn.com/2016-09-27-4.png)  
+
 
