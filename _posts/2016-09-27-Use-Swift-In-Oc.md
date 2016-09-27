@@ -13,7 +13,9 @@ tags:
 ---
 
 以使用Swift写的一个控件为例:  
+
 #### 桥接文件
+
 通常我们需要在OC项目中创建一个Swift类 此时Xcode提示创建一个桥接文件  
 ![](http://7xqmgj.com1.z0.glb.clouddn.com/2016-09-27-1.png)  
 ![](http://7xqmgj.com1.z0.glb.clouddn.com/2016-09-27-2.png)  
