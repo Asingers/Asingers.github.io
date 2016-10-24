@@ -6,6 +6,7 @@ author: "Alpaca"
 subtitle: "App 推荐"
 catalog: true
 categories: ios
+category: App
 tags:
    - Mac
    - App
