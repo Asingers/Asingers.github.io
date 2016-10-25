@@ -5,6 +5,7 @@ date: 2016-09-27
 author: "Alpaca"
 subtitle: "App 推荐"
 catalog: true
+category: App
 categories: ios
 tags:
    - Mac
