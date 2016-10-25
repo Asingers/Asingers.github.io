@@ -1,6 +1,6 @@
 ---
 layout: blog_by_category
-title: 'App'
-category: iOS
+title: 'APP推荐'
+category: App
 permalink: /App/
 ---
