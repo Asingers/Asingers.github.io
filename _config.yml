@@ -13,10 +13,12 @@ url: "http://9dic.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 permalink: :categories/:title/
 
-categories: [App]
+categories: [App,photo]
 navigation:
   - title: App
     url: /App
+  - title:photo
+    url: /photo
 
 # SNS settings
 RSS: false
