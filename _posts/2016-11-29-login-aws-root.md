@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "在AWS EC 2上使用Root用户登录？"
+title: "在AWS EC 2上使用 Root 用户登录"
 date: 2016-11-29
 author: "Alpaca"
+header-img: http://7xqmgj.com1.z0.glb.clouddn.com/2016-11-29-Wallions22023.jpeg
 subtitle: "远程连接"
 catalog: true
 categories: ios
