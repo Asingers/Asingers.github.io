@@ -21,7 +21,8 @@ tags:
     ./configure 
     make && make install
 
-
+若 `configure: error: no acceptable C compiler found` 则 `yum -y install gcc`
+若 `没有 GCC 指令` 则 `yum install gcc-c++`
 命令执行完毕之后，检测一下环境是否配置成功。
 
     node -v  
@@ -249,3 +250,5 @@ PS：
 #### 初始化Ghost
 
 现在所有准备工作都做好了，打开你的浏览器，在浏览器中输入<你的 URL>/ghost/，开始初始化你的Ghost吧~
+
+
