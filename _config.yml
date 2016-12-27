@@ -21,15 +21,15 @@ navigation:
     url: /Photo
 
 # SNS settings
-RSS: false
-# weibo_username:     
-#zhihu_username:    Asingers
-#github_username:   Asingers
-# twitter_username:  Asingersz
-# facebook_username:  Asingers.z
+RSS: true
+weibo_username:    Asingers 
+zhihu_username:    Asingers
+# github_username:   Asingers
+twitter_username:  Asingersz
+facebook_username:  Asingers.z
 
 # E-mail:
-# mail_username: 	    asingers@9dic
+mail_username: 	    asingers@9dic
 
 
 
@@ -59,7 +59,7 @@ kramdown:
 # Duoshuo settings
 duoshuo_username: 9dic
 # Share component is depend on Comment so we can NOT use share only.
-# duoshuo_share: false                     # set to false if you want to use Comment without Sharing
+duoshuo_share: true                    # set to false if you want to use Comment without Sharing
 
 
 
