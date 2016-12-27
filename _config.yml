@@ -21,9 +21,9 @@ navigation:
     url: /Photo
 
 # SNS settings
-RSS: true
+RSS: false
 weibo_username:    Asingers 
-zhihu_username:    Asingers
+# zhihu_username:    Asingers
 # github_username:   Asingers
 twitter_username:  Asingersz
 facebook_username:  Asingers.z
