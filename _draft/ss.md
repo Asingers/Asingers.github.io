@@ -1,5 +1,17 @@
-
-
+---
+layout: post
+title: "SS快速搭建"
+date: 2016-12-27
+author: "Alpaca"
+header-img: http://7xqmgj.com1.z0.glb.clouddn.com/2016-11-29-Wallions22023.jpeg
+subtitle: "到世界的另一边看一看"
+catalog: true
+categories: life
+tags:
+   - SS
+   - VPS
+      
+---
 
 
 **教程正式开始**
@@ -7,6 +19,7 @@
 <ul>
 <a href="http://www.vultr.com/?ref=7071587-3B"><img src="http://7xqmgj.com1.z0.glb.clouddn.com/2016-12-27-15%3A29%3A43.jpg" </a>
 </ul>  
+
 1. 这里需要申请一台免费的Vultr 主机（1000Mbps经典网络，不限流量），使用本推荐链接注册账户免费领取 $50美刀  **[http://www.vultr.com](http://www.vultr.com/?ref=7071587-3B) ** ****免费送 50G 备份空间，还支持免流****
 
 点击**[http://www.vultr.com](http://www.vultr.com/?ref=7071587-3B)**进入官网，输入邮箱和密码,点击Create Account 注册,
@@ -44,8 +57,6 @@ Billing 账单方式选择关联信用卡Credit Card或者Paypal (如果选择Pa
 
 1. ssh root@ip
 
-
-*复制代码*
 其中“ip”要替换成你VPS的ip地址,回车，
 然后输入密码回车登录就好。
 详见：[http://www.cnblogs.com/ghj1976/archive/2013/04/19/3030159.html](http://www.cnblogs.com/ghj1976/archive/2013/04/19/3030159.html)
@@ -57,29 +68,18 @@ Billing 账单方式选择关联信用卡Credit Card或者Paypal (如果选择Pa
 
 1. wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
 
-
-*复制代码*
 **第二行**(请点击下面复制代码按钮)
-
 
 1. chmod +x shadowsocks.sh
 
-
-*复制代码*
 **第三行**(请点击下面复制代码按钮)
 
-
 1. ./shadowsocks.sh 2>&1 | tee shadowsocks.log
-
-
-*复制代码*
 
 期间没出现[{root@vurlt](mailto:{root@vurlt)~}就不要动，这个命令是给服务器装SS。中间会提示你输入你的SS SERVER的密码和端口。建议你自己输入一个密码和端口(端口范围1-65536，推荐10000以上),如果不输入,系统会启用默认密码端口。然后按任意键继续,
 
 
 稍等一会跑完命令后会出来你的SS客户端的信息,记得记下来：
-
-
 
 看到以上提示后就表明VPS上SS已经安装成功，并且已经设置了开机启动，VPS重启后不用手工启动SS。
 
@@ -91,53 +91,38 @@ Billing 账单方式选择关联信用卡Credit Card或者Paypal (如果选择Pa
 
 **已经科学上网成功且对速度满意的小伙伴可以直接略过下面这部分内容**
 
-
 锐速加速 安装方法
 
 1.请点击下面复制代码按钮复制到putty里按回车：
 
 
-
 1. wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh && bash serverspeeder-all.sh
 
-
-*复制代码*
 2. 然后再点击下面复制代码按钮复制到putty里按回车)
-
-
 
 1. vi /serverspeeder/etc/config
 
-
-*复制代码*
 然后在键盘上按方向键移动光标到要修改的数值上,如果原来的数值和下面给出的一致，则不需要修改(由于列表较长,将光标一直按下去 就能找到rsc和gso ) 再按键盘上字母 i 进入编辑模式,  直接修改底下四个参数数值为1 (按键盘上字母1, 如果按Delete键则为删除) ,编辑好后请按键盘上ESC键退出编辑模式 ,  然后在键盘上按shift键加 : 键, 输入wq 按回车）：
 
-rsc="1"
-gso="1"
-maxmode="1"
-advinacc="1"
-
+    rsc="1"
+    gso="1"
+    maxmode="1"
+    advinacc="1"
 
 3. 重启加速服务完成优化(请点击下面复制代码按钮复制到putty里按回车)：
-
-
 
 1. service serverSpeeder restart
 
 
-*复制代码*
+1.双击打开后如图设置SS服务器的信息,然后点击确定  
+
+<img class="lazy" data-original="http://images.weiphone.net/data/attachment/forum/201610/06/112636m41ptuqpjfuqvxn4.png">
 
 
-至此，就成功加速,  可以超高速看视频了.锐速加速效果还是很明显的。
+2.在右下角任务栏SS图标处点击鼠标右键如图设置
 
-*别光顾着看教程哦，请不要吝啬你的举手之劳，将本教程转发给身边朋友(公开) ，以帮助更多的人。谢谢！*
+<img class="lazy" data-original="http://images.weiphone.net/data/attachment/forum/201610/06/112653tqc78qpouf8xu9wo.png">
 
-*(更新:1.想要免费搭Surge/ shadowrocket 免流量上网的,可以看我写的另一详细菜鸟教程:*
-[http://bbs.feng.com/read-htm-tid-10667573.html](http://bbs.feng.com/read-htm-tid-10667573.html)
-**整个教程到这里就结束了，我按照自己写的内容重新搭建了一遍没有任何问题，大家有什么问题请尽量在 原帖子 下面提问，在提问之前请先 确保 你是 严格 按照教程一步步 认真 往下执行了的。最后请不要吝啬你的举手之劳，转发本教程给墙内外的朋友 ，以帮助更多的人。谢谢！**
-**如果你觉得教程对你有帮助，请不要吝啬你的举手之劳，****请给我加分并将教程转发给身边朋友(公开) ，以帮助更多的人。谢谢!**
-**附效果图 :**
-**1 双击打开后如图设置SS服务器的信息,然后点击确定****2.在右下角任务栏SS图标处点击鼠标右键如图设置**
 
 http://www.vultr.com/?ref=7053298
 http://www.vultr.com/?ref=7071587-3B
