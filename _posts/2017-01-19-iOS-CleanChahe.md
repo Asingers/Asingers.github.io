@@ -17,8 +17,9 @@ catalog: true
 categories: ios
 tags:
    - iOS
-      
 ---
+
+
 
 	#import <Foundation/Foundation.h>
 	typedef void(^cleanCacheBlock)();
