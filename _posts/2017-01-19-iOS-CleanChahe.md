@@ -6,20 +6,6 @@ categories: iOS
 tags: iOS
 
 ---
----
-layout: post
-title: "iOS 一句话调用清除缓存"
-date: 2017-01-19
-author: "Asingers"
-header-img: http://7xqmgj.com1.z0.glb.clouddn.com/2016-11-29-Wallions22023.jpeg
-subtitle: "学习笔记"
-catalog: true
-categories: ios
-tags:
-   - iOS
----
-
-
 
 	#import <Foundation/Foundation.h>
 	typedef void(^cleanCacheBlock)();
