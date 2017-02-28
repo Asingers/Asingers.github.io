@@ -15,8 +15,8 @@ tags:
 
 #### Ghost是基于Node.js构建的开源博客平台，所以我们首先搭建Node环境。
 
-    wget http://nodejs.org/dist/v0.10.40/node-v0.10.40.tar.gz  
-    tar zxvf node-v0.10.40.tar.gz  
+    wget http://nodejs.org/dist/v6.10.0/node-v6.10.0.tar.gz  
+    tar zxvf node-v6.10.0.tar.gz  
     cd node-v0.10.40  
     ./configure 
     make && make install
@@ -26,11 +26,29 @@ tags:
 命令执行完毕之后，检测一下环境是否配置成功。
 
     node -v  
-    v0.10.40
+    v6.10.0
 
 
 *如果显示以上信息，恭喜你，安装成功了~*
 
+今天，又发现一个超级简单的升级node.js的方法。一行命令搞定，省去了重新编译安装的过程。
+node有一个模块叫n（这名字可够短的。。。），是专门用来管理node.js的版本的。
+首先安装n模块：
+
+    npm install -g n
+
+第二步：
+升级node.js到最新稳定版
+
+    n stable
+    
+是不是很简单？！
+n后面也可以跟随版本号比如：
+
+    n v0.10.26
+或
+
+    n 0.10.26
 #### 安装 nginx 
 安装依赖的库：
 
@@ -150,8 +168,8 @@ Ghost 默认使用 sqlite3 数据库，对于一般使用足够了，但是内�
 首先下载Ghost：
 
     cd /var/www  
-    wget http://dl.ghostchina.com/Ghost-0.7.4-zh-full.zip  
-    unzip Ghost-0.7.4-zh-full.zip -d ghost  
+    wget https://ghost.org/zip/ghost-latest.zip 
+    unzip ghost-latest.zip -d ghost  
     cd ghost
 
 
@@ -164,27 +182,31 @@ Ghost 默认使用 sqlite3 数据库，对于一般使用足够了，但是内�
 Ghost有产品模式、开发模式和测试模式等多种运行模式，这里我们需要在配置文件中找到production模式：
 
     # 生产模式
-    production: {  
-        url: 'http://snowz.me', # 修改为你的域名或者IP，注意加上http://
-        mail: {},
-        database: {
-            client: 'mysql'
-            connection: {
-                host     : '127.0.0.1',
-                user     : 'ghost', # 数据库连接的用户
-                password : '123456', # 先前创建的密码
-                database : 'ghost', # 先前创建的数据库
-                charset  : 'utf8'
-            },
-        server: {
-                host: '127.0.0.1',
-                port: '2368' # 若修改该端口记得在nginx中做相应改变
-            }
-        }
+production: {
+        url: 'http://asingers.win', //替换为你自己的域名。
+        mail: {}, 
+            database: { 
+                client: 'mysql',
+                connection: { 
+                host : '127.0.0.1', 
+                user : 'ghost', //我们暂且用 MySQL 的 root 账户
+                password : 'xxx,', //输入你的 MySQL 密码
+                database : 'ghost', //我们前面为 Ghost 创建的数据库名称 
+                charset : 'utf8'
+    }
+}, 
+    server: { 
+// Host to be passed to node's `net.Server#listen()`
+    host: '127.0.0.1', 
+// Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
+    port: '2368' 
+    }
+},
 
 
 保存退出，接下来就到了见证奇迹的时刻啦，输入指令：
 
+    npm install --production
     npm start --production
     
 PS: 如果启动出错,我的方法是尝试卸载nodejs 重新安装,并且重新链接npm地址:
