@@ -13,7 +13,6 @@ tags:
 ---
 
 
-<iframe src="//banners.itunes.apple.com/banner.html?partnerId=&aId=1001ludq&bt=catalog&t=catalog_white&id=1177953618&c=us&l=en-US&w=728&h=90&store=apps" frameborder=0 style="overflow-x:hidden;overflow-y:hidden;width:728px;height:90px;border:0px"></iframe>
 
 	#import <Foundation/Foundation.h>
 	typedef void(^cleanCacheBlock)();
