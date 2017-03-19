@@ -61,6 +61,37 @@ Nginx:
             index  index.html index.htm;
         }
     }
+延伸: Ghost SSL 设置:  
+
+我的配置:  
+1: nginx.conf 配置  
+	
+	    server {
+        listen       80;
+        server_name  asingers.win;
+        location / {
+        rewrite ^(.*) https://$server_name$1 permanent;
+    }
+    
+2: ghost config 中设置 url: 配置在子目录下
+	
+	url: 'http://asingers.win/blog'
+3: ghost.conf 配置:
+	
+	server {  
+        listen 443 ssl; 
+        server_name asingers.win;
+        ssl_certificate        /etc/letsencrypt/live/asingers.win/fullchain.pem;
+        ssl_certificate_key    /etc/letsencrypt/live/asingers.win/privkey.pem;
+        location ^~ /blog {
+                proxy_set_header   X-Real-IP $remote_addr;
+                proxy_set_header   Host      $http_host;
+                proxy_pass         http://127.0.0.1:2368;
+                client_max_body_size 35m;
+        }
+	}
+这样配置可以实现 ghost ssl 在子目录下,以达到 nginx 托管多个网站的目的
+
 
 Apache: 
 
