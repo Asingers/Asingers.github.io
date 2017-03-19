@@ -18,7 +18,8 @@ tags:
 	
 	chmod +x ./certbot-auto
 	
-	./certbot-auto --debug 
+	./certbot-auto --debug  也有可能是 ./certbot-auto certonly 进行手动配置
+Nginx:
 
 需要验证权限,nginx conf 中加入:  
 
@@ -61,5 +62,26 @@ tags:
         }
     }
 
+Apache: 
+
+httpd.conf中 引入:
+
+	Include extra/vhost.conf
+	
+httpd/extra 中增加 vhost.con 配置:  
+	
+	<VirtualHost *:443>
+    DocumentRoot /var/www/html
+    ServerName asingers.win:443
+    ServerAlias www.asingers.win
+    DirectoryIndex index.html index.php
+    ErrorLog logs/main-error_log
+    CustomLog logs/main-access_log common
+	</VirtualHost>
+	
+获取证书:  
+
+	sudo ./certbot-auto --debug certonly --webroot --webroot-path /var/www/html --renew-by-default --email xx@qq.com --text --agree-tos -d asingers.win 
+	
 	
 	

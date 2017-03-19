@@ -17,7 +17,7 @@ tags:
 
     wget http://nodejs.org/dist/v6.10.0/node-v6.10.0.tar.gz  
     tar zxvf node-v6.10.0.tar.gz  
-    cd node-v0.10.40  
+    cd node-v6.10.0  
     ./configure 
     make && make install
 
