@@ -12,7 +12,7 @@ tags:
       
 ---
 
-下载文件:
+### 下载文件:
 
 	wget https://dl.eff.org/certbot-auto --no-check-certificate
 	
@@ -21,7 +21,7 @@ tags:
 	./certbot-auto --debug  也有可能是 ./certbot-auto certonly 进行手动配置
 Nginx:
 
-需要验证权限,nginx conf 中加入:  
+### 需要验证权限,nginx conf 中加入:  
 
 	location ~ /\.well-known/acme-challenge/ {
            root /usr/local/ispconfig/interface/acme/;
@@ -31,7 +31,7 @@ Nginx:
 	
 然后根据提示输入相关信息生成证书
 
-最后配置 nginx:
+### 最后配置 nginx:
 
 	server {
         listen       80;
@@ -61,28 +61,28 @@ Nginx:
             index  index.html index.htm;
         }
     }
-延伸: Ghost SSL 设置:  
-
-我的配置:  
+    
+#### 延伸: Ghost SSL 设置:  
 1: nginx.conf 配置  
 	
 	    server {
         listen       80;
-        server_name  asingers.win;
+        server_name  xxx.com;
         location / {
         rewrite ^(.*) https://$server_name$1 permanent;
     }
     
 2: ghost config 中设置 url: 配置在子目录下
 	
-	url: 'http://asingers.win/blog'
+	url: 'http://xxx.com/blog'
+	
 3: ghost.conf 配置:
 	
 	server {  
         listen 443 ssl; 
-        server_name asingers.win;
-        ssl_certificate        /etc/letsencrypt/live/asingers.win/fullchain.pem;
-        ssl_certificate_key    /etc/letsencrypt/live/asingers.win/privkey.pem;
+        server_name xxx.com;
+        ssl_certificate        /etc/letsencrypt/live/x/fullchain.pem;
+        ssl_certificate_key    /etc/letsencrypt/live/x/privkey.pem;
         location ^~ /blog {
                 proxy_set_header   X-Real-IP $remote_addr;
                 proxy_set_header   Host      $http_host;
@@ -90,6 +90,7 @@ Nginx:
                 client_max_body_size 35m;
         }
 	}
+	
 这样配置可以实现 ghost ssl 在子目录下,以达到 nginx 托管多个网站的目的
 
 
@@ -103,8 +104,8 @@ httpd/extra 中增加 vhost.con 配置:
 	
 	<VirtualHost *:443>
     DocumentRoot /var/www/html
-    ServerName asingers.win:443
-    ServerAlias www.asingers.win
+    ServerName xxx.com:443
+    ServerAlias www.xxx.com
     DirectoryIndex index.html index.php
     ErrorLog logs/main-error_log
     CustomLog logs/main-access_log common
@@ -112,7 +113,7 @@ httpd/extra 中增加 vhost.con 配置:
 	
 获取证书:  
 
-	sudo ./certbot-auto --debug certonly --webroot --webroot-path /var/www/html --renew-by-default --email xx@qq.com --text --agree-tos -d asingers.win 
+	sudo ./certbot-auto --debug certonly --webroot --webroot-path /var/www/html --renew-by-default --email xx@qq.com --text --agree-tos -d xxx.com 
 	
 	
 	
