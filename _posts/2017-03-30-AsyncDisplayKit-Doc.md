@@ -6,7 +6,7 @@ categories: ios
 
 ---
 
-### [#入门](#入门)入门
+### 入门
 
 AsyncDisplayKit的基本单位是node。 ASDisplayNode是一个抽象UIView，反过来是一个抽象CALayer。不同于只能在主线程上使用的视图，节点是线程安全的：您可以在后台线程上并行实例化和配置它们的整个层次结构。
 
@@ -14,7 +14,7 @@ AsyncDisplayKit的基本单位是node。 ASDisplayNode是一个抽象UIView，�
 
 AsyncDisplayKit允许您从主线程移动图像解码，文本大小和呈现以及其他昂贵的UI操作，以保持主线程可用于响应用户交互。AsyncDisplayKit还有其他的技巧，但我们稍后会介绍。
 
-### [#nodes-节点](#nodes-节点)Nodes 节点
+###  节点
 
 如果你之前使用过views，那么你应该已经知道如何使用nodes，大部分的方法都有一个等效的node，大部分的UIView和CALayer的属性都有类似的可用的。任何情况都会有一点点命名差异（例如，clipsToBounds和masksToBounds），node基本上都是默认使用UIView的名字，唯一的例外是node使用position而不是center
 
@@ -29,7 +29,7 @@ AsyncDisplayKit允许您从主线程移动图像解码，文本大小和呈现�
 - AsTextNode:UITextView类对应使用，建造全功能的富文本支持库。
 
 
-### [#node-containers节点容器](#node-containers节点容器)Node Containers节点容器
+### Node Containers节点容器
 
 当在项目中替换使用AsyncDisplayKit的时候，一个经常犯的错误就是把一个Node节点直接添加到一个现有的view视图层次结构里。这样做会导致你的节点在渲染的时候会闪烁一下
 
@@ -43,7 +43,7 @@ AsyncDisplayKit允许您从主线程移动图像解码，文本大小和呈现�
 - ASPagerNode. 一种特殊的ASCollectionNode 可以当做 UIPageViewController类型
 
 
-### [#排版引擎](#排版引擎)排版引擎
+### 排版引擎
 
 AsyncDisplayKit的排版引擎是非常强大并且独特的，基于CSS FlexBox模型。他提供了一种声明方式来约定自定义节点所属的子节点的大小和布局，当所有的节点同时被默认渲染和展现的时候，通过给每个节点提供一个ASLayoutSpec，异步的测量和布局。
 
@@ -57,7 +57,7 @@ AsyncDisplayKit的排版引擎是非常强大并且独特的，基于CSS FlexBox
 - ASStaticLayoutSpec. 当要手动定义一组节点静态大小
 
 
-## [#所达到的效果](#所达到的效果)所达到的效果
+## 所达到的效果
 
 AsyncDisplayKit是一个UI框架，最初诞生于Facebook App。最开始Facebook团队面临一个很核心的问题：怎么能保证主线程尽可能的简洁，AsyncDisplayKit就是答案。
 
@@ -70,15 +70,15 @@ AsyncDisplayKit的Node节点就是一个线程安全的抽象对象，基于UIVi
 
 在iPhone6+上的性能提升不是很明显，但是在4S上，性能差距非常之大
 
-### [#强大的用户体验](#强大的用户体验)强大的用户体验
+### 强大的用户体验
 
 AsyncDisplayKit所带来的性能提升，可以让你为每个用户在所有设备上，在所有的网络环境下，提供强大的用户体验设计
 
-### [#强大的开发体验](#强大的开发体验)强大的开发体验
+### 强大的开发体验
 
 AsyncDisplayKit一样也在追求开发人员的使用体验，追求iOS&tvOS跨平台的特性，追求swift&OC语言的兼容性。只需要很少的代码就能构建很棒的app，清晰的架构，健壮的代码（参见examples/ASDKgram这个例子）（开发这个的都是一些超级聪明工作3年多的工程师）
 
-### [#高级的开发工具](#高级的开发工具)高级的开发工具
+### 高级的开发工具
 
 随着AsyncDisplayKit逐渐成熟，很多聪明的工程师都加入一起构建这个项目，可以大幅度节省作为开发者，使用ASDK的开发时间
 
@@ -92,7 +92,7 @@ ASRangeController 智能预加载
 
 automatic batch fetching (e.g. JSON payloads)自动批量抓取
 
-## [#安装](#安装)安装
+## 安装
 
 **CocoaPods安装**
 
@@ -125,9 +125,9 @@ AsyncDisplayKit可以当做静态库引入
     #import <AsyncDisplayKit/AsyncDisplayKit.h>
 
 
-# [#核心概念](#核心概念)核心概念
+# 核心概念
 
-## [#智能预加载](#智能预加载)智能预加载
+## 智能预加载
 
 node的功能很强大的原因是具有异步渲染和计算的能力，另一个至关重要的因素是ASDK的智能预加载方案。
 
@@ -137,10 +137,10 @@ node的功能很强大的原因是具有异步渲染和计算的能力，另一�
 
 一个节点在容器之外被使用，是不会使它的状态得到rangeController的更新。有时候会产生的闪屏现象是由于，一个节点刚刚被渲染到屏幕之后又进行了一次渲染
 
-### [#界面状态区域](#界面状态区域)界面状态区域
+### 界面状态区域
 
 当节点被添加到滚动或者分页的控件的时候，一般都会遇到下面的几种情况。这就是说scrollview正在滚动，他的界面属性会随着移动一直在更新。
-[![https://camo.githubusercontent.com/18d6f2000e93029c51baa71e8bd87394b7a0e348/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3031333933342e6a7067](https://camo.githubusercontent.com/18d6f2000e93029c51baa71e8bd87394b7a0e348/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3031333933342e6a7067)](https://camo.githubusercontent.com/18d6f2000e93029c51baa71e8bd87394b7a0e348/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3031333933342e6a7067)
+![](http://cloud9dic.b0.upaiyun.com/2017-03-30-013934.jpg)
 
 每个节点一定会处于以下几种范围：
 
@@ -148,15 +148,16 @@ node的功能很强大的原因是具有异步渲染和计算的能力，另一�
 显示范围：在这个范围，显示任务，比如文本光栅化，图像解码等正在进行
 可见范围：这个node，至少有一个像素已经被渲染到屏幕上
 
-### [#asrangetuningparameters](#asrangetuningparameters)ASRangeTuningParameters
+### ASRangeTuningParameters
 
-每一个范围的大小都是全屏去计算的，一般情况下，默认的尺寸就能很好的工作，但是你也可以通过设置滚动节点的区域类型参数，很简单的进行调整。[![https://camo.githubusercontent.com/c92bce6bef50766b237519f29cc3a79c1d9d8c5b/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3031343035312e6a7067](https://camo.githubusercontent.com/c92bce6bef50766b237519f29cc3a79c1d9d8c5b/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3031343035312e6a7067)](https://camo.githubusercontent.com/c92bce6bef50766b237519f29cc3a79c1d9d8c5b/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3031343035312e6a7067)
+每一个范围的大小都是全屏去计算的，一般情况下，默认的尺寸就能很好的工作，但是你也可以通过设置滚动节点的区域类型参数，很简单的进行调整。
+![](http://cloud9dic.b0.upaiyun.com/2017-03-30-014051.jpg)
 
 上图就是一款app的截图，用户可以向下滚动，正如你所看到的，用户滚动方向区域（领先方向）的大小，要比用户离开方向区域（尾随方向）的大小，大得多。如果用户滚动的方向发生了改变，这两个区域的大小会动态的切换，以保证内存的最佳使用。你只需要考虑定义领先方向和尾随方向的区域大小，而不必担心滚动方向的变化。
 
 在这个截图中，你还可以看到智能的预加载是如何在多维度下工作的，你可以看到一个垂直的滚动容器，你可以看到虽然有些node还未在红色的设备屏幕中出现，但是他有一个范围控制器，也有处在黄色的数据范围的node，和橙色的显示范围的node
 
-### [#界面状态回调](#界面状态回调)界面状态回调
+### 界面状态回调
 
 随着用户的滚动，nodes会移动穿过这些区域，并做出适当的反应，读取数据，渲染，等等。你自己创建的node子类可以很容易的通过实现相应的回调来精细设计他们
 
@@ -178,11 +179,11 @@ node的功能很强大的原因是具有异步渲染和计算的能力，另一�
 
 最后，千万别忘记调用super
 
-## [#自定义子类](#自定义子类)自定义子类
+## 自定义子类
 
 写一个node的子类，很像写一个UIView的子类，这有几条准则需要遵守，来确保你能够充分发挥这个框架的潜力，确保你的节点正常工作
 
-### [#基本重载方法](#基本重载方法)基本重载方法
+### 基本重载方法
 
 -init
 
@@ -200,7 +201,7 @@ layout
 
 在这个方法里调用super之后，布局规则对象会把所有的子节点都计算并且定位好，所以这个时间点是你手动进行布局所有子view的时机。或许更有用的是，有时候你想手动布局，但并不太容易创建一个布局规则对象，或者有时候你不想等所有子节点布局完毕，而只是很简单的手动设置frame，如果是这样的话，就在这个方法里写
 
-## [#排版引擎-1](#排版引擎-1)排版引擎
+## 排版引擎
 
 AsyncDisplayKit的排版引擎是基于CSS Box模型，它具有类似UIKit（自动布局）一样的特征，一旦你习惯它，就会发现这是他最有用的特点。只要有足够的联系，你就会越来越习惯通过创建布局声明来实现基础约束。
 
@@ -219,7 +220,7 @@ AsyncDisplayKit的排版引擎是基于CSS Box模型，它具有类似UIKit（�
 
 尽管这个例子非常简单，但是它给了你一个思路，如何去使用布局规则对象，一个stack布局规则对象为例，定义了一种子节点们相邻的布局方式，确定了方向，间隔的定义，他看起来很像UIStackView，但是可以支持低版本iOS
 
-### [#aslayoutable](#aslayoutable)ASLayoutable
+### ASLayoutable
 
 布局规则对象的孩子，可以是任何对象，只要他遵从协议，所有的nodes和布局规则对象都遵从这个协议，就是说你的布局，可以用任何你想的对象来建立。
 
@@ -244,11 +245,11 @@ AsyncDisplayKit的排版引擎是基于CSS Box模型，它具有类似UIKit（�
 
 当然，使用布局规则对象需要一些联系，可以看layout section部分
 
-# [#节点容器](#节点容器)节点容器
+# 节点容器
 
-## [#容器总览](#容器总览)容器总览
+## 容器总览
 
-### [#在节点容器中使用节点](#在节点容器中使用节点)在节点容器中使用节点
+### 在节点容器中使用节点
 
 强烈建议你通过节点容器，来使用AsyncDisplayKit的节点，AsyncDisplayKit提供了下面4种节点
 
@@ -262,13 +263,13 @@ AsyncDisplayKit的排版引擎是基于CSS Box模型，它具有类似UIKit（�
 
 想要详细的从UIKit移植app到AsyncDisplayKit信息，请看移植指南
 
-### [#使用节点容器有什么好处](#使用节点容器有什么好处)使用节点容器有什么好处
+### 使用节点容器有什么好处
 
 介电容器自动管理着子节点的智能预加载，所有的子节点都可以异步的执行布局计算，获取数据，解码，渲染。正因为此，推荐在节点容器内使用节点
 
 注意：确实可以直接使用节点不使用节点容器，但他们只会在出现到屏幕上的时候展现一次，这样会导致性能退化，或者闪烁
 
-## [#asviewcontroller](#asviewcontroller)ASViewController
+## ASViewController
 
 ASViewController是UIViewController的子类，并且添加了很多和ASDisplayNode层级相关的功能
 
@@ -300,7 +301,7 @@ UIViewController提供他自己的view，ASViewController提供了他自己的no
 
 如果你的app已经有了很复杂的viewcontroller层级，你最好把他们都改成继承自ASViewController，就是说，即便你不使用ASViewController的-initWithNode:方法，你只是把它当做传统的UIViewController来使用，当你一旦选择不同的使用方式，他就能给你节点管理方面的支持
 
-## [#astablenode](#astablenode)ASTableNode
+## ASTableNode
 
 ASTableNode等效于UIKit的UITableview，而且可以拿来替换UITableView
 
@@ -325,7 +326,7 @@ ASTableNode替换UITableView以下方法
 
 请注意这两个方法都不需要重用机制！
 
-### [#用asviewcontroller替换uitableviewcontroller](#用asviewcontroller替换uitableviewcontroller)用ASViewController替换UITableViewController
+### 用ASViewController替换UITableViewController
 
 AsyncDisplayKit并没有提供一个类似UITableViewController的东西，你需要使用ASViewController初始化一个ASTableNode
 
@@ -347,7 +348,7 @@ AsyncDisplayKit并没有提供一个类似UITableViewController的东西，你�
     }
 
 
-### [#node-block线程安全警告](#node-block线程安全警告)node block线程安全警告
+### node block线程安全警告
 
 保证node block 的代码一定要是线程安全的，一方面要保证块里面的数据对外面是可访问的，所以你不应该使用block内的索引
 
@@ -370,7 +371,7 @@ AsyncDisplayKit并没有提供一个类似UITableViewController的东西，你�
     }
 
 
-### [#列表行高](#列表行高)列表行高
+### 列表行高
 
 一个很重要的事情就是，ASTableNode并不提供类似UITableview的-tableView:heightForRowAtIndexPath:方法
 
@@ -384,7 +385,7 @@ AsyncDisplayKit并没有提供一个类似UITableViewController的东西，你�
 
 和UIKit不同的时，你不需要调用reload，这样很节省了代码，可以看ASDKgram sample来看一个table的具体实现
 
-## [#ascollectionnode](#ascollectionnode)ASCollectionNode
+## ASCollectionNode
 
 ASCollectionNode就是类似UIKit的UICollectionView，可以拿来代替UICollectionView
 
@@ -413,7 +414,7 @@ ASCollectionNode替换UICollectionView的时候需要把下面这个方法
 - ASCellNodes可由ASTableNode，ASCollectionNode和ASPagerNode使用
 
 
-### [#用asviewcontroller替换uicollectionviewcontroller](#用asviewcontroller替换uicollectionviewcontroller)用ASViewController替换UICollectionViewController
+### 用ASViewController替换UICollectionViewController
 
 AsyncDisplayKit并没有提供类似UICollectionViewController的类，你还是需要使用ASViewController，初始化的时候创建一个ASCollectionNode，在-initWithNode:方法里
 
@@ -434,7 +435,7 @@ AsyncDisplayKit并没有提供类似UICollectionViewController的类，你还是
 
 ASTableNode,ASPagerNode都是这样工作的
 
-### [#访问ascollectionview](#访问ascollectionview)访问ASCollectionView
+### 访问ASCollectionView
 
 如果你用过以前版本的ASDK，你会发现，为了方便ASCollectionNode，ASCollectionView已经被移除了，
 
@@ -453,7 +454,7 @@ ASCollectionView是UICollectionView的子类，仍然是通过ASCollectionNode�
     }
 
 
-### [#cell计算和布局](#cell计算和布局)CELL计算和布局
+### CELL计算和布局
 
 就像之前提到过的，ASCollectionNode和ASTableNode不需要计算他们的CellNode的高度
 
@@ -461,7 +462,7 @@ ASCollectionView是UICollectionView的子类，仍然是通过ASCollectionNode�
 
 不久之后，会有一个类似ASTableNode的constrainedSizeForRow:方法，但是现在，如果你需要在collectionNode里约束一个cellNode，你需要包装处理一下约束规则对象
 
-### [#例子](#例子)例子
+### 例子
 
 最详细的ASCollectionNode例子就是CustomCollectionView，包括自定义的ASCollectionNode与UICollectionViewLayout.
 
@@ -472,7 +473,7 @@ ASCollectionView是UICollectionView的子类，仍然是通过ASCollectionNode�
 - ASCollectionView
 
 
-## [#aspagernode](#aspagernode)ASPagerNode
+## ASPagerNode
 
 ASPagerNode是ASCollectionNode的子类，他特别定制了UICollectionViewLayout
 
@@ -497,7 +498,7 @@ ASPagerNode是ASCollectionNode的子类，他特别定制了UICollectionViewLayo
 
 -pagerNode:nodeAtIndex:会在主线程被调用,-pagerNode:nodeBlockAtIndex:更推荐使用，因为所有的node的初始化方法都可能在背景线程和主线程中调用，所以一定要确保block中的代码线程安全
 
-### [#nodeblock线程安全警告](#nodeblock线程安全警告)nodeblock线程安全警告
+### nodeblock线程安全警告
 
 保证node block 的代码一定要是线程安全的，一方面要保证块里面的数据对外面是可访问的，所以你不应该使用block内的索引
 
@@ -517,7 +518,7 @@ ASPagerNode是ASCollectionNode的子类，他特别定制了UICollectionViewLayo
     }
 
 
-### [#优化使用asviewcontroller](#优化使用asviewcontroller)优化使用ASViewController
+### 优化使用ASViewController
 
 一个很有效的方式是，直接返回ASViewController中初始化好的ASCellNode，所以还是推荐使用ASViewController
 
@@ -543,11 +544,11 @@ ASPagerNode是ASCollectionNode的子类，他特别定制了UICollectionViewLayo
 - VerticalWithinHorizontalScrolling
 
 
-# [#节点](#节点)节点
+# 节点
 
-## [#asdisplaynode](#asdisplaynode)ASDisplayNode
+## ASDisplayNode
 
-### [#最基础的节点](#最基础的节点)最基础的节点
+### 最基础的节点
 
 ASDisplayNode是最主要的UIView和CALayer的抽象对象，他初始化的时候拥有一个UIView，同时UIView在初始化的时候拥有一个CALayer
 
@@ -573,7 +574,7 @@ Node和UIView具有一样的属性，所以使用起来非常像UIKit
 
 当我们使用了节点容器，节点的属性会在背景线程被设置和使用，背后的view/layer会延迟懒加载生成约束，你不需要去担心跳入背景线程要注意什么，因为框架都处理好了，但是你也要了解都发生了什么
 
-### [#页面包装](#页面包装)页面包装
+### 页面包装
 
 某些情况下，需要初始化一个节点，提供一个view当做基础view。这些view需要一个block来处理之后被保存的view（有点绕。。我也没太懂。）
 
@@ -589,7 +590,7 @@ Node和UIView具有一样的属性，所以使用起来非常像UIKit
 
 唯一要注意的时node使用position，不是center
 
-## [#ascellnode](#ascellnode)ASCellNode
+## ASCellNode
 
 ASCellNode 可能是最常用的节点子类了，他可以被用于ASTableNode和ASCollectionNode
 
@@ -597,9 +598,9 @@ ASCellNode 可能是最常用的节点子类了，他可以被用于ASTableNode�
 
 如果你不喜欢继承，你也可以使用-initWithView和-initWithViewController方法来返回一个节点，他的内部view就是通过已经存在的view来创建的
 
-## [#astextcellnode](#astextcellnode)ASTextCellNode
+## ASTextCellNode
 
-## [#ascontrolnode](#ascontrolnode)ASControlNode
+## ASControlNode
 
 ASControlNode
 ASControlNode是ASDK相当于UIControl。您不ASControlNode直接创建实例。相反，您可以在创建自己的控件时将其用作子类化点。实际上，ASTextNode，ASImageNode，ASVideoNode和ASMapNode都是子类ASControlNode。
@@ -664,7 +665,7 @@ ASControlNode是ASDK相当于UIControl。您不ASControlNode直接创建实例�
 
 只用一行代码，就可以轻松的把所有的ASControlNode的点击区域可视化，通过这个工具hit test slop debug tool.
 
-## [#asbuttonnode](#asbuttonnode)ASButtonNode
+## ASButtonNode
 
 ASButtonNode是ASControlNode的子类，提供了简单button的功能，有多重状态，标签，图片，和布局选项，开启layerBacking可以显著减少button对主线程的影响
 
@@ -680,7 +681,7 @@ ASButtonNode是ASControlNode的子类，提供了简单button的功能，有多�
 小心：
 选择selected属性的逻辑应该由开发者处理，点击buttonNode不会自动的开启selected
 
-## [#astextnode](#astextnode)ASTextNode
+## ASTextNode
 
 ASTextNode是AsyncDisplayKit的主文本节点，可以在您通常使用的任何时间使用UILabel。它包含完整的富文本支持，是一个ASControlNode意义的子类，它可以在您通常使用其titleLabel集创建一个UIButton时随时使用。
 
@@ -705,7 +706,8 @@ ASTextNode任何人使用的界面都应该是熟悉的UILabel。您可能注意
     											initWithString：@“¶¶¶”];
 
 
-这样做会产生如下结果：[![https://camo.githubusercontent.com/ebb0f0afa182ce62bfc3bbef38a496870db09763/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303633382e6a7067](https://camo.githubusercontent.com/ebb0f0afa182ce62bfc3bbef38a496870db09763/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303633382e6a7067)](https://camo.githubusercontent.com/ebb0f0afa182ce62bfc3bbef38a496870db09763/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303633382e6a7067)
+这样做会产生如下结果：
+![](http://cloud9dic.b0.upaiyun.com/2017-03-30-020638.jpg)
 
 默认情况下，截断字符串将是“...”，因此如果您需要的话，则不需要设置它。
 
@@ -726,7 +728,8 @@ ASTextNode任何人使用的界面都应该是熟悉的UILabel。您可能注意
     _textNode.attributedText = string;
 
 
-这导致了一个浅灰色的链接，带有点划线的风格下划线！[![https://camo.githubusercontent.com/82d9e6d28b22eee2171e9d2f8cf8495820236786/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303730312e6a7067](https://camo.githubusercontent.com/82d9e6d28b22eee2171e9d2f8cf8495820236786/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303730312e6a7067)](https://camo.githubusercontent.com/82d9e6d28b22eee2171e9d2f8cf8495820236786/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303730312e6a7067)
+这导致了一个浅灰色的链接，带有点划线的风格下划线！
+![](http://cloud9dic.b0.upaiyun.com/2017-03-30-020701.jpg)
 
 正如你所看到的，对于给定其归因字符串范围的各个链接，应用各种样式是比较方便的。
 
@@ -748,7 +751,7 @@ ASTextNodeDelegate
 
 – textNode:shouldLongPressLinkAttribute:value:atPoint:
 
-## [#aseditabletextnode](#aseditabletextnode)ASEditableTextNode
+## ASEditableTextNode
 
 ASEditableTextNode提供了一个灵活的高效的动画有好的可编辑文本控件
 ASEditableTextNode可用于通常使用UITextView或任何地方的任何地方UITextField。在引擎盖下，它使用专门UITextView的后视。只要在主线程上执行，您可以在节点加载后的任何时间直接访问和配置此视图。
@@ -819,7 +822,7 @@ ASEditableTextNode委托
 小心：不支持 layer backing
 例子：examples/editableText
 
-## [#asimagenode](#asimagenode)ASImageNode
+## ASImageNode
 
 ASImageNode是ASDK相当于UIImageView。最基本的区别是默认情况下图像被异步解码。当然，还有更先进的改进，如GIF支持和imageModificationBlock。
 
@@ -852,14 +855,20 @@ _backgroundImageNode.image = someImage;
 图像裁剪
 当一个imageNode的contentMode属性设置为UIViewContentModeScaleAspectFill，它会自动放大图像，以填补imageNode的整个区域，以及裁剪那晃过由于缩放图像边界的任何区域。
 
-默认情况下，展开的图像将在视图的边界内居中。拿下面的猫图像。他的脸被默认切断。[![https://camo.githubusercontent.com/52fc3d1d28d42a8c1662150ce83bd94651301d4c/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303435342e6a7067](https://camo.githubusercontent.com/52fc3d1d28d42a8c1662150ce83bd94651301d4c/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303435342e6a7067)](https://camo.githubusercontent.com/52fc3d1d28d42a8c1662150ce83bd94651301d4c/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303435342e6a7067)那就搞砸了 要修复它，您可以设置cropRect属性来移动图像。默认设置为CGRectMake(0.5, 0.5, 0.0, 0.0)。
+默认情况下，展开的图像将在视图的边界内居中。拿下面的猫图像。他的脸被默认切断。
+![](http://cloud9dic.b0.upaiyun.com/2017-03-30-020454.jpg)
+那就搞砸了 要修复它，您可以设置cropRect属性来移动图像。默认设置为CGRectMake(0.5, 0.5, 0.0, 0.0)。
 
 使用源图像的宽度和高度的百分比将矩形指定为“单位矩形”。要显示的图像开始在左侧，您可以设置cropRect的x值是0.0，这意味着图像的起源应该在开始，而不是默认的。{0, 0}
 
     self.animalImageNode.cropRect = CGRectMake（0，0，0.0，0.0）;
 
 
-将宽度和高度值置于0.0意味着图像不会被拉伸。[![https://camo.githubusercontent.com/0406a4a77c82bc01f488689dbda359f972989ebf/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303531352e6a7067](https://camo.githubusercontent.com/0406a4a77c82bc01f488689dbda359f972989ebf/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303531352e6a7067)](https://camo.githubusercontent.com/0406a4a77c82bc01f488689dbda359f972989ebf/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303531352e6a7067)或者，您可以将x原点的值设置1.0为右对齐图像。[![https://camo.githubusercontent.com/97c0fdaa9cf1bea2fb976990f9ed654997ff1a70/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303532352e6a7067](https://camo.githubusercontent.com/97c0fdaa9cf1bea2fb976990f9ed654997ff1a70/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303532352e6a7067)](https://camo.githubusercontent.com/97c0fdaa9cf1bea2fb976990f9ed654997ff1a70/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3032303532352e6a7067)
+将宽度和高度值置于0.0意味着图像不会被拉伸。
+![](http://cloud9dic.b0.upaiyun.com/2017-03-30-020515.jpg)
+
+或者，您可以将x原点的值设置1.0为右对齐图像。
+![](http://cloud9dic.b0.upaiyun.com/2017-03-30-020525.jpg)
 
 强制升级
 默认情况下，当CPU太小而无法放入imageNode已设置的边界时，图像将不会被放大。
@@ -877,7 +886,7 @@ ASImageNode性能提示
 
 只需要一行代码就可以方便的查看app没有下载和渲染的过量图形数据，或者低质量的图形数据，使用这个工具pixel scaling debug tool.
 
-## [#asnetworkimagenode](#asnetworkimagenode)ASNetworkImageNode
+## ASNetworkImageNode
 
 ASNetworkImageNode用来展示那些被远程存储的图片，所有你要做的只是设置好URL，需要是一个NSURL实例，并且图片会异步的被夹在，正确的被读取
 
@@ -885,7 +894,7 @@ ASNetworkImageNode用来展示那些被远程存储的图片，所有你要做�
     imageNode.URL = [NSURL URLWithString:@"https://someurl.com/image_uri"];
 
 
-### [#布局一个网图节点](#布局一个网图节点)布局一个网图节点
+### 布局一个网图节点
 
 一个网图节点在还没有真实地大小的时候，是有必要指定一个特定得布局的
 
@@ -914,21 +923,21 @@ ASNetworkImageNode用来展示那些被远程存储的图片，所有你要做�
     }
 
 
-### [#外部引用](#外部引用)外部引用
+### 外部引用
 
 如果你不打算引入PINRemoteImage和PINCache，你会失去对jpeg的更好的支持，你需要自行引入你自己的cache系统，需要遵从ASImageCacheProtocol
 
-### [#渐进式jpeg支持](#渐进式jpeg支持)渐进式JPEG支持
+### 渐进式JPEG支持
 
 得益于PINRemoteImage，网图节点可以全面支持，有进度下载的JPEG图片，如果你的服务器提供这个功能，你的图片就可以展示的非常快，先加载低质量图，慢慢展示
 
 逐步加载图片是很重要的，如果服务器被要求使用普通的JPEGS，但是给你提供了多个版本的图片数据，你可以使用ASMultiplexImageNode
 
-### [#自动缓存](#自动缓存)自动缓存
+### 自动缓存
 
 ASNetworkImageNode使用PINCache 来自动处理网络图片缓存
 
-## [#asmultipleximagenode](#asmultipleximagenode)ASMultiplexImageNode
+## ASMultiplexImageNode
 
 如果你不能使用渐进式JPEG，但是你可以处理同一个图的几个不同尺寸的图形数据，你可以使用ASMultiplexImageNode代替ASNetworkImageNode
 
@@ -981,7 +990,7 @@ ASNetworkImageNode使用PINCache 来自动处理网络图片缓存
     }
 
 
-## [#asmapnode](#asmapnode)ASMapNode
+## ASMapNode
 
 ASMapNode提供了一个完整的异步准备，自动预加载，高效内存处理的节点
 ，他的标准模式下，是异步快照的形式，ASTableView 和 ASCollectionView 会自动触发liveMap模式，liveMode模式可以轻松的提供缓存，这是地图交互所必须的
@@ -990,7 +999,7 @@ ASMapNode提供了一个完整的异步准备，自动预加载，高效内存�
 
 不足：MKMapView 不是线程安全的
 
-## [#asvideonode](#asvideonode)ASVideoNode
+## ASVideoNode
 
 ASVedioNode是一个新的功能，并且专为方便高效的在滚动试图里嵌入视频
 
@@ -1000,7 +1009,7 @@ ASVedioNode是一个新的功能，并且专为方便高效的在滚动试图里
 
 例子：examples/videosTableview  - examples/videos
 
-## [#asscrollnode](#asscrollnode)ASScrollNode
+## ASScrollNode
 
 ASScrollNode是一个ASDisplayNode底层的观点UIScrollView。这个类提供了自动采用其ASLayoutSpec尺寸作为可滚动的功能contentSize。
 
@@ -1038,7 +1047,7 @@ scrollableDirections
 
 你可以看到，scrollNode底层的观点是一个ASScrollNode.
 
-### [#盒子模型排版](#盒子模型排版)盒子模型排版
+### 盒子模型排版
 
 ASLayout是一个自动的，异步的，纯OC盒子模型排版的布局功能，是一种CSS flex box的简单版，ComponetKit的简化版本，他的目的是让你的布局居右可扩展和复用性
 
@@ -1046,7 +1055,7 @@ UIView的实例存储位置，大小是通过center和bounds的属性，当约�
 
 实例（所有的ASDisplayNodes和子类）不需要大小和位置信息，相反，AsyncDisplayKit会调用layoutSpecThatFits方法通过给一个约束来描述大小和位置信息
 
-### [#术语](#术语)术语
+### 术语
 
 术语可能有点混乱，所以在这里对所有ASDK自动布局进行简单的说明：
 
@@ -1062,13 +1071,13 @@ UIView的实例存储位置，大小是通过center和bounds的属性，当约�
 
 你不需要了解ASLayout，只需要知道他代表着一个不变的布局树，而且通过遵循协议的对象返回
 
-### [#uikit组件布局](#uikit组件布局)UIKit组件布局
+### UIKit组件布局
 
 - 对于直接添加UIView，你需要手动的在didLoad:处理
 - 对于添加到ASDK得UIView，你可以在layoutSpecThatFits:处理
 
 
-## [#布局容器](#布局容器)布局容器
+## 布局容器
 
 AsyncDisplayKit包含有一套布局的组件，下面的LayoutSpecs允许你可以拥有多个孩子
 
@@ -1087,11 +1096,11 @@ ASStaticLayoutSpec 允许你固定孩子的偏移
 - ASRelativeLayoutSpec 9宫格缩放布局
 
 
-## [#布局样例](#布局样例)布局样例
+## 布局样例
 
 3个逐渐复杂的样例
 
-### [#nsspain-talk例子](#nsspain-talk例子)NSSpain Talk例子
+### NSSpain Talk例子
 
     - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constraint
     {
@@ -1111,7 +1120,7 @@ ASStaticLayoutSpec 允许你固定孩子的偏移
     }
 
 
-### [#社交app布局](#社交app布局)社交APP布局
+### 社交APP布局
 
     - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize
     {
@@ -1150,7 +1159,7 @@ ASStaticLayoutSpec 允许你固定孩子的偏移
 
 完整的ASDK工程可以查阅 example/ASDKgram
 
-### [#社交app布局2](#社交app布局2)社交APP布局2
+### 社交APP布局2
 
     - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
     
@@ -1245,17 +1254,17 @@ ASStaticLayoutSpec 允许你固定孩子的偏移
 
 完整的ASDK工程可以查阅 example/CatDealsCollectionView
 
-## [#布局调试](#布局调试)布局调试
+## 布局调试
 
 使用ASC II Art 调试
 
 ASLayoutSpecPlayground App
 
-## [#布局选项](#布局选项)布局选项
+## 布局选项
 
 当使用ASDK的时候，你有3种布局选择，注意：UIKit的autolayout不支持
 
-### [#手动计算布局](#手动计算布局)手动计算布局
+### 手动计算布局
 
 最原始的布局方式，类似于UIKit的布局方法，ASViewControllers使用这种布局方法
 
@@ -1275,9 +1284,9 @@ ASLayoutSpecPlayground App
 - 逻辑不可重用
 
 
-# [#优化](#优化)优化
+# 优化
 
-## [#层处理-layer-backing](#层处理-layer-backing)层处理 Layer-Backing
+## 层处理 Layer-Backing
 
 有些时候，大幅度使用Layer而不是使用views，可以提高你的app的性能，但是手动的把基于view开发的界面代码改为基于layer的界面代码，非常的费劲，如果有时候因为要开启触摸或者view特定的功能的时候，你可能要功能回退
 
@@ -1287,7 +1296,7 @@ rootNode.layerBacked = YES;
 
 如果你想回退，也只需要删除这一行，我们建议不需要触摸处理的所有视图都开启
 
-## [#同步并发](#同步并发)同步并发
+## 同步并发
 
 ASViewController和ASCellNode有一个属性neverShowPlaceholders。
 
@@ -1300,7 +1309,7 @@ ASViewController和ASCellNode有一个属性neverShowPlaceholders。
 
 通常情况下，如果一个单元格已经到达屏幕之前没有完成显示通道，它将显示占位符，直到绘制其内容为止。将此选项设置为YES会使您的滚动节点或ASViewController的行为更像UIKit，实际上使AsyncDisplayKit在UIKit的视觉上与UIKit不可区分，但速度更快。
 
-## [#子树光栅化](#子树光栅化)子树光栅化
+## 子树光栅化
 
 预压缩，扁平化整个视图层级到一个图层，也可以提高性能，node也可以帮你做这件事
 
@@ -1309,9 +1318,9 @@ ASViewController和ASCellNode有一个属性neverShowPlaceholders。
 
 你的整个node层级都会渲染在一个layer下
 
-# [#开发工具](#开发工具)开发工具
+# [开发工具
 
-## [#点击区域扩展](#点击区域扩展)点击区域扩展
+## 点击区域扩展
 
 ASDisplayNode有一个hitTestSlop属性，是UIEdgeInsets，当这个值非零的时候，可以增加点击区域，更加方便进行点击
 
@@ -1322,7 +1331,7 @@ ASDisplayNode是所有节点的基类，所以这个属性可以在任何node上
 
 节点的触摸事件受到其父的边界+父HitTestSlop限制，如果想扩展父节点下的一个孩子节点的边界，请直接扩展父节点
 
-## [#批量获取api](#批量获取api)批量获取API
+## [批量获取API
 
 ASDK的批量获取API可以很方便的让开发者获取大量新数据，如果用户滚动一个列表或者宫格的view，会自动的在特定范围内批量抓取，时机是由ASDK触发的
 
@@ -1389,7 +1398,7 @@ ASDK的批量获取API可以很方便的让开发者获取大量新数据，如�
 - ASCollectionView
 
 
-## [#图片修改块](#图片修改块)图片修改块
+## 图片修改块
 
 很多时候，会影响你所显示的图像的外观的操作是主线程工作的大来源。当然，你想把它们移动到后台线程。
 
@@ -1411,13 +1420,13 @@ ASDK的批量获取API可以很方便的让开发者获取大量新数据，如�
 
 名为“someImage”的图像现在将在分配给要显示的imageNode之前异步模糊。
 
-## [#占位符渐隐](#占位符渐隐)占位符渐隐
+## 占位符渐隐
 
 控制占位符渐隐时间
 
-## [#点击区域可视](#点击区域可视)点击区域可视
+## 点击区域可视
 
-### [#可视化的点击区域](#可视化的点击区域)可视化的点击区域
+### 可视化的点击区域
 
 这是一个调试功能，把任何的ASControlNodes加上半透明高亮，点击，手势识别，这个范围定义为ASControlNodes的frame+hitTestSlop的范围
 
@@ -1428,19 +1437,19 @@ ASDK的批量获取API可以很方便的让开发者获取大量新数据，如�
 - hitTestSlop缩小的点击范围，也可以观察出来
 
 
-[![https://camo.githubusercontent.com/2723b3d21ab502f7fd193c80b6672014cde6eeb8/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3031353335332e6a7067](https://camo.githubusercontent.com/2723b3d21ab502f7fd193c80b6672014cde6eeb8/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3031353335332e6a7067)](https://camo.githubusercontent.com/2723b3d21ab502f7fd193c80b6672014cde6eeb8/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3031353335332e6a7067)
+![](http://cloud9dic.b0.upaiyun.com/2017-03-30-015353.jpg)
 
-### [#限制](#限制)限制
+### 限制
 
 在收到父节点clipsToBounds的剪裁
 
-### [#用法](#用法)用法
+### 用法
 
 在你的Appdelegate.m中
 添加[ASControlNode setEnableHitTestDebug:YES] 到你的didFinishLaunchingWithOptions: 方法的最上方，
 确保在任何ASControllNode初始化前调用这个方法，包括ASButtonNodes, ASImageNodes, and ASTextNodes.
 
-## [#图片缩放](#图片缩放)图片缩放
+## 图片缩放
 
 可视化的ASImageNode.image像素缩放
 如果像素图像不符合像素大小，这个调试工具会增加了一个红色的文本出现在ASImageNode右下角，
@@ -1463,9 +1472,9 @@ ASDK的批量获取API可以很方便的让开发者获取大量新数据，如�
 
 在下面的截图中，你可以看到，低质量图片被放大因此右下角有文字，你需要优化你的功能，控制最终的尺寸和最佳的图像
 
-[![https://camo.githubusercontent.com/b4ca80b5df0da26c85aac20e3a1b25d8410c0d6d/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3031353432392e6a7067](https://camo.githubusercontent.com/b4ca80b5df0da26c85aac20e3a1b25d8410c0d6d/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3031353432392e6a7067)](https://camo.githubusercontent.com/b4ca80b5df0da26c85aac20e3a1b25d8410c0d6d/687474703a2f2f636c6f7564396469632e62302e7570616979756e2e636f6d2f323031372d30332d33302d3031353432392e6a7067)
+![](http://cloud9dic.b0.upaiyun.com/2017-03-30-015429.jpg)
 
-### [#使用](#使用)使用
+### 使用
 
 在appdelegate.m文件中
 
