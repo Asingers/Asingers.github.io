@@ -53,7 +53,8 @@ AsyncDisplayKit的排版引擎是非常强大并且独特的，基于CSS FlexBox
 - ASBackgroundLayoutSpec. 设置节点背景.
 - ASStaticLayoutSpec. 当要手动定义一组节点静态大小  
 
-## 所达到的效果   
+## 所达到的效果  
+
 AsyncDisplayKit是一个UI框架，最初诞生于Facebook App。最开始Facebook团队面临一个很核心的问题：怎么能保证主线程尽可能的简洁，AsyncDisplayKit就是答案。
 
 现在，很多应用程序都会频繁使用手势以及物理动画，再不济，你的app也会很广泛使用某种形式的滚动试图，这类型的用户交互是完全决定于主线程的流畅，并且对主线程的负荷十分敏感，一个被阻塞的主线程就意味着掉帧，卡顿，意味着很不愉快的用户体验
@@ -65,61 +66,63 @@ AsyncDisplayKit的Node节点就是一个线程安全的抽象对象，基于UIVi
 
 在iPhone6+上的性能提升不是很明显，但是在4S上，性能差距非常之大  
 
-### 强大的用户体验
+### 强大的用户体验  
 
-AsyncDisplayKit所带来的性能提升，可以让你为每个用户在所有设备上，在所有的网络环境下，提供强大的用户体验设计
+AsyncDisplayKit所带来的性能提升，可以让你为每个用户在所有设备上，在所有的网络环境下，提供强大的用户体验设计  
 
-### 强大的开发体验
+### 强大的开发体验  
 
 AsyncDisplayKit一样也在追求开发人员的使用体验，追求iOS&tvOS跨平台的特性，追求swift&OC语言的兼容性。只需要很少的代码就能构建很棒的app，清晰的架构，健壮的代码（参见examples/ASDKgram这个例子）（开发这个的都是一些超级聪明工作3年多的工程师）
 
-### 高级的开发工具
+### 高级的开发工具  
 
-随着AsyncDisplayKit逐渐成熟，很多聪明的工程师都加入一起构建这个项目，可以大幅度节省作为开发者，使用ASDK的开发时间
+随着AsyncDisplayKit逐渐成熟，很多聪明的工程师都加入一起构建这个项目，可以大幅度节省作为开发者，使用ASDK的开发时间  
 
-先进技术
+先进技术  
 
-ASRunLoopQueue
+ASRunLoopQueue  
 
-ASRangeController 智能预加载
+ASRangeController 智能预加载  
 
-网络工具
+网络工具  
 
-automatic batch fetching (e.g. JSON payloads)自动批量抓取
+automatic batch fetching (e.g. JSON payloads)自动批量抓取  
 
-## 安装
+## 安装  
 
-**CocoaPods安装**
-AsyncDisplayKit可以使用cocoapods安装，将下面的代码添加进入`Podfile`
+**CocoaPods安装**  
 
-`pod 'AsyncDisplayKit'`
+AsyncDisplayKit可以使用cocoapods安装，将下面的代码添加进入`Podfile`  
 
-**Carthage安装**
-AsyncDisplayKit可以使用Carthage安装，将下面的代码添加进入`Cartfile`
+`pod 'AsyncDisplayKit'`  
 
-`github "facebook/AsyncDisplayKit"`
+**Carthage安装**  
 
-在终端执行`carthage update`来构建AsyncDisplayKit库，会自动在项目根目录下生成Carthage名字的文件夹，里面有个build文件夹，可以用来framework到你打算使用的项目中
+AsyncDisplayKit可以使用Carthage安装，将下面的代码添加进入`Cartfile`  
 
-**静态库**
-AsyncDisplayKit可以当做静态库引入
+`github "facebook/AsyncDisplayKit"`  
 
-1）拷贝整个工程到你的目录下，添加`AsyncDisplayKit.xcodeproj`到你的workspace
+在终端执行`carthage update`来构建AsyncDisplayKit库，会自动在项目根目录下生成Carthage名字的文件夹，里面有个build文件夹，可以用来framework到你打算使用的项目中  
 
-2）在build phases中，在Target Dependencies下添加AsyncDisplayKit Library
+**静态库**  
 
-3）在build phases中，添加libAsyncDisplayKit.a, AssetsLibrary, Photos等框架到Link Binary With Libraries中
+AsyncDisplayKit可以当做静态库引入  
 
-4）在build settings中，添加`-lc++`和`-ObjC`到 project linker flags
+1）拷贝整个工程到你的目录下，添加`AsyncDisplayKit.xcodeproj`到你的workspace  
 
-**引用AsyncDisplayKit**
+2）在build phases中，在Target Dependencies下添加AsyncDisplayKit Library  
 
-    #import <AsyncDisplayKit/AsyncDisplayKit.h>
+3）在build phases中，添加libAsyncDisplayKit.a, AssetsLibrary, Photos等框架到Link Binary With Libraries中  
 
+4）在build settings中，添加`-lc++`和`-ObjC`到 project linker flags  
 
-# 核心概念
+**引用AsyncDisplayKit**  
 
-## 智能预加载
+    #import <AsyncDisplayKit/AsyncDisplayKit.h>  
+		
+# 核心概念  
+
+## 智能预加载  
 
 node的功能很强大的原因是具有异步渲染和计算的能力，另一个至关重要的因素是ASDK的智能预加载方案。
 
