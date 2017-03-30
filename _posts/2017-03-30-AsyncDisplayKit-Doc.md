@@ -998,15 +998,16 @@ scrollableDirections
 你可以看到，scrollNode底层的观点是一个ASScrollNode.
 
 
+
 ### 盒子模型排版
 
 ASLayout是一个自动的，异步的，纯OC盒子模型排版的布局功能，是一种CSS flex box的简单版，ComponetKit的简化版本，他的目的是让你的布局居右可扩展和复用性
 
 UIView的实例存储位置，大小是通过center和bounds的属性，当约束条件发生变化，CoreAnimation会调用layoutSubviews，告诉view需要更新界面
 
-<ASLayoutable>实例（所有的ASDisplayNodes和子类）不需要大小和位置信息，相反，AsyncDisplayKit会调用layoutSpecThatFits方法通过给一个约束来描述大小和位置信息
+<ASLayoutable>实例（所有的ASDisplayNodes和子类）不需要大小和位置信息，相反，AsyncDisplayKit会调用layoutSpecThatFits方法通过给一个约束来描述大小和位置信息  
 
-### 术语
+### 术语  
 
 术语可能有点混乱，所以在这里对所有ASDK自动布局进行简单的说明：
 
@@ -1020,15 +1021,17 @@ UIView的实例存储位置，大小是通过center和bounds的属性，当约�
 
 每个ASLayoutSpec至少要作用在一个孩子上，ASLayoutSpec持有这个孩子，一些约束规则如ASInsetLayoutSpec，只需要一个孩子，其他的规则需要多个孩子。
 
-你不需要了解ASLayout，只需要知道他代表着一个不变的布局树，而且通过遵循<ASLayoutable>协议的对象返回
+你不需要了解ASLayout，只需要知道他代表着一个不变的布局树，而且通过遵循<ASLayoutable>协议的对象返回  
 
-### UIKit组件布局
+### UIKit组件布局  
+
 
 - 对于直接添加UIView，你需要手动的在didLoad:处理
 - 对于添加到ASDK得UIView，你可以在layoutSpecThatFits:处理
 
 
-## 布局容器
+## 布局容器  
+
 
 AsyncDisplayKit包含有一套布局的组件，下面的LayoutSpecs允许你可以拥有多个孩子
 
@@ -1051,11 +1054,13 @@ ASStaticLayoutSpec 允许你固定孩子的偏移
 - ASRelativeLayoutSpec 9宫格缩放布局
 
 
-## 布局样例
+## 布局样例  
+
 
 3个逐渐复杂的样例
 
-### NSSpain Talk例子
+### NSSpain Talk例子  
+
 
 
     - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constraint
@@ -1076,7 +1081,8 @@ ASStaticLayoutSpec 允许你固定孩子的偏移
     }
 
 
-### 社交APP布局
+### 社交APP布局  
+
 
 
     - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize
@@ -1116,7 +1122,8 @@ ASStaticLayoutSpec 允许你固定孩子的偏移
 
 完整的ASDK工程可以查阅 example/ASDKgram
 
-### 社交APP布局2
+### 社交APP布局2  
+
 
 
     - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
@@ -1218,11 +1225,13 @@ ASStaticLayoutSpec 允许你固定孩子的偏移
 
 ASLayoutSpecPlayground App
 
-## 布局选项
+## 布局选项  
+
 
 当使用ASDK的时候，你有3种布局选择，注意：UIKit的autolayout不支持
 
-### 手动计算布局
+### 手动计算布局  
+
 
 最原始的布局方式，类似于UIKit的布局方法，ASViewControllers使用这种布局方法
 
@@ -1242,9 +1251,11 @@ ASLayoutSpecPlayground App
 - 逻辑不可重用
 
 
-# 优化
+# 优化  
 
-## 层处理 Layer-Backing
+
+## 层处理 Layer-Backing  
+
 
 有些时候，大幅度使用Layer而不是使用views，可以提高你的app的性能，但是手动的把基于view开发的界面代码改为基于layer的界面代码，非常的费劲，如果有时候因为要开启触摸或者view特定的功能的时候，你可能要功能回退
 
@@ -1254,7 +1265,8 @@ rootNode.layerBacked = YES;
 
 如果你想回退，也只需要删除这一行，我们建议不需要触摸处理的所有视图都开启
 
-## 同步并发
+## 同步并发  
+
 
 ASViewController和ASCellNode有一个属性neverShowPlaceholders。
 
@@ -1267,7 +1279,8 @@ ASViewController和ASCellNode有一个属性neverShowPlaceholders。
 
 通常情况下，如果一个单元格已经到达屏幕之前没有完成显示通道，它将显示占位符，直到绘制其内容为止。将此选项设置为YES会使您的滚动节点或ASViewController的行为更像UIKit，实际上使AsyncDisplayKit在UIKit的视觉上与UIKit不可区分，但速度更快。
 
-## 子树光栅化
+## 子树光栅化  
+
 
 预压缩，扁平化整个视图层级到一个图层，也可以提高性能，node也可以帮你做这件事
 
@@ -1276,9 +1289,11 @@ ASViewController和ASCellNode有一个属性neverShowPlaceholders。
 你的整个node层级都会渲染在一个layer下
 
 
-# 开发工具
+# 开发工具  
 
-## 点击区域扩展
+
+## 点击区域扩展  
+
 
 ASDisplayNode有一个hitTestSlop属性，是UIEdgeInsets，当这个值非零的时候，可以增加点击区域，更加方便进行点击
 
@@ -1289,7 +1304,8 @@ ASDisplayNode是所有节点的基类，所以这个属性可以在任何node上
 
 节点的触摸事件受到其父的边界+父HitTestSlop限制，如果想扩展父节点下的一个孩子节点的边界，请直接扩展父节点
 
-## 批量获取API
+## 批量获取API  
+
 
 ASDK的批量获取API可以很方便的让开发者获取大量新数据，如果用户滚动一个列表或者宫格的view，会自动的在特定范围内批量抓取，时机是由ASDK触发的
 
@@ -1352,7 +1368,8 @@ ASDK的批量获取API可以很方便的让开发者获取大量新数据，如�
 - ASCollectionView
 
 
-## 图片修改块
+## 图片修改块  
+
 
 很多时候，会影响你所显示的图像的外观的操作是主线程工作的大来源。当然，你想把它们移动到后台线程。
 
@@ -1371,13 +1388,16 @@ ASDK的批量获取API可以很方便的让开发者获取大量新数据，如�
 	_backgroundImageNode.image = someImage;
 名为“someImage”的图像现在将在分配给要显示的imageNode之前异步模糊。
 
-## 占位符渐隐
+## 占位符渐隐  
+
 
 控制占位符渐隐时间
 
-## 点击区域可视
+## 点击区域可视  
 
-### 可视化的点击区域
+
+### 可视化的点击区域  
+
 
 这是一个调试功能，把任何的ASControlNodes加上半透明高亮，点击，手势识别，这个范围定义为ASControlNodes的frame+hitTestSlop的范围
 
@@ -1389,17 +1409,20 @@ ASDK的批量获取API可以很方便的让开发者获取大量新数据，如�
 
 ![](http://cloud9dic.b0.upaiyun.com/2017-03-30-015353.jpg)
 
-### 限制
+### 限制  
+
 
 在收到父节点clipsToBounds的剪裁
 
-### 用法
+### 用法  
+
 
 在你的Appdelegate.m中
 添加[ASControlNode setEnableHitTestDebug:YES] 到你的didFinishLaunchingWithOptions: 方法的最上方，
 确保在任何ASControllNode初始化前调用这个方法，包括ASButtonNodes, ASImageNodes, and ASTextNodes.
 
-## 图片缩放
+## 图片缩放  
+
 
 可视化的ASImageNode.image像素缩放
 如果像素图像不符合像素大小，这个调试工具会增加了一个红色的文本出现在ASImageNode右下角，
@@ -1425,14 +1448,14 @@ ASDK的批量获取API可以很方便的让开发者获取大量新数据，如�
 ![](http://cloud9dic.b0.upaiyun.com/2017-03-30-015429.jpg)
 
 
-### 使用
+### 使用  
+
 
 在appdelegate.m文件中
 
 导入AsyncDisplayKit+Debug.h
 
 添加[ASImageNode setShouldShowImageScalingOverlay:YES] 到didFinishLaunchingWithOptions: 方法的最上方
-
 
 
 
