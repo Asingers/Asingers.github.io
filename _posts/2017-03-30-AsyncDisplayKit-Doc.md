@@ -6,6 +6,8 @@ categories: ios
 catalog: true
 ---
 
+> 最近在学习牛X的 AsyncDisplayKit,阅读官方那个文档发现知识量真是惊人...对照文档进行翻译做笔记
+
 ### 入门
 
 AsyncDisplayKit的基本单位是node。 ASDisplayNode是一个抽象UIView，反过来是一个抽象CALayer。不同于只能在主线程上使用的视图，节点是线程安全的：您可以在后台线程上并行实例化和配置它们的整个层次结构。
