@@ -4,6 +4,7 @@ title: SDWebImage 缓存机制
 description: SDWebImage 缓存机制
 categories: ios
 tags: iOS
+catalog: true
 
 ---
 > SDWebImage 相信对大多数开发者来说，都是一个不陌生的名字。它除了帮助我们读取网络图片，还会处理这些图片的缓存。它的缓存机制到底是什么样的呢，今天我们就来看一看.
