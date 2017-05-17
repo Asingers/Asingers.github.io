@@ -6,12 +6,12 @@ description: "Life is struggle"
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-                   <div class="post-cover">
-    <img src="{{ post.cover }}" alt="">
-  </div>
         <h2 class="post-title">
             {{ post.title }}
         </h2>
+            <div class="post-cover">
+                <img src="{{ post.cover }}" alt="">
+            </div>
         {% if post.subtitle %}
         <h3 class="post-subtitle">
             {{ post.subtitle }}
