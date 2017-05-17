@@ -57,6 +57,10 @@ layout: default
                         <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
                         Previous<br>
                         <span>{{page.previous.title}}</span>
+                                    {% if page.previous.cover %}
+            <div class="filter"></div>
+            <img src="{{ page.previous.cover }}" alt="">
+            {% endif %}
                         </a>
                     </li>
                     {% endif %}
@@ -65,6 +69,10 @@ layout: default
                         <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
                         Next<br>
                         <span>{{page.next.title}}</span>
+                                    {% if page.next.cover %}
+            <div class="filter"></div>
+            <img src="{{ page.next.cover }}" alt="">
+            {% endif %}
                         </a>
                     </li>
                     {% endif %}
