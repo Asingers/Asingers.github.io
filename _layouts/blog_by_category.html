@@ -26,6 +26,7 @@ description: "list"
                     Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
                 </p>
             </div>
+            <hr>
         {% endfor %}
 
     {% else %}
