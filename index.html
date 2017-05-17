@@ -9,9 +9,6 @@ description: "Life is struggle"
         <h2 class="post-title">
             {{ post.title }}
         </h2>
-  <div class="post-cover">
-    <img src="{{ post.cover }}" alt="">
-  </div>
         {% if post.subtitle %}
         <h3 class="post-subtitle">
             {{ post.subtitle }}
@@ -20,6 +17,9 @@ description: "Life is struggle"
         <div class="post-content-preview">
             {{ post.content | strip_html | truncate:200 }}
         </div>
+   <div class="post-cover">
+    <img src="{{ post.cover }}" alt="">
+  </div>
     </a>
     <p class="post-meta">
         Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
