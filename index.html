@@ -6,6 +6,9 @@ description: "Life is struggle"
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
+                   <div class="post-cover">
+    <img src="{{ post.cover }}" alt="">
+  </div>
         <h2 class="post-title">
             {{ post.title }}
         </h2>
@@ -17,9 +20,6 @@ description: "Life is struggle"
         <div class="post-content-preview">
             {{ post.content | strip_html | truncate:200 }}
         </div>
-           <div class="post-cover">
-    <img src="{{ post.cover }}" alt="">
-  </div>
     </a>
     <p class="post-meta">
         Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
