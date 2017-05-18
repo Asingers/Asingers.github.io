@@ -2,22 +2,35 @@
 layout: default
 ---
 
+<!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        /*pld*/
-        /*background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')*/
-        background-image: url('{{ site.baseurl }}{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
+        position: relative;
+        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
     }
+
+    {% if page.header-mask %}
+    header.intro-header .header-mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0,0,0, {{ page.header-mask }});
+    }
+    {% endif %}
 </style>
 <header class="intro-header" >
+    <div class="header-mask"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
                     <div class="tags">
                         {% for tag in page.tags %}
-                        <a class="tag" href="{{ site.baseurl }}/pages/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+                        <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
                         {% endfor %}
                     </div>
                     <h1>{{ page.title }}</h1>
@@ -32,7 +45,6 @@ layout: default
             </div>
         </div>
     </div>
-    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </header>
 
 <!-- Post Content -->
@@ -45,25 +57,45 @@ layout: default
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
-               <!-- <p><a href="https://itunes.apple.com/cn/app/%E8%B7%B3%E8%88%9E%E7%9A%84%E7%BA%BF-dancing-line/id1177953618?mt=8&amp;at=1001ludq"><img src="http://cloud9dic.b0.upaiyun.com/2017-03-08-142249.jpg" alt="" title="" /></a></p> -->
+
                 {{ content }}
+
                 <hr style="visibility: hidden;">
 
-                <hr>分享文章到微博: <wb:share-button appkey="363523033" addition="simple" type="button" ralateUid="1780482190" language="zh_cn"></wb:share-button>
+                {% if site.duoshuo_share && site.duoshuo_username %}
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="{{page.id}}"
+                    data-title="{{page.title}}"
+                    data-url="{{site.url}}{{site.baseurl}}{{page.url}}"
+                    data-images="{{ site.url }}{{site.baseurl}}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}"
+                    data-content="{{ content | strip_html | truncate:80 }} | {{ site.SEOTitle }} " >
+                    <div class="ds-share-inline">
+                      <style> 
+                        .ds-share-icons-16 {display:none;} 
+                      </style>
+                      <ul class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
                 <hr>
+                </div>
+                <!-- 多说 Share end-->
+                {% endif %}
+
+
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
                         <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
                         Previous<br>
                         <span>{{page.previous.title}}</span>
-<!--                                     {% if page.previous.cover %}
-            <div class="filter"></div>
-            <img src="{{ page.previous.cover }}" alt="">
-            {% else %}
-            <div class="filter"></div>
-            <img src="http://7xqmgj.com1.z0.glb.clouddn.com/2017-05-17-nocover.png" alt="">
-            {% endif %} -->
                         </a>
                     </li>
                     {% endif %}
@@ -72,17 +104,24 @@ layout: default
                         <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
                         Next<br>
                         <span>{{page.next.title}}</span>
-<!--                                     {% if page.next.cover %}
-            <div class="filter"></div>
-            <img src="{{ page.next.cover }}" alt="">
-            {% else %}
-            <div class="filter"></div>
-            <img src="http://7xqmgj.com1.z0.glb.clouddn.com/2017-05-17-nocover.png" alt="">
-            {% endif %} -->
                         </a>
                     </li>
                     {% endif %}
                 </ul>
+
+
+                {% if site.duoshuo_username %}
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="{{page.id}}"
+                        data-title="{{page.title}}"
+                        data-url="{{site.url}}{{site.baseurl}}{{page.url}}" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                {% endif %}
+
                 {% if site.disqus_username %}
                 <!-- disqus 评论框 start -->
                 <div class="comment">
@@ -90,8 +129,10 @@ layout: default
                 </div>
                 <!-- disqus 评论框 end -->
                 {% endif %}
-                <!-- <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div> -->
-            </div>
+
+            </div>  
+
+    <!-- Side Catalog Container -->
         {% if page.catalog %}
             <div class="
                 col-lg-2 col-lg-offset-0
@@ -107,6 +148,7 @@ layout: default
                 </div>
             </div>
         {% endif %}
+
     <!-- Sidebar Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
@@ -117,11 +159,11 @@ layout: default
                 {% if site.featured-tags %}
                 <section>
                     <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/pages/tags/">FEATURED TAGS</a></h5>
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                         {% for tag in site.tags %}
                             {% if tag[1].size > {{site.featured-condition-size}} %}
-                                <a href="/pages/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                <a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
                                     {{ tag[0] }}
                                 </a>
                             {% endif %}
@@ -144,13 +186,28 @@ layout: default
         </div>
     </div>
 </article>
+
+
+{% if site.duoshuo_username %}
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
-    $(function () {
-        $("img.lazy").lazyload({
-            effect: "fadeIn"
-        });
-    });
+    // dynamic User by Hux
+    var _user = '{{site.duoshuo_username}}';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
 </script>
+<!-- 多说公共JS代码 end -->
+{% endif %}
+
 
 {% if site.disqus_username %}
 <!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
@@ -169,15 +226,6 @@ layout: default
 <!-- disqus 公共JS代码 end -->
 {% endif %}
 
-<script>
-  var cloudTieConfig = {
-    url: document.location.href, 
-    sourceId: "",
-    productKey: "532644aa4f9645c2b9051a9de4779799",
-    target: "cloud-tie-wrapper"
-  };
-</script>
-<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 
 {% if site.anchorjs %}
 <!-- async load function -->
@@ -192,9 +240,8 @@ layout: default
     }
 </script>
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<!-- Asingers 自定义 -->
 <script>
-    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
         anchors.options = {
           visible: 'always',
           placement: 'right',
@@ -209,7 +256,7 @@ layout: default
         .anchorjs-link{
             position: absolute;
             left: -0.75em;
-            font-size: 1.2em;
+            font-size: 1.1em;
             margin-top : -0.1em;
         }
     }
