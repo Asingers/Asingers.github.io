@@ -5,8 +5,6 @@ layout: default
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        /*pld*/
-        /*background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')*/
         background-image: url('{{ site.baseurl }}{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
     }
         {% if page.header-mask %}
@@ -16,8 +14,7 @@ layout: default
         position: absolute;
         background: rgba(0,0,0, {{ page.header-mask }});
     }
-    {% endif %}
-
+        {% endif %}
 </style>
 <header class="intro-header" >
     <div class="header-mask"></div>
