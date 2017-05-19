@@ -1,10 +1,4 @@
 <!-- Footer -->
-<div id="backtotop">
-  <div class="backtotop-btn">
-    <div class="arrow-upward"></div>
-    <div class="vertical-stick"></div>
-  </div>
-</div>
 <footer>
     <div class="container">
         <div class="row">
@@ -201,10 +195,6 @@
         $('.side-catalog').toggleClass("fold")
     }))
 
-    /*
-     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
-     * Fork by Hux to support padding
-     */
     async("/js/jquery.nav.js", function () {
         $('.catalog-body').onePageNav({
             currentClass: "active",
