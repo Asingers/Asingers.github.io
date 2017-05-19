@@ -77,7 +77,7 @@
 .side-catalog .catalog-body {
   position: relative;
   list-style: none;
-  height: 500px;
+  height: auto;
   overflow: hidden;
   padding-left: 0px;
   padding-right: 5px;
