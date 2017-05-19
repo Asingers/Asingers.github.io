@@ -1,46 +1,40 @@
 # Site settings
-title: Asingers | Dev
-owner: Asingers
-SEOTitle: Asingers的独立博客
-header-img: http://cloud9dic.b0.upaiyun.com/2017-04-02-Wallions26021.jpeg
-email: asingers@9dic.com
-description: "Asingers ，张袁杰 ，9dic.com ，iOS,解忧の杂货, Asingers的独立博客"
-keyword: "Asingers,博客,个人网站,互联网,产品,解忧の杂货,9dic.com,9dic,aws,svn,vpn,xcode,教程,张袁杰,Asingers的独立博客"
+title: Hux Blog
+SEOTitle: 黄玄的博客 | Hux Blog
+header-img: img/home-bg.jpg
+email: huxpro@gmail.com
+description: "关于前端与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。"
+keyword: "黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品, 肖玉, Lynn, 肖玉的男朋友"
 url: "http://9dic.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
-permalink: :categories/:title/
 
-categories: [App,Photo]
-navigation:
-  - title: App
-    url: /App
-  - title: Photo
-    url: /Photo
+
 
 # SNS settings
 RSS: false
-# weibo_username:    Asingers
-# zhihu_username:    Asingers
-# github_username:   Asingers
-# twitter_username:  Asingersz
-# facebook_username:  Asingers.z
-
-# E-mail:
-# mail_username: 	    asingers@9dic
+weibo_username:     huxpro
+zhihu_username:     huxpro
+github_username:    huxpro
+#twitter_username:  huxpro
+facebook_username:  huxpro
+# linkedin_username:  firstname-lastname-idxxxx
 
 
 
 # Build settings
-#highlighter: pygments
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
 gems: [jekyll-paginate]
+
 
 
 # Markdown settings
@@ -54,48 +48,79 @@ kramdown:
 
 
 # Disqus settings
-#disqus_username: 9dic
+disqus_username: hux
+
+# Duoshuo settings
+duoshuo_username: huxblog
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+
+
+
 
 # Analytics settings
-# Baidu Analytics
-ba_track_id: 755e6c341058bb1bd7322efd4abda5a7
+# Baidu Analytics 
+# ba_track_id: [your track id]
+
 # Google Analytics
-ga_track_id: 'UA-70263726-2'            # Format: UA-xxxxxx-xx
-ga_domain: 9dic.com
+ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_domain: huangxuan.me
 
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "在平坦的路面上,曲折前行."
-# sidebar-avatar: /img/avatar.png     # use absolute URL, seeing it's used in both `/` and `/about/`
-# sidebar-avatar: http://7xqmgj.com1.z0.glb.clouddn.com/header_imgp1092913307.jpg
-# sidebar-avatar: http://7xqmgj.com1.z0.glb.clouddn.com/love1.png
-sidebar-avatar: http://7xqmgj.com1.z0.glb.clouddn.com/2016-08-17_tantantan.gif
-# sidebar-wechat: http://7xqmgj.com1.z0.glb.clouddn.com/wechat.jpg
+sidebar-about-description: "写写代码，做做设计，<br>离开世界之前，一切都是过程"
+sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
-# Featured Tags
-featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 3              # A tag will be featured if the size of it is more than this condition value
+
 
 # Friends
-#friends: [
-#    {
-#        title: “”,
-#        href: ""
-#    },{
-#        title: “”,
-#        href: ""
-#    },{
-#        title: “”,
-#        href: ""
-#    },{
-#        title: “”,
-#        href: ""
-#    }
-#]
-
+friends: [
+    {
+        title: "Su",
+        href: "http://su.gallery/"
+    },{
+        title: "乱序",
+        href: "http://mida.re/"
+    },{
+        title: "前端外刊评论",
+        href: "http://qianduan.guru/"
+    },{
+        title: "天镶的博客",
+        href: "http://lingyu.wang/"
+    },{
+        title: "Luke 的自留地",
+        href: "http://hmqk1995.github.io"
+    },{
+        title: "Ebn's Blog",
+        href: "http://ebnbin.com/"
+    },{
+        title: "SmdCn's Blog",
+        href: "http://blog.smdcn.net"
+    },{
+        title: "解旻的博客",
+        href: "http://xieminis.me/"
+    },{
+        title: "DHong Say",
+        href: "http://dhong.co"
+    },{
+        title: "尹峰以为",
+        href: "http://ingf.github.io/"
+    },{
+        title: "前端神盾局",
+        href: "http://wepiaofei.github.io/blog/"
+    }
+]
