@@ -1,10 +1,10 @@
 # Site settings
-title: Hux Blog
+title: Asingers Blog
 SEOTitle: 黄玄的博客 | Hux Blog
 header-img: http://cloud9dic.b0.upaiyun.com/2017-04-02-Wallions26021.jpeg
 email: huxpro@gmail.com
-description: "关于前端与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。"
-keyword: "黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品, 肖玉, Lynn, 肖玉的男朋友"
+description: "Asingers ，张袁杰 ，9dic.com ，iOS,解忧の杂货, Asingers的独立博客"
+keyword: "Asingers,博客,个人网站,互联网,产品,解忧の杂货,9dic.com,9dic,aws,svn,vpn,xcode,教程,张袁杰,Asingers的独立博客"
 url: "http://9dic.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -12,14 +12,14 @@ baseurl: ""                             # for example, '/blog' if your blog host
 
 # SNS settings
 RSS: false
-weibo_username:     huxpro
-zhihu_username:     huxpro
-github_username:    huxpro
-#twitter_username:  huxpro
-facebook_username:  huxpro
-# linkedin_username:  firstname-lastname-idxxxx
+# weibo_username:    Asingers
+# zhihu_username:    Asingers
+# github_username:   Asingers
+# twitter_username:  Asingersz
+# facebook_username:  Asingers.z
 
-
+# E-mail:
+# mail_username:        asingers@9dic
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
