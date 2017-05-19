@@ -1,7 +1,7 @@
 ---
 layout: blog_by_category
 title: 'PHOTO'
-header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/2016-11-24-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-24%2020.11.36.png"
+header-img: "http://o6ledomfy.bkt.clouddn.com/2017-05-19-2016-12-27-20160610-2016-06-10%20143904-compressed.jpg"
 category: Photo
 permalink: /Photo/
 ---
