@@ -3,6 +3,7 @@ layout:     keynote
 title:      "JavaScript 模块化七日谈"
 subtitle:   "Keynote: JavaScript Modularization Journey"
 iframe:     "http://7xoawu.com1.z0.glb.clouddn.com/keynotejs_math.html"
+navcolor: invert
 date:       2015-07-09
 author:     "Alpaca"
 tags:
