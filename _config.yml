@@ -2,8 +2,8 @@
 title: Asingers Blog
 SEOTitle: Asingers的独立博客 | Asingers Blog
 header-img: http://o6ledomfy.bkt.clouddn.com/2017-05-19-Wallions20930.jpeg
-email: huxpro@gmail.com
-description: "Asingers ，张袁杰 ，9dic.com ，iOS,解忧の杂货, Asingers的独立博客"
+email: asingers@9dic.com
+description: "Asingers ，张袁杰 ，9dic.com ，iOS, 解忧の杂货, Asingers的独立博客"
 keyword: "Asingers,博客,个人网站,互联网,产品,解忧の杂货,9dic.com,9dic,aws,svn,vpn,xcode,教程,张袁杰,Asingers的独立博客"
 url: "http://9dic.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
@@ -12,9 +12,9 @@ owner: Asingers
 
 # SNS settings
 RSS: false
-# weibo_username:    Asingers
-# zhihu_username:    Asingers
-# github_username:   Asingers
+# weibo_username:    
+# zhihu_username:    
+# github_username:   
 # twitter_username:  Asingersz
 # facebook_username:  Asingers.z
 
