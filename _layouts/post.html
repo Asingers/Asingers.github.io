@@ -216,39 +216,5 @@ layout: default
 </style>
 {% endif %}
 <script>
-function backtotop(acceleration,stime) {
-   acceleration = acceleration || 0.1;
-   stime = stime || 10;
-   var x1 = 0;
-   var y1 = 0;
-   var x2 = 0;
-   var y2 = 0;
-   var x3 = 0;
-   var y3 = 0; 
-   if (document.documentElement) {
-       x1 = document.documentElement.scrollLeft || 0;
-       y1 = document.documentElement.scrollTop || 0;
-   }
-   if (document.body) {
-       x2 = document.body.scrollLeft || 0;
-       y2 = document.body.scrollTop || 0;
-   }
-   var x3 = window.scrollX || 0;
-   var y3 = window.scrollY || 0;
- 
-   // ¹ö¶¯Ìõµ½Ò³Ãæ¶¥²¿µÄË®Æ½¾àÀë
-   var x = Math.max(x1, Math.max(x2, x3));
-   // ¹ö¶¯Ìõµ½Ò³Ãæ¶¥²¿µÄ´¹Ö±¾àÀë
-   var y = Math.max(y1, Math.max(y2, y3));
- 
-   // ¹ö¶¯¾àÀë = Ä¿Ç°¾àÀë / ËÙ¶È, ÒòÎª¾àÀëÔ­À´Ô½Ð¡, ËÙ¶ÈÊÇ´óÓÚ 1 µÄÊý, ËùÒÔ¹ö¶¯¾àÀë»áÔ½À´Ô½Ð¡
-   var speeding = 1 + acceleration;
-   window.scrollTo(Math.floor(x / speeding), Math.floor(y / speeding));
- 
-   // Èç¹û¾àÀë²»ÎªÁã, ¼ÌÐøµ÷ÓÃº¯Êý
-   if(x > 0 || y > 0) {
-       var run = "backtotop(" + acceleration + ", " + stime + ")";
-       window.setTimeout(run, stime);
-   }
-}
+var d=t("#backtotop");d.on("click",function(){var e=document.body,s=e.scrollTop,i=s/30;i>1500?i=1500:i<200&&(i=200),t( "body").animate({scrollTop:0},i, "swing")})
 </script>
