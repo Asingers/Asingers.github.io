@@ -115,7 +115,11 @@ layout: default
 	</div>
 
 	<script type="text/javascript">
-		$(".slider").HSlider();
+		$(".slider").HSlider({
+	     easing: "ease-in-out",
+	     animationTime: 400,
+	     pagination: false
+        });
 	</script>
 </body>
 </html>
