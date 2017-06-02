@@ -19,7 +19,7 @@ RSS: false
 # facebook_username:  Asingers.z
 
 # E-mail:
-# mail_username:        asingers@9dic
+mail_username:        asingers@9dic
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
@@ -66,7 +66,7 @@ sidebar-avatar: http://7xqmgj.com1.z0.glb.clouddn.com/2017-05-22-2017-05-22-IMG_
 
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 3              # A tag will be featured if the size of it is more than this condition value
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 # Friends
 friends: [
