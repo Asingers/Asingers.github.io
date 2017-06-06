@@ -6,8 +6,8 @@ author:     "Alpaca"
 header-img: "http://7xqmgj.com1.z0.glb.clouddn.com/header_imgWallions10267.png"
 subtitle: "日常搞机"
 tags:
-     - Life
-     - 手机
+     - AWS
+     - Shadowsocks
      - VPN
 ---
 
