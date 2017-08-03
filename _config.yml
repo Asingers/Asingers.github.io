@@ -12,7 +12,7 @@ owner: Asingers
 
 # SNS settings
 RSS: false
-# weibo_username:    
+weibo_username: Asingers   
 # zhihu_username:    
 # github_username:   
 # twitter_username:  Asingersz
@@ -59,8 +59,8 @@ ga_domain: 9dic.com
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "在平坦的路面上,曲折前行."
-sidebar-avatar: http://7xqmgj.com1.z0.glb.clouddn.com/2017-05-22-2017-05-22-IMG_513111.jpg    # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "袁杰 iOS程序猿 <br/>在平坦的路面上,曲折前行."
+sidebar-avatar: http://o6ledomfy.bkt.clouddn.com/20170803150176250181007.jpg    # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
