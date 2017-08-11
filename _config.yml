@@ -20,6 +20,9 @@ RSS: false
 # E-mail:
 mail_username:        asingers@9dic
 
+# LaiBiLi
+data-uid: MTAyMC8zMDAzOS82NjAz
+
 # Build settings
 highlighter: rouge
 permalink: pretty
