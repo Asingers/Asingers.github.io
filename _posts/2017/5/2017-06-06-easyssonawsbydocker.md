@@ -26,12 +26,5 @@ tags:
 
 完了.   
 
-更新： 发现一个屌到不行的加速脚本。 Google BBR
-	
-	wget –no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
-	chmod +x bbr.sh
-	./bbr.sh
-	
-![](http://o6ledomfy.bkt.clouddn.com/20170728150124688552408.jpg)
-加速效果明显。
+
 	
