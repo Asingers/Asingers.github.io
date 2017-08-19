@@ -65,7 +65,26 @@ layout: default
                 <a id="article-end-anchor"></a>
                 <hr style="visibility: hidden;">
 
-                <hr>分享文章到微博: <wb:share-button appkey="363523033" addition="text" type="button" ralateUid="1780482190" language="zh_cn" default_text="这个对我有用！"></wb:share-button>
+                <hr>分享文章到微博: <wb:share-button appkey="363523033" addition="text" type="button" ralateUid="1780482190" language="zh_cn" default_text="这个对我有用！"></wb:share-button>  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>对您有点帮助? 您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://cloud9dic.b0.upaiyun.com/2017-01-18-qr-wechat-256.png" alt="Asingers WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://cloud9dic.b0.upaiyun.com/2017-01-18-2017-01-18-qr-alipay-256.png" alt="Asingers Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
                 <hr>
                 <ul class="pager">
                     {% if page.previous.url %}
