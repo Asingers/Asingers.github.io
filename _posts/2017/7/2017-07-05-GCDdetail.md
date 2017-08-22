@@ -8,7 +8,8 @@ header-mask: 0.4
 tags: 
     - iOS
     - 线程
-
+    - GCD
+   
 ---
 
 首先我们来理解 GCD 的含义:
