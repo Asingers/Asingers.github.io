@@ -27,7 +27,7 @@ mail_username:        asingers@9dic
 # Build settings
 highlighter: rouge
 permalink: pretty
-paginate: 10
+paginate: 6
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: yes                          # if you want to customize anchor. check out line:181 of `post.html`
 
