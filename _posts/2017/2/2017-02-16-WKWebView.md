@@ -104,7 +104,8 @@ HTML中的 三个Button click 方法分分别对应着 相应方法并传入参�
 	}
 	
 因为创建 WKWebView时已经加入了处理脚本,即 能够响应到 JS 的调用.
-<img src="https://ws2.sinaimg.cn/large/006tNc79ly1fisbz3yzl3j30nk13wmzk.jpg" alt="demo" width=300 height=600>
+
+<img src="https://ws2.sinaimg.cn/large/006tNc79ly1fisbz3yzl3j30nk13wmzk.jpg" alt="demo" width=300 height=600 >
 
 
 另外也可以直接用 Safari 的开发工具来直接调试.Safari 打开开发菜单-选择正在运行的真机或模拟器-选择连接 就能进行调试了.这里我们测试:给小红发信息,改去唱歌
@@ -159,6 +160,7 @@ OC 传入参数要和 JS 中相对应以便接收
 这样我们 OC 执行相应方法时
 ![](https://ws2.sinaimg.cn/large/006tNc79ly1fisciy6yz0j30wu04674z.jpg)
 JS 就能给出相应相应:
+
 <img src="https://ws2.sinaimg.cn/large/006tNc79ly1fiscqc5oqjj30m012cgny.jpg" alt="demo" width=300 height=600>
 
 
