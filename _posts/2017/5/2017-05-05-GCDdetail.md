@@ -2,6 +2,7 @@
 layout: post
 title: 理解线程
 subtitle: GCD
+catalog: true
 header-img: https://ws2.sinaimg.cn/large/006tNc79ly1fiskbwpfupj30xc0m8td6.jpg
 categories: ios
 header-mask: 0.4
