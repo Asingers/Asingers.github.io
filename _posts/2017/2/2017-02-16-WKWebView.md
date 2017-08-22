@@ -83,19 +83,12 @@ WKWebView 有以下几大主要进步：
 其中, HTML 代码
 	
 <div>
-<button class="btn" type="button" onclick="btnClick1()">小红手机号 "btnClick1()"</button>
-</div>
+<button class="btn" type="button" onclick="btnClick1()">小红手机号 "btnClick1()"</button>✨
   
-<div id="name"></div>
-<div>
-<button class="btn" type="button" onclick="btnClick2()">📱小红"btnClick2()"</button>
-</div>
+<button class="btn" type="button" onclick="btnClick2()">📱小红"btnClick2()"</button>✨
         
-<div id="msg"></div>
-<div>
 <button class="btn" type="button" onclick="btnClick3()">📧给小红"btnClick3()"</button>
 </div>
-		
 HTML中的 三个Button click 方法分分别对应着 相应方法并传入参数:
 	
 	function btnClick1() {
