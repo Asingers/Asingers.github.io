@@ -10,7 +10,7 @@ baseurl: ""                             # for example, '/blog' if your blog host
 owner: Asingers
 
 # SNS settings
-RSS: false
+RSS: true
 # weibo_username: Asingers   
 # zhihu_username:    
 # github_username:
