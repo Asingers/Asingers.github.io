@@ -80,11 +80,19 @@ tags:
 	
 	# 注意，如果wordpress放在了子目录如abc.com/wordpress
 	则其中 "location /" 则为 
-	"location /wordpress/"，
-	同理
-	"rewrite (.*) $1/index.html break;" 
-	则为"rewrite . /wordpress/index.html break;"
-	后两个修改相似
+	location /wordpress/ {
+	index index.html index.php;
+	if (-f $request_filename/index.html){
+                rewrite (.*) $1/index.html break;
+        }
+	if (-f $request_filename/index.php){
+                rewrite (.*) $1/index.php;
+        }
+	if (!-f $request_filename){
+                rewrite (.*) /wordpress/index.php;
+        }
+	}
+
 
 然后在 `/usr/local/nginx/conf` 的nginx.conf 中添加
 ![](http://o6ledomfy.bkt.clouddn.com/20170812150253725396355.jpg)
