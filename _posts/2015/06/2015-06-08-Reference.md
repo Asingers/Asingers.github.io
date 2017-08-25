@@ -2,7 +2,7 @@
 layout: post
 title: 引用计数与 ARC
 subtitle: 你说的白是什么白
-header-img: http://o6ledomfy.bkt.clouddn.com/20170825150362677716560.jpg
+header-img: http://o6ledomfy.bkt.clouddn.com/20170825150362958121722.jpg
 categories: ios
 catalog: true
 header-mask: 0.3
