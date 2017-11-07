@@ -1,0 +1,55 @@
+$text-size: 15rem;
+$text-color: #fff;
+$shadow-colors: rgba(#fff, 0.4) rgba(#fff, 0.3) rgba(#fff, 0.2) rgba(#fff, 0.1);
+$animation-duration: 1200ms;
+$shadow-distance-step: 0.033333em;
+$background-color: #ff3700;
+
+@function layerize($state) {
+  $text-shadow: 0 0 transparent;
+  @for $i from 1 through length($shadow-colors) {
+    $text-shadow: #{$text-shadow}, #{$shadow-distance-step * $i * $state} #{$shadow-distance-step * $i * $state} #{nth($shadow-colors, $i)};
+  }
+  @return $text-shadow;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(to bottom right, adjust-hue(lighten($background-color, 12), 8), adjust-hue(saturate($background-color, 30), -8));
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+}
+
+#t {
+  animation: layerize cubic-bezier(0.4, 0.0, 0.2, 1) $animation-duration 200ms infinite alternate;
+  opacity: 0;
+  width: 100%;
+  color: $text-color;
+  font: italic 500 $text-size "Roboto", sans-serif;
+  cursor: default;
+  user-select: none;
+  text-align: center;
+}
+
+@keyframes layerize {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+    text-shadow: layerize(0);
+  } 100% {
+    opacity: 1;
+    transform: translate($shadow-distance-step * length($shadow-colors) / -2, $shadow-distance-step * length($shadow-colors) / -2);
+    text-shadow: layerize(1);
+  }
+}

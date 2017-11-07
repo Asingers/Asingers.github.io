@@ -1,136 +1,250 @@
-<!DOCTYPE html>
-<html>
-{% include post-head.html %}
-<body>
-    <!--[if lt IE 10]>
-<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
-<![endif]-->
-<input id="nm-switch" type="hidden" value="{{ site.nightMode }}">
+---
+layout: default
+---
 
-{% include header.html %}
-
-<header class="g-banner post-header {{ site.postPatterns | prepend: 'post-pattern-' }} {{ site.theme-color | prepend: 'bgcolor-' }} {% unless page.cover %}post-no-cover{% endunless %}" data-theme="{{ site.theme-color }}">
-    <div class="post-wrapper">
-        <div class="post-tags">
-            {% if page.tags.size > 0 %}
-            {% for tag in page.tags  %}
-            <a href="{{ "tags#" | append: tag | absolute_url }}" class="post-tag">{{ tag }}</a>
-            {% endfor %}
-            {% endif %}
-        </div>
-        <h1>{{ page.title }}</h1>
-        <div class="post-meta">
-            <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="{{ site.url }}" target="_blank" rel="author">{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</a></></span>
-            <time class="post-meta-item" datetime="{{ page.date | date:"%y-%m-%d" }}"><i class="iconfont icon-date"></i>{{ page.date | date_to_string }}</time>
-        </div>
-    </div>
-    {% if page.cover %}
-    <div class="filter"></div>
-    <div class="post-cover" style="background: url('{{ page.cover }}') center no-repeat; background-size: cover;">
-    {% endif %}
-</header>
-
-<div class="post-content">
-    {% if page.subtitle %}
-    <h2 class="post-subtitle">{{ page.subtitle }}</h2>
-    {% endif %}
-    <article class="markdown-body">
-        {{ page.content }}
-    </article>
-    {% if site.social-share %}
-    <div class="social-share-wrapper">
-        <div class="social-share"></div>
-    </div>
-    {% endif %}
+<div id="backtotop">
+  <div class="backtotop-btn" onclick="backtotop();">
+    <div class="arrow-upward"></div>
+    <div class="vertical-stick"></div>
+  </div>
 </div>
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('{{ site.baseurl }}{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
+    }
 
-<section class="author-detail">
-    <section class="post-footer-item author-card">
-        <div class="avatar">
-            <img src="{{ site.avatar | absolute_url }}" alt="">
+    {% if page.header-mask %}
+    header.intro-header .header-mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0,0,0, {{ page.header-mask }});
+    }
+    {% endif %}
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        {% for tag in page.tags %}
+                        <a class="tag" href="{{ site.baseurl }}/pages/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    <h1>{{ page.title }}</h1>
+                    {% comment %}
+                        always create a h2 for keeping the margin , Hux
+                    {% endcomment %}
+                    {% comment %} if page.subtitle {% endcomment %}
+                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    {% comment %} endif {% endcomment %}
+                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                </div>
+            </div>
         </div>
-        <div class="author-name" rel="author">{{ site.author }}</div>
-        <div class="bio">
-            <p>{{ site.bio }}</p>
+    </div>
+    <link href="{{ "/css/top.css" | prepend: site.baseurl }}" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="{{ "/js/top.js" | prepend: site.baseurl }}"></script>
+</header>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+               <!-- <p><a href="https://itunes.apple.com/cn/app/%E8%B7%B3%E8%88%9E%E7%9A%84%E7%BA%BF-dancing-line/id1177953618?mt=8&amp;at=1001ludq"><img src="http://cloud9dic.b0.upaiyun.com/2017-03-08-142249.jpg" alt="" title="" /></a></p> -->
+                {{ content }}
+                <a id="article-end-anchor"></a>
+                <hr style="visibility: hidden;">
+
+                <hr>分享文章到微博: <wb:share-button appkey="363523033" addition="text" type="button" ralateUid="1780482190" language="zh_cn" default_text="这个对我有用！"></wb:share-button>  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>对您有点帮助? 您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>-= 💰赏💰 =-</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="https://ws4.sinaimg.cn/large/006tKfTcly1fiph3ajx5vj307j07r0tj.jpg" alt="Asingers WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
-        {% if site.sns.size > 0 %}
-        <ul class="sns-links">
-            {% for s in site.sns %}
-            <li>
-                <a href="{{ s[1] }}" target="_blank">
-                    <i class="iconfont icon-{{ s[0] }}"></i>
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    </section>
-    <section class="post-footer-item read-next">
-        {% if page.next.url %}
-        <div class="read-next-item">
-            <a href="{{ page.next.url }}" class="read-next-link"></a>
-            <section>
-                <span>{{ page.next.title }}</span>
-                <p>{{ page.next.excerpt | strip_html | strip_newlines | truncate: 60}}</p>
-            </section>
-            {% if page.next.cover %}
-            <div class="filter"></div>
-            <img src="{{ page.next.cover }}" alt="">
-            {% endif %}
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="https://ws3.sinaimg.cn/large/006tKfTcly1fiph5i09z6j307j07qq3t.jpg" alt="Asingers Alipay"/>
+          <p>支付宝打赏</p>
         </div>
-        {% endif %}
-        {% if page.previous.url %}
-        <div class="read-next-item">
-            <a href="{{ page.previous.url }}" class="read-next-link"></a>
-            <section>
-                <span>{{ page.previous.title }}</span>
-                <p>{{ page.previous.excerpt | strip_html | strip_newlines | truncate: 60}}</p>
-            </section>
-            {% if page.previous.cover %}
+      
+    </div>
+  </div>
+                <hr>
+                <ul class="pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
+                        Previous<br>
+                        <span>{{page.previous.title}}</span>
+<!--                                     {% if page.previous.cover %}
             <div class="filter"></div>
             <img src="{{ page.previous.cover }}" alt="">
-            {% endif %}
-        </div>
+            {% else %}
+            <div class="filter"></div>
+            <img src="http://7xqmgj.com1.z0.glb.clouddn.com/2017-05-17-nocover.png" alt="">
+            {% endif %} -->
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
+                        Next<br>
+                        <span>{{page.next.title}}</span>
+<!--                                     {% if page.next.cover %}
+            <div class="filter"></div>
+            <img src="{{ page.next.cover }}" alt="">
+            {% else %}
+            <div class="filter"></div>
+            <img src="http://7xqmgj.com1.z0.glb.clouddn.com/2017-05-17-nocover.png" alt="">
+            {% endif %} -->
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+{% if site.data-uid %}
+<div id="lv-container" data-id="city" data-uid="{{site.data-uid}}">
+    <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+{% endif %}
+                {% if site.disqus_username %}
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                {% endif %}
+                <!-- <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div> -->
+            </div>
+        {% if page.catalog %}
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
         {% endif %}
-    </section>
-    {% if site.disqus %}
-    <section class="post-footer-item comment">
-        <div id="disqus_thread"></div>
-    </section>
-    {% endif %}
-</section>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-{% include footer.html %}
+                <!-- Featured Tags -->
+                {% if site.featured-tags %}
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/pages/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        {% for tag in site.tags %}
+                            {% if tag[1].size > {{site.featured-condition-size}} %}
+                                <a href="/pages/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                    {{ tag[0] }}
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </section>
+                {% endif %}
 
-<script src="/assets/js/social-share.min.js"></script>
-<script>
-    socialShare('.social-share', {
-        sites: [{% for i in site.social-share-items %}'{{ i }}'{% if forloop.last == false %},{% endif %}{% endfor %}],
-        wechatQrcodeTitle: "分享到微信朋友圈",
-        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
-    });
+                <!-- Friends Blog -->
+                {% if site.friends %}
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    {% for friend in site.friends %}
+                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</article>
+{% if site.disqus_username %}
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus_username}}";
+    var disqus_identifier = "{{page.id}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
 </script>
+<!-- disqus 公共JS代码 end -->
+{% endif %}
+{% if site.anchorjs %}
+<!-- async load function -->
 <script>
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-/*写入自己的disqus信息*/
-s.src = '{{ site.disqus_url }}';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-<script src="/assets/js/prism.js"></script>
-<script src="/assets/js/index.min.js"></script>
-</body>
-</html>
+<!-- Asingers 自定义 -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.2em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+{% endif %}

@@ -1,66 +1,67 @@
-# Site settings 配置站点
-title: 'Asingers Blog'
-description: 'iOS程序猿 在平坦的路面上,曲折前行。'
-keyword: 'Asingers,博客,个人网站,互联网,产品,解忧の杂货,9dic.com,9dic,aws,svn,vpn,xcode,教程,张袁杰,Asingers的独立博客'
-url: 'http://9dic.com' # your host
+# Site settings
+title: Asingers Blog
+SEOTitle: Asingers的独立博客 | Asingers Blog
+header-img: http://o6ledomfy.bkt.clouddn.com/IMG_5555.JPG
+email: asingers@9dic.com
+description: "Asingers ，张袁杰 ，9dic.com ，iOS, 解忧の杂货, Asingers的独立博客"
+keyword: "Asingers,博客,个人网站,互联网,产品,解忧の杂货,9dic.com,9dic,aws,svn,vpn,xcode,教程,张袁杰,Asingers的独立博客"
+url: "http://9dic.com"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+owner: Asingers
 
-# if you don't need baseurl, you should leave this value blank.
-baseurl: ''
+# SNS settings
+RSS: true
+# weibo_username: Asingers   
+# zhihu_username:    
+# github_username:
+# instagram_username: jzyai1   
+twitter_username:  Asingersz
+# facebook_username:  Asingers.z
 
-# Navigation links
-nav:
-  home: '/'
-  tags: '/tags.html'
+# E-mail:
+mail_username:        asingers@9dic
 
-# Author 配置博主信息
-author: 'Asingers'
-nickname: '🐱'
-bio: '在平坦的路面上,曲折前行'
-avatar: '/assets/img/profile.png'
-
-# Search
-search: true
-
-# Night mode
-nightMode: true
-
-# Comments
-disqus: false
-disqus_url: ''
-
-# Share
-social-share: true
-social-share-items: ['wechat', 'weibo', 'douban', 'twitter']
-
-# theme color 主题皮肤
-theme-color: 'default'  # pink or default
-
-# Post header background patterns (when the post no cover): circuitBoard, overlappingCircles, food, glamorous, ticTacToe, seaOfClouds
-postPatterns: 'circuitBoard'
-
-# SNS settings 配置社交网站url: weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
-sns:
-  weibo: '//weibo.com/309954331'
-  juejin: '//juejin.im/user/'
-  instagram: '//www.instagram.com/jzyai1  '
-  github: '//github.com/'
-
-# Tags 设置标签
-recommend-tags: true # whether or not display recommend-tags on the sidebar
-recommend-condition-size: 12 # a tag will be recommended if the size of it is more than this value
+# LaiBiLi
+# data-uid: MTAyMC8zMDAzOS82NjAz
 
 # Build settings
-paginate: 6
-paginate_path: 'page:num'
-exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md']
-
-# Markdown
-markdown: kramdown
 highlighter: rouge
-kramdown:
-  input: GFM
+permalink: pretty
+paginate: 6
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: yes                          # if you want to customize anchor. check out line:181 of `post.html`
 
-RSS: false
-
-# Plugins
+# Gems
 gems: [jekyll-paginate]
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+# Disqus settings
+# disqus_username: 9dic
+
+# Analytics settings
+# Baidu Analytics
+ba_track_id: 755e6c341058bb1bd7322efd4abda5a7
+# Google Analytics
+ga_track_id: 'UA-70263726-2'            # Format: UA-xxxxxx-xx
+ga_domain: 9dic.com
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "袁杰 iOS程序猿 <br/>在平坦的路面上,曲折前行."
+sidebar-avatar: http://o6ledomfy.bkt.clouddn.com/20170803150176250181007.jpg    # use absolute URL, seeing it's used in both `/` and `/about/`
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+# Friends
+friends: [
+    {
+        title: "what?",
+        href: "http://asingers.win"
+    }
+]
