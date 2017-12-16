@@ -1,30 +1,27 @@
-/**
- * @file
- * Printfriendly CSS rules.
- */
- 
-#printfriendly-config-form .form-item-printfriendly-image:last-child {
-	display: inline-block;
-	float: left;
-	margin-right: 4px;
-    vertical-align: top;
-}
+@media print{
 
-#printfriendly-config-form .form-item-custom-button-img-url {
-    display: inline-block;
-    vertical-align: top;
-    margin: -40px auto auto auto;
-    padding: 0px 0 15px 15px;
+    /*隐藏不打印的元素*/
+    .no-print{
+        display:none;
+    }
+    /*其他打印样式*/
 }
-
-#printfriendly-config-form .form-item-custom-button-img-url label {
-    display: inline-block;
-    vertical-align: top;
-    float:right;
-	padding-left: 10px;
+@page{
+     size: 5.5in 8.5in;       
+     margin: 30px;
 }
+@page :first { 
 
-#printfriendly-config-form .form-text {
-    display: inline-block;
-    vertical-align: top;
+    /*首页设置*/
+
+}
+@page{
+    table{
+        page-break-after: avoid;
+    }  
+}
+@page{
+    table{
+        page-break-inside: avoid;
+    }  
 }
