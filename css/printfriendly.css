@@ -1,0 +1,30 @@
+/**
+ * @file
+ * Printfriendly CSS rules.
+ */
+ 
+#printfriendly-config-form .form-item-printfriendly-image:last-child {
+	display: inline-block;
+	float: left;
+	margin-right: 4px;
+    vertical-align: top;
+}
+
+#printfriendly-config-form .form-item-custom-button-img-url {
+    display: inline-block;
+    vertical-align: top;
+    margin: -40px auto auto auto;
+    padding: 0px 0 15px 15px;
+}
+
+#printfriendly-config-form .form-item-custom-button-img-url label {
+    display: inline-block;
+    vertical-align: top;
+    float:right;
+	padding-left: 10px;
+}
+
+#printfriendly-config-form .form-text {
+    display: inline-block;
+    vertical-align: top;
+}
