@@ -1071,9 +1071,7 @@ img::-moz-selection {
     display: block;
     max-width: 100%;
     height: auto;
-    margin-top: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin: 1.5em auto 1.6em auto
 }
 
 .navbar-default .navbar-toggle:focus,
