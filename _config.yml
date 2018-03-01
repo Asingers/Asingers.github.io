@@ -40,7 +40,7 @@ kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
 # Disqus settings
-# disqus_username: 9dic
+disqus_username: 9dic
 
 # Analytics settings
 # Baidu Analytics
