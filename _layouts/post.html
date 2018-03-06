@@ -143,6 +143,12 @@ layout: default
                 </div>
                 <!-- disqus 评论框 end -->
                 {% endif %}
+                
+                {% if site.github_comment %}
+                <div class="comment">
+                    {% include comments.html %}
+                </div>
+{% endif %}
                 <!-- <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div> -->
             </div>
         {% if page.catalog %}
@@ -215,24 +221,6 @@ layout: default
     })();
 </script>
 <!-- disqus 公共JS代码 end -->
-{% endif %}
-{% if site.github_comment %}
-        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-        <script>
-        var gitalk = new Gitalk({
-            id: '{{ page.url }}',
-            clientID: '{{ site.gitalk.clientID }}',
-            clientSecret: '{{ site.gitalk.clientSecret }}',
-            repo: '{{ site.gitalk.repo }}',
-            owner: '{{ site.gitalk.owner }}',
-            admin: ['{{ site.gitalk.owner }}'], 
-            labels: ['gitment'],
-            distractionFreeMode: '{{ site.gitalk.distractionFreeMode }}',
-        })
-        gitalk.render('gitalk-container')
-        </script>
-
 {% endif %}
 {% if site.anchorjs %}
 <!-- async load function -->
