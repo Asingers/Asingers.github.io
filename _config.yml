@@ -40,7 +40,14 @@ kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
 # Disqus settings
-disqus_username: 9dic
+# disqus_username: 9dic
+github_comment: 9dic.com
+gitalk:
+    owner: Asingers
+    repo: blog-comments
+    clientID: 06dbfe060bc62ecf1c12
+    clientSecret: b31ce5752df3c90075c6d840270f3bb914848de9
+    admin: Asingers
 
 # Analytics settings
 # Baidu Analytics

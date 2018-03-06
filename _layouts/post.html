@@ -213,6 +213,24 @@ layout: default
 </script>
 <!-- disqus 公共JS代码 end -->
 {% endif %}
+{% if site.github_comment %}
+<div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '{{ page.url }}',
+            clientID: '{{ site.gitalk.clientID }}',
+            clientSecret: '{{ site.gitalk.clientSecret }}',
+            repo: '{{ site.gitalk.repo }}',
+            owner: '{{ site.gitalk.owner }}',
+            admin: ['{{ site.gitalk.owner }}'], 
+            distractionFreeMode: '{{ site.gitalk.distractionFreeMode }}',
+        })
+        gitalk.render('gitalk-container')
+        </script>
+
+{% endif %}
 {% if site.anchorjs %}
 <!-- async load function -->
 <script>
