@@ -118,24 +118,7 @@ layout: default
                     </li>
                     {% endif %}
                 </ul>
-{% if site.data-uid %}
-<div id="lv-container" data-id="city" data-uid="{{site.data-uid}}">
-    <script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
 
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-    </script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-{% endif %}
                 {% if site.disqus_username %}
                 <!-- disqus 评论框 start -->
                 <div class="comment">
@@ -148,7 +131,7 @@ layout: default
                 <div class="comment">
                     {% include comments.html %}
                 </div>
-{% endif %}
+                {% endif %}
                 <!-- <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div> -->
             </div>
         {% if page.catalog %}
@@ -166,9 +149,6 @@ layout: default
                 </div>
             </div>
         {% endif %}
-        <div class="comment">
-        <div id="gitalk-container"></div>
-        </div>
     <!-- Sidebar Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
