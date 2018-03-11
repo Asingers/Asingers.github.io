@@ -3,8 +3,8 @@ title: Asingers Blog
 SEOTitle: Asingers的独立博客 | Asingers Blog
 header-img: https://source.unsplash.com/user/asingers/likes/1600x900
 email: asingers@9dic.com
-description: "Asingers ，张袁杰 ，9dic.com ，iOS, 解忧の杂货, Asingers的独立博客"
-keyword: "Asingers,博客,个人网站,互联网,产品,解忧の杂货,9dic.com,9dic,aws,svn,vpn,xcode,教程,张袁杰,Asingers的独立博客"
+description: "Asingers ，9dic.com ，iOS, 解忧の杂货, Asingers的独立博客"
+keyword: "Asingers,博客,个人网站,互联网,产品,解忧の杂货,9dic.com,9dic,aws,svn,vpn,xcode,教程,Asingers的独立博客"
 url: "http://9dic.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 owner: Asingers
@@ -58,7 +58,7 @@ ga_domain: 9dic.com
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "袁杰 iOS程序猿 <br/>在平坦的路面上,曲折前行."
+sidebar-about-description: "Asingers <br/>在平坦的路面上,曲折前行."
 sidebar-avatar: http://o6ledomfy.bkt.clouddn.com/20171123151144801785468.png    # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
