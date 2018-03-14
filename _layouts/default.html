@@ -11,5 +11,11 @@
     {{ content }}
     
     {% include footer.html %}
+    <script>
+    daovoice('init', {
+      app_id: "99711274",
+    });
+    daovoice('update');
+  </script>
 </body>
 </html>
