@@ -150,37 +150,6 @@
     ga('send', 'pageview');
 </script>
 {% endif %}
-
-<!-- Baidu Tongji -->
-{% if site.ba_track_id %}
-<script>
-    var _baId = '{{ site.ba_track_id }}';
-    // Originial
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?" + _baId;
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-{% endif %}
-<!-- Baidu push Start-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-<!-- Baidu push End-->
 <!-- Side Catalog -->
 {% if page.catalog %}
 <script type="text/javascript">
@@ -224,4 +193,3 @@
     });
 </script>
 {% endif %}
-<!-- <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script> -->
