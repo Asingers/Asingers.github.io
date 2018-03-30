@@ -9,267 +9,338 @@
 
 <url>
   <loc>https://9dic.com/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://9dic.com/pages/about/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://9dic.com/pages/archive/</loc>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://9dic.com/pages/explore/</loc>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://9dic.com/pages/tags/</loc>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2017/08/08/Xcode9/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2017/06/06/easyssonawsbydocker/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2017/05/16/Ramdisk/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2017/05/10/GCDGroup/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2017/05/05/GCDdetail/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2017/05/01/QandA/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2017/04/12/SDWebImage/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2017/03/31/OC-GuiFan/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2017/03/13/HTTP/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/mac/2017/03/12/Change-Mac-Setup/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2017/02/16/WKWebView/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2017/01/19/iOS-CleanChahe/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2017/01/05/iOS-UITextField-Format/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/11/28/thread-safe/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/11/03/bubbleimage/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/09/08/creat-QRCode-with-CIFilter/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/09/05/runloop/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/08/11/ios-10-sdk/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/08/11/ios-10-notification/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/life/2016/07/29/two-step/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/07/25/Objective-C-Runtime/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/07/25/Objective-C-Message-Sending-and-Forwarding/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/07/19/make-document-by-appledoc/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/07/19/CALayer-Animaton-Replicator/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/06/24/Xcode7.3-failed-to-type/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/06/17/ios-draw-viewborder/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/06/03/BMKit-import/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/05/31/MJExtension-Study/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/05/18/iOS-UITextField-Wrong-Frame/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/life/2016/04/15/neteasemusic-basedon-Python/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/04/13/ios-get-screenshoot/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/04/11/ios-screen-manage/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/03/09/the-Self-Manager-in-ios-dev/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/03/08/%E7%BA%AF%E4%BB%A3%E7%A0%81%E5%88%9B%E5%BB%BAUICollectionView%E6%AD%A5%E9%AA%A4%E4%BB%A5%E5%8F%8A%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/03/01/use-jenkins-to-setup-Integration-Services/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/03/01/CocoaPods-wrong-message/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/02/29/iOS9-screen-set-processing-method/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/02/29/The-ways-to-solve-Xcode7-upgrade-the-plugin-is-invalid/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/02/26/ios-define/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/02/25/global-credentialhelper-osxkeychain/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/02/22/NSArrayNSMutableArray/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/2016/01/28/40%E4%B8%AAMacShell%E8%84%9A%E6%9C%AC/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/2016/01/26/%E6%80%8E%E6%A0%B7%E5%87%8F%E5%B0%8FiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%A4%A7%E5%B0%8F/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/01/26/%E5%88%A9%E7%94%A8%E9%95%BF%E6%8C%89%E6%89%8B%E5%8A%BF%E7%A7%BB%E5%8A%A8TableViewCells/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/01/25/%E8%A2%AB%E8%AF%AF%E8%A7%A3%E7%9A%84mvc/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2016/01/05/%E6%9C%80%E7%81%AB%E7%9A%84iOS%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2015/12/10/%E5%A6%82%E4%BD%95%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BDXcode%E7%AD%89dmg%E6%96%87%E4%BB%B6/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2015/11/19/App-Store%E6%9D%82%E8%B0%88/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2015/11/13/Xcode%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2015/07/30/iOS-singleton/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://9dic.com/ios/2015/06/08/Reference/</loc>
-  <lastmod>2018-03-30T07:29:11+00:00</lastmod>
+  <lastmod>2018-03-30T08:05:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 
