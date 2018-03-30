@@ -1,15 +1,15 @@
-<div id="container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <script>
 var gitment = new Gitment({
     id: '{{ page.url }}',
-    oauth: {
-    	client_id: '{{ site.gitalk.clientID }}',
-    	client_secret: '{{ site.gitalk.clientSecret }}',
-  },
+    clientID: '{{ site.gitalk.clientID }}',
+    clientSecret: '{{ site.gitalk.clientSecret }}',
     repo: '{{ site.gitalk.repo }}',
     owner: '{{ site.gitalk.owner }}',
+    admin: ['{{ site.gitalk.owner }}'], 
+	labels: ['gitment'],
 })
-gitment.render('container')
+gitalk.render('gitalk-container')
 </script>
