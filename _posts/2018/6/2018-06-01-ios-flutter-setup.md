@@ -17,7 +17,7 @@ tags:
 	通常我们安装在用户根目录下
 	
 ### 配置环境变量
-
+	在用户根目录 .bash_profile 中添加，文件通常为隐藏的
 	export PATH=your src/bin:$PATH
 	
 ### 安装
