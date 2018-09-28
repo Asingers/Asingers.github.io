@@ -65,6 +65,10 @@ layout: default
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
                 <!-- 网易云跟帖 评论框 end -->
                 {% endif %}
+                {% if site.github_comment %}
+                <div class="comment">
+                    {% include comments.html %}
+                </div>
             </div>  
 
     <!-- Side Catalog Container -->
