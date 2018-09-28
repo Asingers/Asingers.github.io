@@ -9,6 +9,9 @@ url: "http://9dic.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 owner: Asingers
 
+# Publish posts or collection documents with a future date.
+future: true
+
 # SNS settings
 RSS: true
 # weibo_username: Asingers   
@@ -38,7 +41,12 @@ gems: [jekyll-paginate]
 markdown: kramdown
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
-
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 # Disqus settings
 # disqus_username: 9dic
 github_comment: 9dic.com
