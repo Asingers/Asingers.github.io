@@ -1,17 +1,20 @@
 ---
 layout: page
 title: "About"
-description: "Hey, this is Asingers."
-header-mask: 0.3
+description: ""
 header-img: "https://source.unsplash.com/user/asingers/likes/1600x900"
+multilingual: true
 ---
 
-<div class="zh">
-    <blockquote>
-        世界那么大，多玩玩看看。
-    </blockquote>
-    <img src="https://cloud9dic.b0.upaiyun.com/photo-1495900158145-fa1e1786861b.jpeg" alt="" class="shadow"/><br>
-    一个爱搞机的iOS程序猿<br>平时主要工作是iOS开发，兴趣原因涉猎面也较广。网站可能被Google索引的会多一点，如果有幸你看到了感兴趣的内容或者什么问题可以给我邮件 asingers#9dic.com 。
+<!-- Language Selector -->
+<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 Chinese </option>
+</select>
+
+<!-- Chinese Version -->
+<div class="zh post-container">
+    {% capture about_zh %}{% include about/zh.md %}{% endcapture %}
+    {{ about_zh | markdownify }}
 </div>
 
 {% if site.disqus_username %}
@@ -38,6 +41,3 @@ header-img: "https://source.unsplash.com/user/asingers/likes/1600x900"
 </script>
 <!-- disqus 公共JS代码 end -->
 {% endif %}
-                <div class="comment">
-                    {% include comments.html %}
-                </div>
