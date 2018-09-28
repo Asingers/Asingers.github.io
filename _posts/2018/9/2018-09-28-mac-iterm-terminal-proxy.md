@@ -42,6 +42,7 @@ tags:
 	git config --global --unset http.proxy
 	git config --global --unset https.proxy
 	npm config delete proxy
+	
 3.如果遇到 pod repo update failed: Cannot do hard reset with paths 请使用⬇️
 
 	proxychains4 -q pod repo update
