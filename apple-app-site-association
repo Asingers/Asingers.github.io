@@ -1,0 +1,11 @@
+{
+"applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "VHMNY6V4C7.com.asingers.test”,
+				   "paths": [ "*" ]
+            }
+        ]
+    }
+}
