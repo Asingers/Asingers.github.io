@@ -16,6 +16,11 @@ tags:
 ### 提交自己的变更
 打上tag备用
 
+	//删除本地tag 
+	# git tag -d 标签名  
+	// 删除远程tag
+	# git push origin :refs/tags/标签名
+	
 	git tag "v1.0.0"  
     git push --tags
     
@@ -224,4 +229,8 @@ source_files写法及含义：
 	s.version      = "1.0.1"
 	s.source       = { :Git => "https://github.com/xxx/xxx.git", :tag => "1.0.1" }
 	
-这样就能对应到版本了
+这样就能对应到版本了，然后执行下边命令就能搜到你的库了
+
+	rm ~/Library/Caches/CocoaPods/search_index.json
+	pod search yourname
+	
