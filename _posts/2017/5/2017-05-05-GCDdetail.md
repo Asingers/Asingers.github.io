@@ -27,20 +27,99 @@ tags:
 
 再来理解 串并行,同异步:
 
-#### 串行队列同步执行: 在当前线程顺序执行 ⤵️
-![](http://o6ledomfy.bkt.clouddn.com/20170822150339729720943.jpg)
-#### 串行队列异步执行: 开辟一条新的线程,在该线程中顺序执行⤵️
-![](http://o6ledomfy.bkt.clouddn.com/20170822150339743032748.jpg)
-#### 并行队列同步执行: 不开新线程,在当前线程顺序执行⤵️
-![](http://o6ledomfy.bkt.clouddn.com/20170822150339755239035.jpg)
-#### 并行队列异步执行:开辟多个线程,无序执行⤵️
-![](http://o6ledomfy.bkt.clouddn.com/20170822150339770379791.jpg)
-#### 主队列异步执行: 不开新线程,同步执行⤵️
-![](http://o6ledomfy.bkt.clouddn.com/20170822150339789630387.jpg)
-#### 主队列同步执行: 会造成死锁. ⤵️
-![](http://o6ledomfy.bkt.clouddn.com/20170822150339794466571.jpg)
+#### 串行队列同步执行: 在当前线程顺序执行 
+	    dispatch_queue_t queue =  dispatch_queue_create("queneName", NULL);
+        //2.添加任务到队列中，就可以执行任务
+    dispatch_sync(queue, ^{
+        NSLog(@"下载图片1----%@",[NSThread currentThread]);
+    });
+    dispatch_sync(queue, ^{
+        NSLog(@"下载图片2----%@",[NSThread currentThread]);
+    });
+    dispatch_sync(queue, ^{
+        NSLog(@"下载图片3----%@",[NSThread currentThread]);
+    });
+        //打印主线程
+    NSLog(@"主线程----%@",[NSThread mainThread]);
+    
+*不会开启新的线程，创建的自定义队列无效。*
 
-相信上图已经能够很好的理解串并行,同异步.
+#### 串行队列异步执行: 开辟一条新的线程,在该线程中顺序执行
+	
+	    dispatch_queue_t queue =  dispatch_queue_create("queneName", NULL);
+        //2.添加任务到队列中，就可以执行任务
+    dispatch_async(queue, ^{
+        NSLog(@"下载图片1----%@",[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"下载图片2----%@",[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"下载图片3----%@",[NSThread currentThread]);
+    });
+        //打印主线程
+    NSLog(@"主线程----%@",[NSThread mainThread]);
+
+*异步串行执行3个任务，只会开启一个子线程。*
+	
+#### 并行队列同步执行: 不开新线程,在当前线程顺序执行
+	
+	        //获取全局并发队列
+    dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        //2.添加任务到队列中，就可以执行任务
+    dispatch_sync(queue, ^{
+        NSLog(@"下载图片1----%@",[NSThread currentThread]);
+    });
+    dispatch_sync(queue, ^{
+        NSLog(@"下载图片2----%@",[NSThread currentThread]);
+    });
+    dispatch_sync(queue, ^{
+        NSLog(@"下载图片3----%@",[NSThread currentThread]);
+    });
+        //打印主线程
+    NSLog(@"主线程----%@",[NSThread mainThread]);
+	
+*不会开启新的线程，并发队列失去了并发的功能。*
+
+#### 并行队列异步执行:开辟多个线程,无序执行
+	
+	   //获取全局并发队列
+    dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    //2.添加任务到队列中，就可以执行任务
+    dispatch_async(queue, ^{
+       NSLog(@"下载图片1----%@",[NSThread currentThread]);
+       });
+    dispatch_async(queue, ^{
+       NSLog(@"下载图片2----%@",[NSThread currentThread]);
+           });
+    dispatch_async(queue, ^{
+       NSLog(@"下载图片3----%@",[NSThread currentThread]);
+        });
+    //打印主线程
+    NSLog(@"主线程----%@",[NSThread mainThread]);
+	
+*异步并发执行3个任务，会开启3个子线程。*
+
+#### 主队列异步执行: 不开新线程,同步执行
+	
+	dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"111111");
+    });
+    NSLog(@"222222");
+    
+    2019-01-16 10:28:57.254042+0800 GCD[463:148602] 222222
+	2019-01-16 10:28:57.277710+0800 GCD[463:148602] 111111
+	
+#### 主队列同步执行: 会造成死锁. 
+	⚠️ BOOM！
+	
+	dispatch_sync(dispatch_get_main_queue(), ^{
+       NSLog(@"111111");
+    });
+     
+	NSLog(@"222222")
+
+
 #### 总结
 总结一下就是: 
 
