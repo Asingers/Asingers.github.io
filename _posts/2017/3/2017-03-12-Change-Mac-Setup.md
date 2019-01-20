@@ -8,7 +8,7 @@ subtitle: "学习笔记"
 catalog: true
 categories: mac
 tags:
-   - mac
+   - Mac
       
 ---
 
