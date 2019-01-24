@@ -84,28 +84,7 @@ CKAsset
 `CKAsset`  为资源文件，比如之前提到的照片就是用这种方式存储的。
 
 ## CloudKit Dashboard ##
-
-更新：
-
-这里还有一个WWDC的视频介绍Cloud dashboard
-
-[Build Better Apps with CloudKit Dashboard](https://link.jianshu.com?t=https%3A%2F%2Fdeveloper.apple.com%2Fvideos%2Fplay%2Fwwdc2017%2F226%2F) (target=undefined rel=undefined)]
-
-CloudKit Dashboard 的入口在这里：
-
-undefined (data-original-src=undefined data-original-width=undefined data-original-height=undefined data-original-format=undefined data-original-filesize=undefined)
-
-CloudKitDashboardEnter.png
-
-你也可以直接访问[https://link.jianshu.com?t=https%3A%2F%2Ficloud.developer.apple.com%2Fdashboard%2F](https://link.jianshu.com?t=https%3A%2F%2Ficloud.developer.apple.com%2Fdashboard%2F) (target=undefined rel=undefined)[地址](https://link.jianshu.com?t=https%3A%2F%2Ficloud.developer.apple.com%2Fdashboard%2F) (target=undefined rel=undefined)。
-
-这个界面好像更新过了，和网上很多教程的样式都不太一样。新的界面长这样：
-
-undefined (data-original-src=undefined data-original-width=undefined data-original-height=undefined data-original-format=undefined data-original-filesize=undefined)
-
-CloudKitDashboardWeb.png
-
-新的界面包括开发版和产品版（线上版）两种，在开发的时候我们就只针对左边的开发版进行操作就可以了。无论是那个版本，都有五个相同的入口。
+在Xcode中进入或者直接在开发者网站
 
 ### Data ###
 
