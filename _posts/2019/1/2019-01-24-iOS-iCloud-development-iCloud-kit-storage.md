@@ -10,8 +10,6 @@ tags:
 ---
    
 
-cloud kit一共有7个基础类，简单了解一下这些基础类接下来的使用就比较容易理解了。
-
 ### CKContainer ###
 
 `CKContainer`类似于应用运行时的沙盒，一个应用只能访问自己的沙盒，同样的，一个应用也只能访问自己的Container。
@@ -50,7 +48,6 @@ NSDate
 CLLocation
 - 
 CKReference
-
 - 
 CKAsset
 
@@ -74,10 +71,6 @@ CKAsset
 
 ## CloudKit Dashboard ##
 在Xcode中进入或者直接在开发者网站
-
-### 使用 ###
-
-这次我们只讲简单的操作，所以本篇文章就只使用 Data中的部分功能。
 
 #### 创建 RECORD TYPE ####
 
@@ -103,7 +96,7 @@ photo  Asset
 
 #### 添加 indexs ####
 
-为了搜索更方便一些，我们添加一些索引。
+不添加索引获取数据的时候会报错。
 
 点击**INDEXS**，选择我们刚刚添加的**Note**，然后添加索引，添加的索引类型有**QUERYABLE**,**SEARCHABLE**,**SORTABLE**。
 
@@ -338,5 +331,18 @@ recordName QUERYABLE
 }
 ```
 
+##### 关于环境的说明：
+
+DataBase 分为测试和正式环境区分。测试阶段统一会访问开发环境，也就是说我们可以随意增删改相关记录，也可以在`entitlement`中加入一个新的key，名为`com.apple.developer.icloud-container-environment`，将它的值设为`Production `就可以测试生产环境了。但是要注意，发布到商店这个配置必须删除，否则被拒。
+
+在开发环境中配置完成之后，准备上线，可以点击Deploy to Production 即将开发环境镜像到证书环境，但具体数据不会同步，⚠️ 正式环境下不能删除已经创建的record. 所以要谨慎，字段什么的不要写错了。可以看下图区分：
+
+![](https://developer.apple.com/library/archive/documentation/DataManagement/Conceptual/CloudKitQuickStart/Art/Dashboard1_2x.png)
+
+测试环境镜像到正式环境的关系可以看下图:
+
+![](https://developer.apple.com/library/archive/documentation/DataManagement/Conceptual/CloudKitQuickStart/Art/developer_workflow_2x.png)
+
+> [Using CloudKit Dashboard to Manage Databases](https://developer.apple.com/library/archive/documentation/DataManagement/Conceptual/CloudKitQuickStart/EditingSchemesUsingCloudKitDashboard/EditingSchemesUsingCloudKitDashboard.html)
 
 
