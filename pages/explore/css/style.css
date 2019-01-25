@@ -11,7 +11,7 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  background: linear-gradient(to bottom right, #ff813d, #ff1500);
+  background: linear-gradient(to bottom right, #4dbb8a, #1ab045);
   text-rendering: optimizeLegibility;
   overflow: hidden;
 }
@@ -35,7 +35,7 @@ body {
   }
   100% {
     opacity: 1;
-    transform: translate(-0.06667em, -0.06667em);
-    text-shadow: 0 0 transparent, 0.03333em 0.03333em rgba(255, 255, 255, 0.4), 0.06667em 0.06667em rgba(255, 255, 255, 0.3), 0.1em 0.1em rgba(255, 255, 255, 0.2), 0.13333em 0.13333em rgba(255, 255, 255, 0.1);
+    transform: translate(-0.066666em, -0.066666em);
+    text-shadow: 0 0 transparent, 0.033333em 0.033333em rgba(255, 255, 255, 0.4), 0.066666em 0.066666em rgba(255, 255, 255, 0.3), 0.099999em 0.099999em rgba(255, 255, 255, 0.2), 0.133332em 0.133332em rgba(255, 255, 255, 0.1);
   }
 }
