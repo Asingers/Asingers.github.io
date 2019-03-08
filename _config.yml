@@ -30,7 +30,7 @@ mail_username:        asingers@9dic
 # Build settings
 highlighter: rouge
 permalink: pretty
-paginate: 6
+paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: yes                          # if you want to customize anchor. check out line:181 of `post.html`
 
@@ -72,6 +72,10 @@ sidebar-avatar: https://cloud9dic.b0.upaiyun.com/photo-1517352551702-336dda93455
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
 
 # Friends
 friends: [
