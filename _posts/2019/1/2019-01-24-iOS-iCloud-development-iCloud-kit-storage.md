@@ -3,7 +3,7 @@ layout: post
 title: iOS iCloud Development(3) iCloudKit Storage
 subtitle: iCloud 存储之 iCloudKit
 categories: ios
-header-style:text
+header-style: text
 tags: 
     - iOS
 
