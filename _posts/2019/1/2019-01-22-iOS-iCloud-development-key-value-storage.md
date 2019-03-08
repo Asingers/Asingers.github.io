@@ -3,7 +3,7 @@ layout: post
 title: iOS iCloud Development(1) Key-Value Storage
 subtitle: iCloud 存储之 Key-Value
 categories: ios
-header-mask: 0.7
+header-style: text
 tags: 
     - iOS
 

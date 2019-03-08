@@ -3,7 +3,7 @@ layout: post
 title: iOS iCloud Development(2) Document Storage
 subtitle: iCloud 存储之 Document
 categories: ios
-header-mask: 0.7
+header-style: text
 tags: 
     - iOS
 
