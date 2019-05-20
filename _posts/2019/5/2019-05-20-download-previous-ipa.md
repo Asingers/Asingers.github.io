@@ -108,7 +108,7 @@ sudo rm ~/Music/iTunes/iTunes\ Library.itl
 
 <iframe
   src="https://carbon.now.sh/embed/?bg=rgba(74%2C144%2C226%2C1)&t=seti&wt=none&l=text%2Fx-objectivec&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%25F0%259D%2591%25B0%2520%25F0%259D%2592%258D%25F0%259D%2592%2590%25F0%259D%2592%2597%25F0%259D%2592%2586%2520%25F0%259D%2591%25A8%25F0%259D%2592%2591%25F0%259D%2592%2591%25F0%259D%2592%258D%25F0%259D%2592%2586.%2520%250A%25F0%259D%2591%25B7%25F0%259D%2592%2586%25F0%259D%2592%2582%25F0%259D%2592%2584%25F0%259D%2592%2586!%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520"
-  style="transform:scale(0.7); width:1024px; height:473px; border:0; overflow:hidden;"
+  style="transform:scale(0.7); width:600px; height:473px; border:0; overflow:hidden;"
   sandbox="allow-scripts allow-same-origin">
 </iframe>
 
