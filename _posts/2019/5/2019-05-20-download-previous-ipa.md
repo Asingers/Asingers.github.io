@@ -28,9 +28,12 @@ iTunes 是为了进行网络请求，Charles 是为了抓取网络请求，并�
 	4. 重启mac
 	5. 确认状态是否已经关闭
 2. 使用脚本编辑器工具进行重装
-	1. 
+
+1. //卸载现有的：
+
+
 ```
-	//卸载现有的：
+	
 set question to display dialog "Delete iTtunes?" buttons {"Yes", "No"} default button 1
 set answer to button returned of question
 if answer is equal to "Yes" then
@@ -61,7 +64,9 @@ if answer is equal to "No" then
     return
 end if
 ```
-	2. 安装12.6.x
+
+2. 安装12.6.x
+
 ```
 set theAPP to choose file with prompt "Please select iTunes 12.6 app:" of type {"app"}
 do shell script "sed -i '' 's/12.6.5/12.9.4/g' " & POSIX path of theAPP & "Contents/Info.plist" with administrator privileges
@@ -78,6 +83,7 @@ end if
 ```
 
 运行时如果 提示 iTunes Library.itl 错误,需要删除旧的数据库文件
+
 ```
 sudo rm ~/Music/iTunes/iTunes\ Library.itl
 ```
@@ -98,6 +104,6 @@ sudo rm ~/Music/iTunes/iTunes\ Library.itl
 至此，一个历史版本的.ipa 就已经下载完了。总结一下就是修改了网络请求的参数，由于App Store 中app 有版本历史这个特性所以我们可以根据对应的的版本号从而拿到对应的.ipa
 
 𝑰 𝒍𝒐𝒗𝒆 𝑨𝒑𝒑𝒍𝒆 .
-P𝒆𝒂𝒄𝒆!
+𝑷𝒆𝒂𝒄𝒆!
 
 
