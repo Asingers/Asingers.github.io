@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Frida-ios-dump
-subtitle: iOS App Crack
+description: iOS App Crack
+categories: iOS
+tags: Crack
+
 ---
 # 
