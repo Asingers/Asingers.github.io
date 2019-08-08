@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Flarum Install
-subtitle: Flarum Install Guide
+description: Flarum Install Guide
+categories: iOS
+tags: GCP
+
 ---
 # 
