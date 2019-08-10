@@ -33,19 +33,8 @@ exif 扩展`
 
 *  第二部分 Flarum安装
 
-安装Composer，请在SSH中输入下列命令：
+安装Composer，可以按照官方指导就可以了[Composer安装](https://getcomposer.org/download/)
 
-`wget https://dl.laravel-china.org/composer.phar -O /usr/local/bin/composer`
-
-`chmod a+x /usr/local/bin/composer`
-
-`export PATH=$PATH:/root/.config/composer/vendor/bin`
-
-`source /etc/profile`
-
-*  安装php-zip，请在SSH中输入下列命令
-
-`yum install php-zip`
 
 *  安装Flarum
 
@@ -57,9 +46,17 @@ exif 扩展`
 
 `composer create-project flarum/flarum . --stability=beta`
 
+这个步骤其实也可以在宝塔面板通过创建站点的方式创建文件夹，终端安装可能需要通过以下命令（需要在一个空文件夹里）
+`php composer.phar create-project flarum/flarum ./web --stability=beta`
+
+安装可能会报错：
+`[ErrorException]                                 
+  putenv() has been disabled for security reasons`
+	需要在面板的PHP设置中不要禁用这个函数。
+	
 这段命令含义为：移动到wwwroot文件夹，创建flarum文件夹，移动到flarum文件夹，使用Composer安装flarum。
 
-*  在宝塔面板中点击 网站 - 网站名 - 网站目录，将目录地址更改为 /www/wwwroot/flarum/ 并点击保存。运行目录更改为/public 并点击保存。
+*  在宝塔面板中点击 网站 - 网站名 - 网站目录，将目录地址更改为 /www/wwwroot/flarum/ 等对应地址就可以了。并点击保存。运行目录更改为/public 并点击保存。
 
 *  给文件夹授权，在SSH中设置运行下列命令
 
