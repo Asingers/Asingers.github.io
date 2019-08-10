@@ -64,4 +64,33 @@ exif 扩展`
 第16行有你的域名 http://xxx.com 这样的，请将 http:// 改为https:// ，然后再次访问你的网站，SSL安全锁就出来了。
 
 这是安装官方版本的方法，当然也可以通过上传安装包的方式，可以从[汉化版](https://www.flarumchina.org/docs/installation/)下载，然后文件解压到网站目录下。也可以进行安装。
+设置伪静态
+```
+location / {
+            try_files $uri $uri/ /index.php?$query_string;
+        }
+location /api { 
+            try_files $uri $uri/ /api.php?$query_string; 
+        }
+location /admin {
+            try_files $uri $uri/ /admin.php?$query_string; 
+       }
+        
+location /flarum {
+          deny all;
+           return 404;
+       }
+        
+location ~* \.html$ {
+           expires -1;
+       }
+        
+location ~* \.(css|js|gif|jpe?g|png)$ {
+           expires 1M;
+           add_header Pragma public;
+           add_header Cache-Control "public, must-revalidate, proxy-revalidate";
+       }
+```
+
+
 
