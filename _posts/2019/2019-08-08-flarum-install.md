@@ -37,15 +37,7 @@ exif 扩展`
 
 
 *  安装Flarum
-
-`cd /www/wwwroot/`
-
-`mkdir flarum`
-
-`cd flarum`
-
-`composer create-project flarum/flarum . --stability=beta`
-
+*  
 这个步骤其实也可以在宝塔面板通过创建站点的方式创建文件夹，终端安装可能需要通过以下命令（需要在一个空文件夹里）
 `php composer.phar create-project flarum/flarum ./web --stability=beta`
 
@@ -54,15 +46,13 @@ exif 扩展`
   putenv() has been disabled for security reasons`
 	需要在面板的PHP设置中不要禁用这个函数。
 	
-这段命令含义为：移动到wwwroot文件夹，创建flarum文件夹，移动到flarum文件夹，使用Composer安装flarum。
-
-*  在宝塔面板中点击 网站 - 网站名 - 网站目录，将目录地址更改为 /www/wwwroot/flarum/ 等对应地址就可以了。并点击保存。运行目录更改为/public 并点击保存。
+*  在宝塔面板中点击 网站 - 网站名 - 网站目录，将目录地址更改为 /www/wwwroot/web/ 等对应地址就可以了。并点击保存。运行目录更改为/public 并点击保存。
 
 *  给文件夹授权，在SSH中设置运行下列命令
 
-`chmod -R 0777 /www/wwwroot/flarum/storage`
+`chmod -R 0777 /www/wwwroot/web/storage`
 
-`chmod -R 0777 /www/wwwroot/flarum/public/assets`
+`chmod -R 0777 /www/wwwroot/web/public/assets`
 
 
 *  第三部分 配置Flarum
