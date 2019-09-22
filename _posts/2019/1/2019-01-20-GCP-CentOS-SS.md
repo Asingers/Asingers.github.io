@@ -41,7 +41,16 @@ tags:
 **步骤三：使用以下命令启动小飞机服务。**
 ![](/images/post/20190120/gcpss7.png)
 
-注意其中的 mgxqb 是密码,下面客户端连接时需要用到。当然也可以配置成其他端口、密码和加密类型。
+注意其中的 mgxqb 是密码,下面客户端连接时需要用到。当然也可以配置成其他端口、密码和加密类型。如果使用其他加密方式比如 *chacha20* 那么则可能需要安装对应环境。下载解压编译安装...
+1.  `yum groupinstall "Development Tools" -y`
+2.  `yum install wget -y`
+3.  `wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz`
+4.  `tar xzvf LATEST.tar.gz`
+5.  `cd libsodium*`
+6.  `./configure`
+7.  `make -j8 && make install`
+8.  `echo /usr/local/lib > /etc/ld.so.conf.d/usr_local_lib.conf`
+9.  `ldconfig`
 
 **步骤四：最后一步，配置自启动配置文件。**
 补充一下，据我观察 Google 的 VPS 会一个月重启一次，我们可以将小飞机服务添加到系统自启动脚本中，以便在服务器重启时自动开启服务。运行命令 sudo vim /etc/rc.local 编辑自启动配置文件。加入以下代码：
