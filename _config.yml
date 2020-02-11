@@ -67,7 +67,7 @@ ga_domain: 9dic.com
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Asingers <br/>在平坦的路面上,曲折前行."
-sidebar-avatar: https://cloud9dic.b0.upaiyun.com/photo-1517352551702-336dda93455e.jpeg    # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: https://9dic.com/images/beauty_1581389353691.JPG    # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
