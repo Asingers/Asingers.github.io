@@ -14,15 +14,15 @@ future: true
 
 # SNS settings
 RSS: true
- weibo_username:Asingers
+ weibo_username: Asingers
 # zhihu_username:    
 # github_username:
 # instagram_username:  
-twitter_username:  Asingersz
+twitter_username: Asingersz
 # facebook_username:  Asingers.z
 
 # E-mail:
-mail_username:        asingers@9dic.com
+mail_username: asingers@9dic.com
 
 # LaiBiLi
 # data-uid: MTAyMC8zMDAzOS82NjAz
