@@ -1,6 +1,9 @@
 ---
 layout: post
 title: V2Ray+WebSocket+TLS+Nginx
-subtitle: 一键脚本
+description: V2Ray+WebSocket+TLS+Nginx 一键搞定
+categories: tips
+tags: AWS
+
 ---
 # 
