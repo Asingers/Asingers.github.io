@@ -41,4 +41,4 @@ Xcode 11 是安装在 macOS 10.14 SDK 上，在此路径/Library/Developer/Comma
 
 `gem install cocoapods`
 
-当然这个🥚疼的步骤完全可以通过升级到最新的 macOS 😂
+当然这个🥚疼的步骤完全可以通过升级到最新的 macOS 😂.
