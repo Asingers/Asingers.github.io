@@ -1,6 +1,6 @@
 ---
 layout: post
-title: remote: Repository not found
+title: Remote Repository not found
 subtitle: 明明有的仓库地址找不到了？？？
 categories: tips
 header-mask: 0.7
