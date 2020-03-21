@@ -3,6 +3,7 @@ layout: post
 title: Frida-ios-dump
 description: iOS App Crack
 categories: iOS
+header-mask: 0.7
 tags: Crack
 
 ---

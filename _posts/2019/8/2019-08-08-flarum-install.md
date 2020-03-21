@@ -3,6 +3,7 @@ layout: post
 title: Flarum Install
 description: Flarum Install Guide
 categories: iOS
+header-mask: 0.7
 tags: GCP
 
 ---
