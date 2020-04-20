@@ -28,8 +28,9 @@ tags:
 再来理解 串并行,同异步:
 
 #### 串行队列同步执行: 在当前线程顺序执行 
-	    dispatch_queue_t queue =  dispatch_queue_create("queneName", NULL);
-        //2.添加任务到队列中，就可以执行任务
+
+	dispatch_queue_t queue =  dispatch_queue_create("queneName", NULL);
+     //2.添加任务到队列中，就可以执行任务
     dispatch_sync(queue, ^{
         NSLog(@"下载图片1----%@",[NSThread currentThread]);
     });
@@ -41,6 +42,11 @@ tags:
     });
         //打印主线程
     NSLog(@"主线程----%@",[NSThread mainThread]);
+    
+    下载图片1----<NSThread: 0x600002b20240>{number = 1, name = main}
+    下载图片2----<NSThread: 0x600002b20240>{number = 1, name = main}
+    下载图片3----<NSThread: 0x600002b20240>{number = 1, name = main}
+    主线程----<NSThread: 0x600002b20240>{number = 1, name = main}
     
 *不会开启新的线程，创建的自定义队列无效。*
 
@@ -59,6 +65,11 @@ tags:
     });
         //打印主线程
     NSLog(@"主线程----%@",[NSThread mainThread]);
+    
+    下载图片1----<NSThread: 0x600001308040>{number = 5, name = (null)}
+    下载图片2----<NSThread: 0x600001308040>{number = 5, name = (null)}
+    下载图片3----<NSThread: 0x600001308040>{number = 5, name = (null)}
+    主线程----<NSThread: 0x600001344840>{number = 1, name = main}
 
 *异步串行执行3个任务，只会开启一个子线程。*
 	
@@ -78,6 +89,11 @@ tags:
     });
         //打印主线程
     NSLog(@"主线程----%@",[NSThread mainThread]);
+    
+    下载图片1----<NSThread: 0x600001420080>{number = 1, name = main}
+    下载图片2----<NSThread: 0x600001420080>{number = 1, name = main}
+    下载图片3----<NSThread: 0x600001420080>{number = 1, name = main}
+    主线程----<NSThread: 0x600001420080>{number = 1, name = main}
 	
 *不会开启新的线程，并发队列失去了并发的功能。*
 
@@ -97,6 +113,11 @@ tags:
         });
     //打印主线程
     NSLog(@"主线程----%@",[NSThread mainThread]);
+    
+    下载图片3----<NSThread: 0x600000af9680>{number = 5, name = (null)}
+    下载图片2----<NSThread: 0x600000afdac0>{number = 7, name = (null)}
+    下载图片1----<NSThread: 0x600000ae0200>{number = 6, name = (null)}
+    主线程----<NSThread: 0x600000ab8d40>{number = 1, name = main}
 	
 *异步并发执行3个任务，会开启3个子线程。*
 
@@ -108,7 +129,7 @@ tags:
     NSLog(@"222222");
     
     2019-01-16 10:28:57.254042+0800 GCD[463:148602] 222222
-	2019-01-16 10:28:57.277710+0800 GCD[463:148602] 111111
+    2019-01-16 10:28:57.277710+0800 GCD[463:148602] 111111
 	
 #### 主队列同步执行: 会造成死锁. 
 	⚠️ BOOM！
@@ -130,16 +151,16 @@ tags:
 	
 1. 使用dispatch_queue_create函数创建串行队列
 	
-		dispatch_queue_t queue = dispatch_queue_create("queneName", NULL); // 创建
+       dispatch_queue_t queue = dispatch_queue_create("queneName", NULL); // 创建
 	
 2. 还有就是主队列是 GCD 自带的一个特殊的串行队列  
 
-		dispatch_queue_t queue = dispatch_get_main_queue();
+       dispatch_queue_t queue = dispatch_get_main_queue();
 	
 创建一个`串行队列`也可以用
 `dispatch_get_global_queue`函数获得全局的并发队列  
 	
-	dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0); // 获得全局并发队列
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0); // 获得全局并发队列
 其中,全局并发队列有优先级:
  
 	#define DISPATCH_QUEUE_PRIORITY_HIGH 2 // 高
