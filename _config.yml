@@ -1,11 +1,11 @@
 # Site settings
 title: Asingers Blog
 SEOTitle: Asingers的博客 | Asingers Blog
-header-img: https://blog.9dic.com/images/IMG_1027.JPG
+header-img: https://9dic.com/images/IMG_1027.JPG
 email: asingers@9dic.com
 description: "Asingers ，9dic.com ，iOS, 解忧の杂货, Asingers的独立博客"
 keyword: "Asingers,博客,个人网站,互联网,产品,解忧の杂货,9dic.com,9dic,aws,svn,vpn,xcode,教程,Asingers的独立博客"
-url: "http://blog.9dic.com"              # your host, for absolute URL
+url: "http://9dic.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 owner: Asingers
 
@@ -67,7 +67,7 @@ ga_domain: 9dic.com
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Asingers <br/>在平坦的路面上,曲折前行."
-sidebar-avatar: https://blog.9dic.com/images/beauty_1581389353691.JPG    # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: https://9dic.com/images/beauty_1581389353691.JPG    # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
