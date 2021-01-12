@@ -22,11 +22,11 @@
 }
 
 #backtotop .backtotop-btn:hover .arrow-upward {
-    border-bottom-color: #0085A1
+    border-bottom-color: #0084FF
 }
 
 #backtotop .backtotop-btn:hover .vertical-stick {
-    background-color: #0085A1
+    background-color: #0084FF
 }
 
 @media screen and (max-width:550px) {
