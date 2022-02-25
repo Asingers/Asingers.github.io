@@ -1,15 +1,17 @@
 {
-    "applinks":{
-        "apps":[],
-        "details":[
+"applinks": {
+        "apps": [],
+        "details": [
+          
             {
-                "appID":"VHMNY6V4C7.com.asingers.GRecipes",
-                "paths":["/app/grecipes/*"]
+                "appID": "VHMNY6V4C7.com.asingers.GRConnect",
+                "paths": ["/app/grlover/*"]
             },
-            {
-                "appID":"VHMNY6V4C7.com.asingers.GRConnect",
-                "paths":["/app/grlover/*"]
+	    {
+                "appID": "VHMNY6V4C7.com.asingers.GRecipes",
+                "paths": ["/app/grecipes/*"]
             }
         ]
     }
 }
+
