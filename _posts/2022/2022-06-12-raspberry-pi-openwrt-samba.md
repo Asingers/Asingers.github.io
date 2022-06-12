@@ -32,6 +32,8 @@ tags: RaspberryPi
 ### 开启DHCP
 因为要将树莓派作为旁路有网关，IP 地址由openwrt 分配，开启的同时记得把上级路由器的DHCP 关掉。
 
+![网络配置](https://9dic.com/images/post/2022/Xnip2022-06-12_22-40-10.jpg)
+
 ![网络配置](https://9dic.com/images/post/2022/Xnip2022-06-12_22-15-36.jpg)
 
 物理设置中取消桥接，选择Lan 接口 eth0
