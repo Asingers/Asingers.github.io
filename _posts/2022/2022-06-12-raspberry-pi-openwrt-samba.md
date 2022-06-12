@@ -57,13 +57,16 @@ tags: RaspberryPi
 
 ![网络配置](https://9dic.com/images/post/2022/Xnip2022-06-12_22-18-16.jpg)
 
-在网络共享的编辑模版菜单中，将invalid user 这一行注释掉，我们通过终端修改一下samba root 用户的密码
-smbpasswd -a root
+在网络共享的编辑模版菜单中，将invalid user 这一行注释掉
 
-输入新的密码，然后重启服务 /etc/init.d/samba restart
+![网络配置](https://9dic.com/images/post/2022/Xnip2022-06-12_22-35-54.jpg)
+
+我们通过终端修改一下samba root 用户的密码`smbpasswd -a root`
+
+输入新的密码，然后重启服务 `/etc/init.d/samba restart`
 
 ![网络配置](https://9dic.com/images/post/2022/Xnip2022-06-12_22-21-44.jpg)
 
-然后可以通过连smb://192.168.0.102 登录到NAS 了
+然后可以通过连 `smb://192.168.0.102` 登录到NAS 了
 
 ![网络配置](https://9dic.com/images/post/2022/Xnip2022-06-12_22-23-26.jpg)
