@@ -3,7 +3,7 @@ layout: post
 title: Run Openwrt on Raspberry Pi 4B+ with samba server
 description: 利用树莓派做旁路由并顺手开启samba 服务
 categories: RaspberryPi
-header-mask: 0.7
+header-mask: 0.0
 tags: RaspberryPi
 header-img: ""
 header-bg-css: "linear-gradient(to right, #24b94a, #38ef7d);"
