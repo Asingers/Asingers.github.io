@@ -6,7 +6,7 @@ categories: RaspberryPi
 header-mask: 0.0
 tags: RaspberryPi
 header-img: ""
-header-bg-css: "linear-gradient(to right, #24b94a, #38ef7d);"
+header-bg-css: "linear-gradient(to right, #ff0844, #ffb199);"
 ---
 
 ### 固件安装
