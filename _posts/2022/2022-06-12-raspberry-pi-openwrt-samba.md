@@ -5,6 +5,7 @@ description: 利用树莓派做旁路由并顺手开启samba 服务
 categories: RaspberryPi
 header-mask: 0.7
 tags: RaspberryPi
+header-bg-css: "linear-gradient(to right, #24b94a, #38ef7d);"
 
 ---
 
