@@ -232,19 +232,5 @@
         </div>
     </div>
 </footer>
-
-    <!-- ga & ba script hoook -->
-    <script></script>
-    {% if site.ba_track_id %}
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?{{ site.ba_track_id }}";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-{% endif %}
 </head>
 </body></html>
