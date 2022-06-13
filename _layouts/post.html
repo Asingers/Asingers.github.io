@@ -22,15 +22,11 @@ layout: default
 
                 <!-- Multi-Lingual -->
                 {% if page.multilingual %}
-                <!-- Language Selector -->
-                <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-                    <option value="0" selected> 中文 Chinese </option>
-                    <option value="1"> 英文 English </option>
-                </select>
+                    {% include multilingual-sel.html %}
                 {% endif %}
 
 				{{ content }}
-		文章使用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+
                 <hr style="visibility: hidden;">
                 <ul class="pager">
                     {% if page.previous.url %}
@@ -65,15 +61,10 @@ layout: default
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
                 <!-- 网易云跟帖 评论框 end -->
                 {% endif %}
-				{% if site.github_comment %}
-                <div class="comment">
-                {% include comments.html %}
-                </div>
-                {% endif %}
             </div>  
 
     <!-- Side Catalog Container -->
-        {% if page.catalog %}
+        {% unless page.no-catalog %}
             <div class="
                 col-lg-2 col-lg-offset-0
                 visible-lg-block
@@ -87,7 +78,7 @@ layout: default
                     <ul class="catalog-body"></ul>
                 </div>
             </div>
-        {% endif %}
+        {% endunless %}
 
     <!-- Sidebar Container -->
             <div class="
@@ -99,7 +90,7 @@ layout: default
                 {% include featured-tags.html bottom=true %}
 
                 <!-- Friends Blog -->
-                <!-- {% include friends.html %} -->
+                {% include friends.html %}
             </div>
         </div>
     </div>
@@ -161,9 +152,9 @@ layout: default
 <script>
     async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
         anchors.options = {
-          visible: 'always',
+          visible: 'hover',
           placement: 'right',
-          icon: '#'
+          // icon: '#'
         };
         anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
     })
