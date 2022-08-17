@@ -34,7 +34,7 @@ catalog: true
 ### 关闭DHCP
 这里我们仍然使用上级路由器分配IP 地址，不使用树莓派分配。所以在接口设置菜单中，勾选 “忽略此接口”
 
-![网络配置](https://9dic.com/images/post/2022/Xnip2022-08-17_20-14-16)
+![网络配置](https://9dic.com/images/post/2022/Xnip2022-08-17_20-14-16.jpg)
 
 物理设置中取消桥接，选择Lan 接口 eth0
 
