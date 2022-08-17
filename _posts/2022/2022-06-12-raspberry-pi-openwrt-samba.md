@@ -38,11 +38,11 @@ catalog: true
 
 物理设置中取消桥接，选择Lan 接口 eth0
 
-![网络配置](https://9dic.com/images/post/2022/Xnip2022-06-12_22-16-13.jpg)
+![网络配置](https://9dic.com/images/post/2022/Xnip2022-08-17_20-27-04.jpg)
 
 防火墙中把SYN-flood 防御关掉。
 
-![网络配置](https://9dic.com/images/post/2022/Xnip2022-08-17_20-27-04.jpg)
+![网络配置](https://9dic.com/images/post/2022/Xnip2022-06-12_22-16-46.jpg)
 
 ### 设置网关
 在路由器的DHCP 设置菜单中，将网关地址修改为树莓派的IP 地址。这样的设置是对当前局域网网络有侵入性，即树莓派作为网关，当树莓派宕机的时候，所有连接到Wi-Fi 网络的设备都会有问题。当然也有方便之处，就是所有连接的设备自动获取IP 地址及网关地址。不需要手动填写网关为树莓派IP。
