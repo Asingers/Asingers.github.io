@@ -14,12 +14,12 @@ future: true
 
 # SNS settings
 RSS: true
-#weibo_username: 309954331
+#weibo_username:
 # zhihu_username:    
 # github_username:
 # instagram_username:  
-#twitter_username: Asingersz
-# facebook_username:  Asingers.z
+#twitter_username: 
+# facebook_username:
 
 # E-mail:
 mail_username: asingers@9dic.com
