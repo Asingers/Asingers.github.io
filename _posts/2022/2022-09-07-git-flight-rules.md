@@ -2,6 +2,7 @@
 layout: post
 title: Git Flight Rules
 description: Git 安全飞行手册
+subtitle: Git 安全飞行手册，起飞前阅读。
 categories: iOS
 header-mask: 0.0
 tags: Git

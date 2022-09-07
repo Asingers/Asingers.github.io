@@ -2,6 +2,7 @@
 layout: post
 title: Install Gitlab EE on Raspberry Pi 4B+
 description: 在树莓派上搭建 Gitlab 服务
+subtitle: 在树莓派上搭建 Gitlab 服务
 categories: RaspberryPi
 header-mask: 0.7
 tags: Xcode
